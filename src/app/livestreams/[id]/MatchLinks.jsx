@@ -11,7 +11,7 @@ const MatchLinks = () => {
       url: "https://football-live-stream-api.p.rapidapi.com/stream.php",
       params: { matchid: S_ID },
       headers: {
-        "X-RapidAPI-Key": "a91c39ba04msh138dde153e692afp15cff6jsnbd732b41d133",
+        "X-RapidAPI-Key": NEXT_PUBLIC_RAPID_API_FREE_KEY,
         "X-RapidAPI-Host": "football-live-stream-api.p.rapidapi.com",
       },
     };

@@ -11,9 +11,11 @@ const LinksMain = () => {
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_SERVER}/api/livestreams`
         );
-        if (res) {
-          console.log(res);
-          // setLiveEvents(res.data);
+        console.log(res.data);
+        if (res.data != "Empty streams") {
+          setLiveEvents(res.data.livestream_res);
+        } else {
+          setLiveEvents([]);
         }
       } catch (error) {
         console.error(error);

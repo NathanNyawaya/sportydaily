@@ -11,7 +11,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="my-3 md:mb-0">
-            <p className="text-[1rem] max-w-[200px] font-bold px-3 py-1 rounded bg-green-500/[0.2]">
+            <p className="text-[1rem] max-w-[200px] font-bold px-3 py-1 text-white rounded bg-green-500/[0.2]">
               Powered by Grenlyfe
             </p>
           </div>

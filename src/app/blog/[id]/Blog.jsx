@@ -33,15 +33,15 @@ const Blog = () => {
     blogDoc && blogDoc.imageFiles && console.log(blogDoc.imageFiles[0].url);
   }, [blogDoc]);
   return (
-    <div>
+    <div className="m-1">
       {blogDoc && blogDoc.imageFiles ? (
-        <div className="bg- rounded p-1">
+        <div className="rounded">
           <p
             onClick={() => {
               location.replace(`/`);
               localStorage.removeItem("b_id");
             }}
-            className="text-black "
+            className="my-4"
           >
             <KeyboardBackspaceIcon
               className="text-white font-bold cursor-pointer "
@@ -50,14 +50,14 @@ const Blog = () => {
             />
           </p>
           {/* blog header */}
-          <div className="my-10">
-            <h1 className="leading-normal text-5xl font-bold  text-white">
+          <div className="max_ss:mb-2 md:my-10">
+            <h1 className="leading-normal text-xl md:text-3xl lg:text-4xl font-bold  text-white">
               {blogDoc.title}
             </h1>
           </div>
 
           <div className="grid grid-cols-12 gap-x-2 items-start">
-            <div className="col-span-9">
+            <div className="col-span-12 md:col-span-9">
               {/* blog visuals */}
               <div className="flex gap-x-1 mb-2">
                 <img
@@ -80,9 +80,9 @@ const Blog = () => {
               {/* comments */}
               <CommentSection />
             </div>
-            <div className="col-span-3 sticky top-0 flex flex-col gap-y-4 rounded">
+            <div className="max_md:hidden col-span-3 sticky top-[20%] bottom-0 right-0 flex flex-col gap-y-4 rounded">
               <SideBarAds />
-              <FeaturedBlogs />
+              {/* <FeaturedBlogs /> */}
             </div>
           </div>
         </div>

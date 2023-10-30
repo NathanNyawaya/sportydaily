@@ -1,20 +1,17 @@
 import React from "react";
-
+import Link from "next/link";
 const Footer = () => {
   return (
-    <footer className="p-4 bg-gray-800 sm:p-6 dark:bg-gray-800">
+    <footer className="p-3 bg-gray-800 dark:bg-gray-800">
       <div className="mx-auto max-w-screen-xl">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <p className="text-2xl font-bold italic">
-              <span className="text-green-600">Sporty</span>-
-              <span className="bg-white p-2 text-yellow-500 rounded">
-                Daily
-              </span>
+        <div className="md:flex md:justify-between items-center">
+          <div className="md:mb-0">
+            <p className="text-[1.4rem] max-w-[150px] font-bold bg-[#FCD107] rounded p-1 text-black">
+              SportSync
             </p>
           </div>
-          <div className="mb-6 md:mb-0">
-            <p className="text-sm font-bold px-3 py-1 rounded bg-green-500/[0.2]">
+          <div className="my-3 md:mb-0">
+            <p className="text-[1rem] max-w-[200px] font-bold px-3 py-1 rounded bg-green-500/[0.2]">
               Powered by Grenlyfe
             </p>
           </div>
@@ -22,14 +19,9 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-50 uppercase dark:text-white">
-                Resources
+                Links
               </h2>
-              <ul className="text-gray-600 dark:text-gray-400">
-                <li className="mb-4">
-                  <a href="https://flowbite.com" className="hover:underline">
-                    SportyDaily
-                  </a>
-                </li>
+              <ul className="text-gray-400 dark:text-gray-400">
                 <li>
                   <a href="/" className="hover:underline">
                     {" "}
@@ -38,11 +30,11 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            {/* <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-50 uppercase dark:text-white">
                 Follow us
               </h2>
-              <ul className="text-gray-600 dark:text-gray-400">
+              <ul className="text-gray-400 dark:text-gray-400">
                 <li className="mb-4">
                   <a
                     href="https://github.com/themesberg/flowbite"
@@ -60,12 +52,12 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-50 uppercase dark:text-white">
                 Legal
               </h2>
-              <ul className="text-gray-600 dark:text-gray-400">
+              <ul className="text-gray-400 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Privacy Policy
@@ -82,14 +74,14 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
             © 2023{" "}
-            <a href="https://flowbite.com" className="hover:underline">
-              SportyDaily™
+            <a href="#" className="hover:underline">
+              SportSync™
             </a>
             . All Rights Reserved.
-          </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+          </p>
+          {/* <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a
               href="#"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -171,7 +163,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

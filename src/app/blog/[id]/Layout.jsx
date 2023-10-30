@@ -6,11 +6,19 @@ import Footer from "@/app/components/Footer";
 const Layout = () => {
   return (
     <div className="">
-      <Navbar />
-      <div className="mx-auto max-w-screen-xl my-10">
-        <Blog />
-      </div>
-      <Footer />
+      <main className="relative">
+        <div className="mx-auto max-w-screen-xl">
+          <div className="z-100 sticky top-0 z-50 ">
+            {/* navigations */}
+            <Navbar />
+          </div>
+          <div className=" flex min-h-screen flex-col text-black">
+            {/* main content */}
+            <Blog />
+          </div>
+          <Footer />
+        </div>
+      </main>
     </div>
   );
 };

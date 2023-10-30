@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import SideBar from "./sidebar/SideBar";
 import MainSectionDisplay from "./main/MainSectionDisplay";
 
 const Home = () => {
+  const [selectedPage, setSelectedPage] = useState("home");
+
   return (
     <div className="grid grid-cols-10 gap-x-2">
       <div className="col-span-10">
@@ -10,11 +14,11 @@ const Home = () => {
       </div>
       {/* admin sidebar */}
       <div className="col-span-2 sticky top-0 min-h-[40vh] bg-white">
-        <SideBar/>
+        <SideBar setSelectedPage={setSelectedPage} activeView={selectedPage} />
       </div>
       {/* main content */}
       <div className="col-span-8 bg-white w-full">
-        <MainSectionDisplay/>
+        <MainSectionDisplay active={selectedPage} />
       </div>
     </div>
   );

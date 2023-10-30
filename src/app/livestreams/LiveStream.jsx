@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import Blogs from "../components/Blogs";
+// import Blogs from "../components/Blogs";
 import Navbar from "../components/navbars/Navbar";
 import BottomNav from "../components/navbars/Dropdown";
 import SideBarAds from "../components/ads/SideBarAds";
 import HorizontalAds from "../components/ads/HorizontalAds";
-import FeaturedBlogs from "../components/featured/FeaturedBlogs";
+// import FeaturedBlogs from "../components/featured/FeaturedBlogs";
 import Footer from "../components/Footer";
 import LinksMain from "./components/LinksMain";
 
@@ -28,7 +28,7 @@ const LiveStream = () => {
             <HorizontalAds />
           </div>
           {/* side-bar */}
-          <div className="col-span-1">
+          <div className="col-span-1 hidden">
             <div className="sticky top-40 bg-white flex flex-col gap-y-4 min-h-[30vh] p-1">
               <p className="px-2 rounded bg-gray-300 cursor-pointer font-bold text m-1">
                 EPL
@@ -47,7 +47,7 @@ const LiveStream = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-8 z-0">
+          <div className="col-span-10 z-0">
             <LinksMain />
           </div>
           <div className="col-span-2 mb-20">

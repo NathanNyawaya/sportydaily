@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import { getBlogs } from "../funcStore/controllers/blogs/blog_controllers";
 import { getTimeAgo } from "../funcStore/momentTimeProcess";
 
-
-
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
 
@@ -12,8 +10,11 @@ const Blogs = () => {
     const asyncRunner = async () => {
       try {
         const res = await getBlogs();
-        console.log(res.data[0].imageFiles[0].url);
-        setPosts(res.data);
+        if (res) {
+          console.log(res);
+          // console.log(res.data[0].imageFiles[0].url);
+          setPosts(res.data);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -55,9 +56,7 @@ const Blogs = () => {
                 </p>
                 <div className="flex justify-end mt-4 gap-x-3 text-[0.8rem]">
                   <p className="italic text-gray-400">{post.author}</p>
-                  <p className="text-gray-400">
-                    {getTimeAgo(post.createdAt)}
-                  </p>
+                  <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
                 </div>
               </div>
             </div>

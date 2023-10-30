@@ -15,10 +15,7 @@ const Blog = () => {
         const blog_id = localStorage.getItem("b_id");
         if (blog_id) {
           const res = await axios.get(
-            `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/single/${blog_id}`,
-            {
-              blog_id,
-            }
+            `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/single/${blog_id}`
           );
           if (res) {
             setBlogDoc(res.data.blog_doc);
@@ -54,7 +51,9 @@ const Blog = () => {
           </p>
           {/* blog header */}
           <div className="my-10">
-            <h1 className="leading-normal text-5xl font-bold  text-white">{blogDoc.title}</h1>
+            <h1 className="leading-normal text-5xl font-bold  text-white">
+              {blogDoc.title}
+            </h1>
           </div>
 
           <div className="grid grid-cols-12 gap-x-2 items-start">

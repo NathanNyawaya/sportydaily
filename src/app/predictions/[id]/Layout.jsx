@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import Blogs from "../../components/Blogs";
+// import Blogs from "../../components/Blogs";
 import Navbar from "../../components/navbars/Navbar";
 import BottomNav from "../../components/navbars/Dropdown";
 import SideBarAds from "../../components/ads/SideBarAds";
-import HorizontalAds from "../../components/ads/HorizontalAds";
-import FeaturedBlogs from "../../components/featured/FeaturedBlogs";
+// import HorizontalAds from "../../components/ads/HorizontalAds";
+// import FeaturedBlogs from "../../components/featured/FeaturedBlogs";
 import Footer from "../../components/Footer";
 import MatchLinks from "./MatchLinks";
 import Link from "next/link";

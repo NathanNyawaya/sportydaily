@@ -1,16 +1,18 @@
-"use client";
-import React, { useState } from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import QueueIcon from "@mui/icons-material/Queue";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
+import { getBlog } from "@/app/funcStore/controllers/blogs/blog_controllers";
 
-const BlogForm = () => {
+const EditBlog = () => {
+  const [blogDoc, setBlogDoc] = useState({});
   const [images, setImages] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
   const [imageFiles, setImageFiles] = useState([]);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [progress, setProgress] = useState("none");
-  const [uploadOk, setUploadOk] = useState(false);
+  const [editOk, setEditOk] = useState(false);
   const [blogData, setBlogData] = useState({
     title: "",
     club: "",
@@ -18,6 +20,17 @@ const BlogForm = () => {
     imageFiles: [""],
     paragraphs: [""],
   });
+
+  const populateFormWithBlogDoc = (blogDoc_) => {
+    setBlogData({
+      title: blogDoc_.title,
+      club: blogDoc_.club,
+      summaryText: blogDoc_.summaryText,
+      author: blogDoc_.author,
+      imageFiles: blogDoc_.imageFiles || [""],
+      paragraphs: blogDoc_.paragraphs || [""],
+    });
+  };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -97,13 +110,15 @@ const BlogForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     console.log(blogData);
 
     try {
       const token = localStorage.getItem("token");
+      console.log(`${process.env.NEXT_PUBLIC_SERVER}/api/blogs/${blogDoc._id}`);
       if (token) {
-        const res = await axios.post(
-          `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/create`,
+        const res = await axios.put(
+          `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/${blogDoc._id}`,
           {
             blogData,
           },
@@ -114,10 +129,9 @@ const BlogForm = () => {
           }
         );
 
-        console.log(res.data);
         if (res.status === 200) {
           console.log(res);
-          setUploadOk(true);
+          setEditOk(true);
         }
       }
       console.log(blogData);
@@ -126,14 +140,29 @@ const BlogForm = () => {
     }
   };
 
+  useEffect(() => {
+    (async () => {
+      const id_raw = localStorage.getItem("bcmt_id");
+      if (id_raw) {
+        const blog_id = JSON.parse(id_raw);
+        const blog = await getBlog(blog_id);
+        if (blog) {
+          console.log(blog);
+          setBlogDoc(blog.data.blog_doc);
+          populateFormWithBlogDoc(blog.data.blog_doc); // Populate the form with blogDoc data
+        }
+      }
+    })();
+  }, []);
+
   return (
-    <section>
-      <div className="py-8 px-4 relative">
+    <section className="">
+      <div className="py-8 px-4 relative ">
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-black">
-          Add a new blog
+          Edit Blog
         </h2>
         {/* visuals */}
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-2 hidden">
           <form onSubmit={handleImageSubmit}>
             <label
               className="block mb-2 text-sm font-medium text-gray-900 "
@@ -323,20 +352,15 @@ const BlogForm = () => {
             type="submit"
             className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-700 rounded focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900"
           >
-            Add Blog
+            Edit Blog
           </button>
         </form>
-
-        {uploadOk && (
+        {/* successs modal */}
+        {editOk && (
           <div className="absolute top-10 right-10 left-10 bg-white items-center z-50">
             <div className="flex items-center justify-center bg-green-400 p-5 relative">
-              <p
-                className="absolute top-3 right-3 cursor-pointer"
-                onClick={() => setUploadOk(false)}
-              >
-                X
-              </p>
-              <p className="text-white">Blog created Successfully</p>
+              <p className="absolute top-3 right-3 cursor-pointer" onClick={()=>setEditOk(false)}>X</p>
+              <p className="text-white">Blog update Successfully</p>
             </div>
           </div>
         )}
@@ -345,4 +369,4 @@ const BlogForm = () => {
   );
 };
 
-export default BlogForm;
+export default EditBlog;

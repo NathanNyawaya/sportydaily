@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+// import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="p-3 bg-gray-800 dark:bg-gray-800">
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="md:flex md:justify-between items-center">
           <div className="md:mb-0">
             <p className="text-[1.4rem] max-w-[150px] font-bold bg-[#FCD107] rounded p-1 text-black">
-              SportSync
+              SportSynk
             </p>
           </div>
           <div className="my-3 md:mb-0">
@@ -77,7 +77,7 @@ const Footer = () => {
           <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
             © 2023{" "}
             <a href="#" className="hover:underline">
-              SportSync™
+              SportSynk™
             </a>
             . All Rights Reserved.
           </p>

@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className=" flex justify-between items-center">
         <div className="flex justify-between w-[40%] items-center">
           <p className="text-2xl font-bold bg-[#FCD107] rounded p-1 text-black">
-            SportSync
+            SportSynk
           </p>
         </div>
         <div className="flex w-[60%] justify-end items-center mr-2">

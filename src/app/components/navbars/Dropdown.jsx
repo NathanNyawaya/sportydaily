@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 import React, { useState } from "react";
 
 const DropdownMenu = () => {
@@ -25,9 +25,9 @@ const DropdownMenu = () => {
         {/* <Link href="/livestreams">
           <p className="px-2  cursor-pointer">Live Streams</p>
         </Link> */}
-        <Link href="/">
+        {/* <Link href="/">
           <p className="px-2  cursor-pointer">Highlights</p>
-        </Link>
+        </Link> */}
         {/* <Link href="/predictions">
           <p className="px-2  cursor-pointer">Predictions</p>
         </Link> */}

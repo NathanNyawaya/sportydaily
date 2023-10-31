@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import SideBarAds from "@/app/components/ads/SideBarAds";
-import CommentSection from "@/app/components/comments/CommentSection";
+// import CommentSection from "@/app/components/comments/CommentSection";
 import HorizontalAds from "@/app/components/ads/HorizontalAds";
-import FeaturedBlogs from "@/app/components/featured/FeaturedBlogs";
+// import FeaturedBlogs from "@/app/components/featured/FeaturedBlogs";
 import axios from "axios";
 
 const Blog = () => {

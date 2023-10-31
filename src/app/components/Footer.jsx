@@ -6,12 +6,12 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between items-center">
           <div className="md:mb-0">
-            <p className="text-[1.4rem] max-w-[150px] font-bold bg-[#FCD107] rounded p-1 text-black">
+            <p className="text-[1.2rem] max-w-[200px] font-bold bg-[#FCD107] rounded p-1 text-black">
               ThePitchBasket
             </p>
           </div>
           <div className="my-3 md:mb-0">
-            <p className="text-[1rem] max-w-[200px] font-bold px-3 py-1 text-white rounded bg-green-500/[0.2]">
+            <p className="text-[0.7rem] max_md:max-w-[200px] font-bold px-3 py-1 text-white rounded bg-green-500/[0.2]">
               Powered by Grenlyfe
             </p>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => {
           <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
             © 2023{" "}
             <a href="#" className="hover:underline">
-            ThePitchBasket™
+              ThePitchBasket™
             </a>
             . All Rights Reserved.
           </p>

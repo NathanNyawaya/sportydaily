@@ -4,7 +4,7 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import Link  from "next/link";
-import ReactGA from "react-ga4";
+// import ReactGA from "react-ga4";
 import jwt_decode from "jwt-decode";
 import { Helmet } from "react-helmet";
 

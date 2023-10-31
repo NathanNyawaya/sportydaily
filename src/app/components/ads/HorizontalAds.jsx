@@ -1,10 +1,31 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 // import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 
 const HorizontalAds = () => {
+  const [ads, setAds] = useState(false);
+
+  useEffect(() => {
+    function activeLights2() {
+      setAds((prev) => !prev);
+    }
+
+    const intervalid2 = setInterval(activeLights2, 3000);
+    return () => {
+      clearInterval(intervalid2);
+    };
+  }, []);
   return (
-    <Link href="#" className="bg-gray-300">
+    <a
+      target="_blank"
+      href={`${
+        ads
+          ? "https://www.toprevenuegate.com/vjthn3dg98?key=586db3d8b6f61e3ebaddaf55aa08e461"
+          : "https://betika.com"
+      }`}
+      className="bg-gray-300"
+    >
       {" "}
       <div className="h-auto w-full flex">
         <img
@@ -13,7 +34,7 @@ const HorizontalAds = () => {
           className="w-full h-auto object-contain"
         />
       </div>
-    </Link>
+    </a>
   );
 };
 

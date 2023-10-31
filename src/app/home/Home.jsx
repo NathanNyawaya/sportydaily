@@ -35,8 +35,30 @@ const Home = () => {
                 <HorizontalAds />
               </div>
             )}
-            <div className="col-span-4 md:col-span-3 z-0">
+
+            <div className="col-span-4 flex flex-col md:col-span-3 z-0">
               <Blogs />
+              {showAds && (
+                <div className="my-2 flex justify-center">
+                  <div className="hidden">
+                    <a target="_blank" href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T">
+                      <img
+                        alt="banner"
+                        src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
+                      />
+                    </a>
+                  </div>
+
+                  <div className="md:hidden">
+                    <a target="_blank" href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T">
+                      <img
+                        alt="banner"
+                        src="https://landings-cdn.adsterratech.com/referralBanners/png/700%20x%2090%20px.png"
+                      />
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="max_md:hidden col-span-1 mb-20">
               <div className="flex flex-col gap-y-2 sticky top-40">

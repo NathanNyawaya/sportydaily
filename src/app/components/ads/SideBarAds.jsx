@@ -1,5 +1,6 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import AdComponent from "./Adsterra";
 
 const SideBarAds = () => {
   return (
@@ -7,12 +8,19 @@ const SideBarAds = () => {
       <div className="m-3 text-white">
         <p className="opacity-80 text-sm">Ads</p>
         <div className="relative pt-10">
-          <CloseIcon className="cursor-pointer text-white absolute top-0 right-0 w-[24px] h-[24px] rounded-full border p-1" />
-          <img
+          {/* <CloseIcon className="cursor-pointer text-white absolute top-0 right-0 w-[24px] h-[24px] rounded-full border p-1" /> */}
+          {/* <img
             src="https://images.unsplash.com/photo-1517747614396-d21a78b850e8?auto=format&fit=crop&q=80&w=2127&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="ads"
             className="rounded border"
-          />
+          /> */}
+
+          <a target="_blank" href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T">
+            <img
+              alt="banner"
+              src="https://landings-cdn.adsterratech.com/referralBanners/gif/300x425_adsterra_reff.gif"
+            />
+          </a>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function PageHandler() {
   useEffect(() => {
     const run = async () => {
       const logged = await checkIsAuthenticated();
-      console.log(logged);
+      // console.log(logged);
       setLoggedIn(logged);
     };
     run();

@@ -78,7 +78,7 @@ const Blog = () => {
               {/* ads section */}
               <HorizontalAds />
               {/* comments */}
-              <CommentSection />
+              {/* <CommentSection /> */}
             </div>
             <div className="max_md:hidden col-span-3 sticky top-[20%] bottom-0 right-0 flex flex-col gap-y-4 rounded">
               <SideBarAds />

@@ -31,14 +31,14 @@ export default function Login() {
 
       if (res.data) {
         // Send a custom event google-Analytics
-        ReactGA.event({
-          category: "login_category",
-          action: "login_action",
-          label: "login_lable", // optional
-          value: 101, // optional, must be a number
-          nonInteraction: false, // optional, true/false
-          transport: "xhr", // optional, beacon/xhr/image
-        });
+        // ReactGA.event({
+        //   category: "login_category",
+        //   action: "login_action",
+        //   label: "login_lable", // optional
+        //   value: 101, // optional, must be a number
+        //   nonInteraction: false, // optional, true/false
+        //   transport: "xhr", // optional, beacon/xhr/image
+        // });
         // Redirect to the dashboard
         setLoggedIn(true);
         if (res.data.token) {

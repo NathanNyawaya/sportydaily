@@ -5,8 +5,8 @@ import Navbar from "../components/navbars/Navbar";
 import BottomNav from "../components/navbars/Dropdown";
 import SideBarAds from "../components/ads/SideBarAds";
 import HorizontalAds from "../components/ads/HorizontalAds";
-// import FeaturedBlogs from "../components/featured/FeaturedBlogs";
 import Footer from "../components/Footer";
+import AdComponent from "../components/ads/Adsterra";
 
 const Home = () => {
   const [showAds, setShowAds] = useState(false);
@@ -41,7 +41,10 @@ const Home = () => {
               {showAds && (
                 <div className="my-2 flex justify-center">
                   <div className="hidden">
-                    <a target="_blank" href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T">
+                    <a
+                      target="_blank"
+                      href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T"
+                    >
                       <img
                         alt="banner"
                         src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
@@ -50,7 +53,10 @@ const Home = () => {
                   </div>
 
                   <div className="md:hidden">
-                    <a target="_blank" href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T">
+                    <a
+                      target="_blank"
+                      href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T"
+                    >
                       <img
                         alt="banner"
                         src="https://landings-cdn.adsterratech.com/referralBanners/png/700%20x%2090%20px.png"
@@ -68,6 +74,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* <AdComponent/> */}
+
         <Footer />
       </div>
     </main>

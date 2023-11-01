@@ -1,12 +1,18 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
-import { getBlogs } from "@/app/funcStore/controllers/blogs/blog_controllers";
+import {
+  deleteBlog,
+  getBlogs,
+} from "@/app/funcStore/controllers/blogs/blog_controllers";
 import Link from "next/link";
+import axios from "axios";
 
 const AllBlogs = () => {
   const [blogDocs, setBlogDocs] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const [disable, setDisable] = useState(false);
+  const [indexing, setIndexing] = useState(0);
 
   useEffect(() => {
     setLoading(true);
@@ -20,6 +26,36 @@ const AllBlogs = () => {
     })();
   }, []);
 
+  const deleteBlogs = async (id) => {
+    try {
+      setDisable(true);
+      const res = await deleteBlog(id);
+      if (res) {
+        if (res.status === 200) {
+          alert(res.data.message);
+          setDisable(false);
+
+          // refresh data
+          const blogs = await getBlogs();
+          if (blogs) {
+            setBlogDocs(blogs.data);
+          }
+        } else if (res.status === 404) {
+          setDisable(false);
+          alert(res.data.message);
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      setDisable(false);
+    }
+  };
+
+  const handleDeleteBlog = (blog_obj_id, i) => {
+    setIndexing(i);
+    // console.log(blog_obj_id);
+    deleteBlogs(blog_obj_id);
+  };
   const handleEditLink = (blog_obj_id) => {
     localStorage.setItem("bcmt_id", JSON.stringify(blog_obj_id));
     window.location.replace("/admin/edit");
@@ -88,7 +124,16 @@ const AllBlogs = () => {
                       >
                         Edit
                       </p>
-                      <p className="bg-red-500 rounded px-2 py-1">Delete</p>
+                      <p
+                        className={`${
+                          disable && indexing === index
+                            ? "bg-green-500"
+                            : "bg-red-500"
+                        } rounded px-2 py-1 cursor-pointer`}
+                        onClick={() => handleDeleteBlog(blog_doc._id, index)}
+                      >
+                        Delete
+                      </p>
                     </div>
                   </td>
                 </tr>

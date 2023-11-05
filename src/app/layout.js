@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {process.env.NEXT_PUBLIC_PROD === true ? (
+        {process.env.NEXT_PUBLIC_PROD  ? (
           <GoogleAnalytics
             ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}
           />

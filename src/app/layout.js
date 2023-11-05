@@ -5,7 +5,7 @@ import GoogleAnalytics from "./analytics/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "The Pitch Basket",
+  title: "EPL (The Pitch Basket)",
   description: "Supported by Grenlyfe",
 };
 
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID ? (
+        {process.env.NEXT_PUBLIC_PROD === true ? (
           <GoogleAnalytics
             ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}
           />

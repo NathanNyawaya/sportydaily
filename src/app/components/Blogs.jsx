@@ -2,29 +2,37 @@
 import React, { useEffect, useState } from "react";
 import { getBlogs } from "../funcStore/controllers/blogs/blog_controllers";
 import { getTimeAgo } from "../funcStore/momentTimeProcess";
+import LoadingStatus from "../status/Loading";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const asyncRunner = async () => {
+      setLoading(true);
       try {
         const res = await getBlogs();
         if (res) {
           console.log(res);
           // console.log(res.data[0].imageFiles[0].url);
           setPosts(res.data);
+          setLoading(false);
         }
       } catch (error) {
         console.error(error);
       }
+      setLoading(false);
     };
     asyncRunner();
   }, []);
 
   return (
-    <div className="mb-32 gap-y-4  max_lg:max-w-5xl lg:w-full lg:mb-0  lg:text-left">
-      {/* post.imageFiles[0].url */}
-      {posts &&
+    <div className="mb-20 gap-y-4  max_lg:max-w-5xl lg:w-full lg:mb-0  lg:text-left">
+      {loading ? (
+        <LoadingStatus />
+      ) : (
+        posts &&
         posts.map((post, index) => {
           // console.log(post._id)
           return (
@@ -32,6 +40,7 @@ const Blogs = () => {
               key={index}
               className="flex max_lg:flex-col justify-center text-white group mb-2 rounded bg-gray-800 relative cursor-pointer max_sm:m-2"
               onClick={() => {
+                setLoading(true)
                 localStorage.setItem("b_id", post._id);
                 location.replace(`/blog/${index + 1}`);
               }}
@@ -60,7 +69,8 @@ const Blogs = () => {
               </div>
             </div>
           );
-        })}
+        })
+      )}
     </div>
   );
 };

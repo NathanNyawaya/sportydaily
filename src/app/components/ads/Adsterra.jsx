@@ -1,23 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Script from 'next/script';
 
-const AdComponent = () => {
-  useEffect(() => {
-    const adOptions = {
-      key: '56a87b423aa75e73fbee3d61e1e8af46',
-      format: 'iframe',
-      height: 90,
-      width: 728,
-      params: {}
-    };
+const AdDisplay = () => {
+  const atOptions = {
+    'key': 'e00432cd040f5518499410ed4aa7da79',
+    'format': 'iframe',
+    'height': 600,
+    'width': 160,
+    'params': {}
+  };
 
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = '//www.highcpmcreativeformat.com/56a87b423aa75e73fbee3d61e1e8af46/invoke.js';
-    document.body.appendChild(script);
-  }, []);
-
-  return null; // No need to render anything for the ad
+  return (
+    <>
+      <Script
+        id="ad-script"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            atOptions = ${JSON.stringify(atOptions)};
+            document.write('<scr' + 'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/${atOptions.key}/invoke.js"></scr' + 'ipt>');
+          `,
+        }}
+      />
+    </>
+  );
 };
 
-export default AdComponent;
+export default AdDisplay;

@@ -27,7 +27,7 @@ const HorizontalAds = () => {
       className="bg-gray-300"
     >
       {" "}
-      <div className="h-auto w-full flex">
+      <div className="h-auto w-full max-h-[30vh] flex">
         <img
           src="https://cdn.betika.com/int_assets/ke/banners/scratch-to-win2000x436.png"
           alt="ads"

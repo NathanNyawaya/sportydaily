@@ -6,17 +6,19 @@ import BottomNav from "../components/navbars/Dropdown";
 import SideBarAds from "../components/ads/SideBarAds";
 import HorizontalAds from "../components/ads/HorizontalAds";
 import Footer from "../components/Footer";
-import AdComponent from "../components/ads/Adsterra";
 
 const Home = () => {
   const [showAds, setShowAds] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       setShowAds(true);
     }, 4000);
   }, []);
+
   return (
     <main className="relative">
+      
       <div className="mx-auto max-w-screen-xl">
         <div className="sticky top-0 z-50 ">
           {/* navigations */}
@@ -66,7 +68,7 @@ const Home = () => {
                 </div>
               )}
             </div>
-            <div className="max_md:hidden col-span-1 mb-20">
+            <div className="max_md:hidden col-span-1 mb-10">
               <div className="flex flex-col gap-y-2 sticky top-40">
                 <SideBarAds />
                 {/* <FeaturedBlogs /> */}

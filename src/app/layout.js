@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "The Pitch Basket",
-  description: "Powered by Grenlyfe",
+  description: "Supported by Grenlyfe",
 };
 
 export default function RootLayout({ children }) {

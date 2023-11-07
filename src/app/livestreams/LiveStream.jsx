@@ -13,16 +13,16 @@ import LiveStreamDisclaimer from "../legal_documents/LiveStreamDisclaimer";
 const LiveStream = () => {
   return (
     <main className="relative">
-      <div className="z-100 sticky top-0 z-50">
-        {/* navigations */}
-        <Navbar />
-        <div className="bg-black">
-          <div className="mx-auto max-w-screen-xl">
-            <BottomNav />
+      <div className="flex min-h-screen flex-col text-black mx-auto max-w-screen-xl">
+        <div className="z-100 sticky top-0 z-50">
+          {/* navigations */}
+          <Navbar />
+          <div className="bg-black">
+            <div className="mx-auto max-w-screen-xl">
+              <BottomNav />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex min-h-screen flex-col text-black mx-auto max-w-screen-xl">
         {/* main content */}
         <div className="grid grid-cols-12 gap-x-2">
           <div className="col-span-12 mt-4 mb-6">
@@ -48,20 +48,22 @@ const LiveStream = () => {
               </p>
             </div>
           </div>
-          <div className="max_md:col-span-12 flex flex-col md:col-span-10 z-0">
+          <div className="flex flex-col max_md:col-span-12 col-span-9 z-0">
             <LinksMain />
           </div>
 
-          <div className="max_md:hidden col-span-1 mb-20">
+          <div className="max_md:hidden col-span-3 mb-20">
             <div className="flex flex-col gap-y-2 sticky top-40">
               <SideBarAds />
               {/* <FeaturedBlogs /> */}
             </div>
           </div>
         </div>
+        <div className="my-2">
+          <LiveStreamDisclaimer />
+        </div>
+        <Footer />
       </div>
-      <LiveStreamDisclaimer/>
-      <Footer />
     </main>
   );
 };

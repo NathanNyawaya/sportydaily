@@ -15,19 +15,21 @@ import HorizontalAds3 from "@/app/components/ads/Horizonatal3";
 const MatchLinkLayout = () => {
   return (
     <main className="relative">
-      <div className="z-100 sticky top-0 z-50">
-        {/* navigations */}
-        <Navbar />
-        <div className="bg-black">
-          <div className="mx-auto max-w-screen-xl">
-            <BottomNav />
+      <div className="flex min-h-[30vh] flex-col text-black mx-auto max-w-screen-xl">
+        <div className="z-100 sticky top-0 z-50">
+          {/* navigations */}
+          <Navbar />
+          <div className="bg-black">
+            <div className="mx-auto max-w-screen-xl">
+              <BottomNav />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mx-auto max-w-screen-xl">
-        <Link href="/livestreams">Back</Link>
-      </div>
-      <div className="flex min-h-[30vh] flex-col text-black mx-auto max-w-screen-xl">
+        <div className="flex my-4">
+          <Link href="/livestreams" className="text-white">
+            Back
+          </Link>
+        </div>
         {/* main content */}
         <div className="grid grid-cols-4 gap-x-2">
           <div className="col-span-4 mt-4 mb-6">{/* <HorizontalAds /> */}</div>
@@ -45,13 +47,13 @@ const MatchLinkLayout = () => {
         </div>
         {/* ADS */}
         <div className="m-1">
-        <HorizontalAds3 />
+          <HorizontalAds3 />
         </div>
         <div className="my-3">
           <LiveStreamDisclaimer />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </main>
   );
 };

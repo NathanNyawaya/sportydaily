@@ -23,7 +23,7 @@ const DropdownMenu = () => {
           </p>
         </Link> */}
         <Link href="/livestreams">
-          <p className="px-2  cursor-pointer">Live Streams</p>
+          <p className="px-2 text-white cursor-pointer">Live Streams</p>
         </Link>
         {/* <Link href="/">
           <p className="px-2  cursor-pointer">Highlights</p>

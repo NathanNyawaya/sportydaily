@@ -66,7 +66,7 @@ export const uefa_fixture = [
   //   ],
   // },
   {
-    match_status: "Kickoff",
+    match_status: "Live",
     home_team: "Atletico Madrid",
     away_team: "Celtic",
     home_flag: "https://l.ivesoccer.sx/teams/atletico-madrid.png",
@@ -96,7 +96,7 @@ export const uefa_fixture = [
     ],
   },
   {
-    match_status: "Kickoff",
+    match_status: "Live",
     home_team: "AC Milan",
     away_team: "PSG",
     home_flag: "https://l.ivesoccer.sx/teams/ac-milan.png",

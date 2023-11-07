@@ -41,7 +41,7 @@ const SideBarAds = () => {
   }, [currentAdIndex]);
 
   return (
-    <div className="flex rounded max-h-[30vh]">
+    <div className="flex rounded min-h-[10vh]">
       <div className="m-3 text-white">
         <p className="opacity-80 text-sm">Ads</p>
         <div className="relative">

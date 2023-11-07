@@ -36,22 +36,23 @@ const MatchLinkLayout = () => {
 
           <div className="max_md:col-span-4 flex flex-col md:col-span-3 z-0 max_sm:mx-2">
             <MatchLinks />
+            {/* ADS */}
+            <div className="m-1">
+              <HorizontalAds3 />
+            </div>
+            <div className="">
+              <LiveStreamDisclaimer />
+            </div>
           </div>
 
-          <div className="max_md:hidden col-span-1 mb-20">
+          <div className="max_md:hidden col-span-1">
             <div className="flex flex-col gap-y-2 sticky top-40">
               <SideBarAds />
               {/* <FeaturedBlogs /> */}
             </div>
           </div>
         </div>
-        {/* ADS */}
-        <div className="m-1">
-          <HorizontalAds3 />
-        </div>
-        <div className="my-3">
-          <LiveStreamDisclaimer />
-        </div>
+
         <Footer />
       </div>
     </main>

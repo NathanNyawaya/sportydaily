@@ -1,7 +1,131 @@
-"use client"
+"use client";
 import axios from "axios";
 
 import React, { useEffect, useState } from "react";
+import LaunchIcon from "@mui/icons-material/Launch";
+
+export const uefa_fixture = [
+  {
+    match_status: "Live",
+    home_team: "Borussia",
+    away_team: "Newcastle United",
+    home_flag: "https://l.ivesoccer.sx/teams/borussia-dortmund.png",
+    away_flag: "https://l.ivesoccer.sx/teams/newcastle.png",
+    starting_time: "21:45pm",
+    match_id: "02929",
+    title: "UEFA Champions League",
+    stream_links: [
+      {
+        url: "https://top.score808.football/1-borussia-dortmund-vs-newcastle-united",
+        host_name: "WEAK STREAMS",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+      {
+        url: "https://headlines.footybite.to/1-borussia-dortmund-vs-newcastle-united/",
+        host_name: "Footybite Streams",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+    ],
+  },
+  {
+    match_status: "Live",
+    home_team: "Shakhatar Donetsk",
+    away_team: "Barcelona",
+    home_flag: "https://l.ivesoccer.sx/teams/shakhtar-donetsk.png",
+    away_flag: "https://l.ivesoccer.sx/teams/barcelona.png",
+    starting_time: "21:45pm",
+    match_id: "02929",
+    title: "UEFA Champions League",
+    stream_links: [
+      {
+        url: "https://top.score808.football/2-shakhtar-donetsk-vs-barcelona/",
+        host_name: "WEAK STREAMS",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+      {
+        url: "https://sports.chelsealivestream.com/2-shakhtar-donetsk-vs-barcelona/",
+        host_name: "Top Streams",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+    ],
+  },
+  {
+    match_status: "Kickoff",
+    home_team: "Atletico Madrid",
+    away_team: "Celtic",
+    home_flag: "https://l.ivesoccer.sx/teams/atletico-madrid.png",
+    away_flag: "https://l.ivesoccer.sx/teams/newcastle.png",
+    starting_time: "23:00pm",
+    match_id: "02929",
+    title: "UEFA Champions League",
+    stream_links: [
+      {
+        url: "#",
+        host_name: "WEAK STREAMS",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+      {
+        url: "#",
+        host_name: "Footybite Streams",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+    ],
+  },
+  {
+    match_status: "Kickoff",
+    home_team: "AC Milan",
+    away_team: "PSG",
+    home_flag: "https://l.ivesoccer.sx/teams/ac-milan.png",
+    away_flag: "https://l.ivesoccer.sx/teams/psg.png",
+    starting_time: "23:00pm",
+    match_id: "02929",
+    title: "UEFA Champions League",
+    stream_links: [
+      {
+        url: "#",
+        host_name: "WEAK STREAMS",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+      {
+        url: "#",
+        host_name: "Footybite Streams",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+    ],
+  },
+];
 
 const LinksMain = () => {
   const [liveEvents, setLiveEvents] = useState([]);
@@ -45,58 +169,72 @@ const LinksMain = () => {
 
       <div className="col-span-12">
         <div className="flex flex-col justify-center">
-          <div className="flex flex-col justify-center">
-            {liveEvents.length > 0 &&
-              liveEvents.flatMap((stream, index) => (
-                <div className="flex flex-col text-white" key={index}>
-                  <div className="bg-white rounded p-3 my-2 grid grid-cols-12 items-center text-center">
-                    <div className="flex flex-col col-span-2">
-                      <p className="text-black  text-[.7rem]">
-                        {stream.status === "Uncoming"
-                          ? "Not Started"
-                          : stream.status}
-                      </p>
-                      <p className="text-black text-[.7rem]">{stream.time}</p>
-                    </div>
-                    <p className="text-black col-span-2 text-[.7rem]">
-                      {stream.league}
-                    </p>
-
-                    {/* teams */}
-                    <div className="text-black col-span-6 text-[.7rem] items-center grid grid-cols-5">
-                      <div className="flex justify-center items-center col-span-2">
-                        <div className="grid grid-cols-3">
-                          <p className="col-span-2">{stream.home_name}</p>
-                          <div className="col-span-1">
-                            <img
-                              src={correctImageLink(stream.home_flag)}
-                              alt="home_team_img"
-                              className="w-[20px] h-auto rounded"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <p className="col-span-1">vs</p>
-                      <div className="flex justify-center items-center col-span-2">
-                        <div className="grid grid-cols-3">
-                          <div className="col-span-1">
-                            <img
-                              src={correctImageLink(stream.away_flag)}
-                              alt="away_team_img"
-                              className="w-[20px] h-auto rounded"
-                            />
-                          </div>
-                          <p className="col-span-2"> {stream.away_name}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="bg-black px-3 py-1 rounded text-white col-span-2 text-[.7rem]">
-                      Watch Now
-                    </p>
-                  </div>
-                </div>
-              ))}
+          <div className="flex mx-2 my-4">
+            <h2 className="text-gray-400 font-bold text-[1rem]">
+              UEFA Champions League
+            </h2>
           </div>
+          {uefa_fixture.length > 0 &&
+            uefa_fixture.flatMap((stream, index) => (
+              <div
+                className="flex flex-col text-white cursor-pointer"
+                key={index}
+                onClick={() => {
+                  if (stream.stream_links[0].url != "#") {
+                    localStorage.setItem(
+                      "e_data",
+                      JSON.stringify(stream.stream_links)
+                    );
+                    window.location.replace(`/livestreams/${index}`);
+                  } else {
+                    alert("Match not yet started");
+                  }
+                }}
+              >
+                <div className="flex flex-col justify-start rounded my-1 mx-2">
+                  {/* title / league */}
+                  <div className="flex items-center my-1">
+                    <h2 className="text-[0.7rem] text-gray-300">
+                      {stream.match_status}{" "}
+                      {stream.match_status === "Live"
+                        ? ``
+                        : `${stream.starting_time}`}
+                    </h2>
+                  </div>
+                  <div className="flex justify-between text-white bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center">
+                    <div className="flex flex-col gap-y-2">
+                      <div className="flex gap-3">
+                        <img
+                          src={stream.home_flag}
+                          alt="home_team_img"
+                          className="w-[20px] h-auto rounded"
+                        />
+                        <p className="text-[0.8rem] text-white">
+                          {stream.home_team}
+                        </p>
+                      </div>
+                      <div className="flex gap-3">
+                        <img
+                          src={stream.away_flag}
+                          alt="away_team_img"
+                          className="w-[20px] h-auto rounded"
+                        />
+                        <p className="text-[0.8rem] text-white">
+                          {stream.away_team}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="">
+                      <LaunchIcon
+                        size="small"
+                        className="hover:text-green-400 text-green-700"
+                      />
+                    </div>
+                  </div>
+                  {/*  */}
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>

@@ -1,41 +1,24 @@
-"use client"
+"use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { uefa_fixture } from "../components/LinksMain";
+import LaunchIcon from "@mui/icons-material/Launch";
+import Link from "next/link";
+import LiveStreamDisclaimer from "@/app/legal_documents/LiveStreamDisclaimer";
 
 const MatchLinks = () => {
-  const [streamLinks, setStreamLinks] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchLinks = async (S_ID) => {
-    const options = {
-      method: "GET",
-      url: "https://football-live-stream-api.p.rapidapi.com/stream.php",
-      params: { matchid: S_ID },
-      headers: {
-        "X-RapidAPI-Key": NEXT_PUBLIC_RAPID_API_FREE_KEY,
-        "X-RapidAPI-Host": "football-live-stream-api.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await axios.request(options);
-
-      if (response.data.length > 0) {
-        setStreamLinks(response.data);
-      } else {
-        setStreamLinks([]);
-      }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [linkIndex, setLinkIndex] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [eventD, setEventD] = useState([]);
 
   const getStreamLinks = async () => {
-    const stream_id = localStorage.getItem("s_id");
-    if (stream_id) {
-      await fetchLinks(stream_id);
+    // const stream_id = localStorage.getItem("s_id");
+    const event_data = localStorage.getItem("e_data");
+    if (event_data) {
+      const to_use = JSON.parse(event_data);
+      setEventD(to_use);
+      console.log(to_use);
+      setLoading(false);
     }
   };
 
@@ -49,25 +32,31 @@ const MatchLinks = () => {
         <div className="flex flex-col justify-center">
           {loading ? (
             <p>Loading ...</p>
-          ) : streamLinks.length > 0 ? (
-            streamLinks.map((stream, index) => {
-              // console.log(streamLinks);
+          ) : eventD ? (
+            eventD.map((stream, index) => {
               return (
-                <div
-                  key={index}
-                  className="bg-white text-black p-3 my-2 flex justify-between items-center"
-                >
-                  <p className="text-black">{stream.name}</p>
-                  <p className="text-black">{"> > > >"}</p>
-                  <p className="bg-black px-3 py-1 rounded text-white col-span-2 text-[.9rem]">
-                    <a
-                      href={stream.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Watch Now
-                    </a>
-                  </p>
+                <div key={index} target="_blank" rel="noopener noreferrer">
+                  <div className="bg-gray-800 hover:bg-green-500/[0.1]  text-black p-3 my-2 flex justify-between items-center">
+                    <div className="flex justify-between w-full px-3 py-1 rounded text-white col-span-2 text-[.9rem]">
+                      <div className="flex gap-x-2">
+                        <h2 className=" text-white">
+                          
+                          {stream.host_name}
+                        </h2>
+                        <p>{stream.stream_quality}</p>
+                      </div>
+
+                      <div className="">
+                        <a href={stream.url} target="_blank">
+                          
+                          <LaunchIcon
+                            size="small"
+                            className="hover:text-green-400 text-green-700"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })
@@ -76,107 +65,9 @@ const MatchLinks = () => {
           )}
         </div>
       </div>
+      
     </div>
   );
 };
 
 export default MatchLinks;
-
-// import axios from "axios";
-// import Link from "next/link";
-// import React, { useEffect, useState } from "react";
-
-// const MatchLinks = () => {
-//   const [streamLinks, setStreamLinks] = useState([]);
-
-//   const fetchLinks = async (S_ID) => {
-//     const options = {
-//       method: "GET",
-//       url: "https://football-live-stream-api.p.rapidapi.com/stream.php",
-//       params: { matchid: `${S_ID}` },
-//       headers: {
-//         "X-RapidAPI-Key": "a91c39ba04msh138dde153e692afp15cff6jsnbd732b41d133",
-//         "X-RapidAPI-Host": "football-live-stream-api.p.rapidapi.com",
-//       },
-//     };
-
-//     try {
-//       const response = await axios.request(options);
-//       // console.log(response)
-//       // return response;
-//       if (response) {
-//         if (response.data.length > 0) {
-//           console.log(response);
-//           setStreamLinks(response.data);
-//         } else {
-//           setStreamLinks(["empty"]);
-//         }
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   const getStreamLinks = async () => {
-//     const stream_id = localStorage.getItem("s_id");
-//     await fetchLinks(stream_id);
-//     // if (stream_id) {
-//     //   try {
-//     //     const res = await axios.get(
-//     //       `${process.env.NEXT_PUBLIC_SERVER}/api/livestreams/${stream_id}`
-//     //     );
-//     //     if (res) {
-//     //       if (res.data.length > 0) {
-//     //         console.log(res);
-//     //         // setStreamLinks(res.data);
-//     //       } else {
-//     //         setStreamLinks(["empty"]);
-//     //       }
-//     //     }
-//     //   } catch (error) {
-//     //     console.error(error);
-//     //   }
-//     // }
-//   };
-
-//   useEffect(() => {
-//     getStreamLinks();
-//   }, []);
-//   return (
-//     <div className="grid  grid-cols-12 gap-x-2">
-//       {/* links */}
-
-//       <div className="col-span-12">
-//         <div className="flex flex-col justify-center">
-//           {streamLinks.length > 0 && streamLinks[0] != "empty" ? (
-//             streamLinks.map((stream, index) => (
-//               <div
-//                 key={index}
-//                 className="bg-white text-black p-3 my-2 flex justify-between items-center"
-//               >
-//                 <p className="text-black">{stream.name}</p>
-//                 <p className="text-black">{"> > > >"}</p>
-
-//                 <p className="bg-black px-3 py-1 rounded text-white col-span-2 text-[.9rem]">
-//                   <a href={stream.link} target="_blank">
-//                     Watch Now
-//                   </a>
-//                 </p>
-//               </div>
-//             ))
-//           ) : (
-//             <div className="text-white">
-//               {streamLinks[0] === "empty" ? (
-//                 <p>No data found</p>
-//               ) : (
-//                 <p>Loading ...</p>
-//               )}
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MatchLinks;

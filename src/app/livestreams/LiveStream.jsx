@@ -8,6 +8,7 @@ import HorizontalAds from "../components/ads/HorizontalAds";
 // import FeaturedBlogs from "../components/featured/FeaturedBlogs";
 import Footer from "../components/Footer";
 import LinksMain from "./components/LinksMain";
+import LiveStreamDisclaimer from "../legal_documents/LiveStreamDisclaimer";
 
 const LiveStream = () => {
   return (
@@ -47,10 +48,11 @@ const LiveStream = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-10 z-0">
+          <div className="max_md:col-span-12 flex flex-col md:col-span-10 z-0">
             <LinksMain />
           </div>
-          <div className="col-span-2 mb-20">
+
+          <div className="max_md:hidden col-span-1 mb-20">
             <div className="flex flex-col gap-y-2 sticky top-40">
               <SideBarAds />
               {/* <FeaturedBlogs /> */}
@@ -58,6 +60,7 @@ const LiveStream = () => {
           </div>
         </div>
       </div>
+      <LiveStreamDisclaimer/>
       <Footer />
     </main>
   );

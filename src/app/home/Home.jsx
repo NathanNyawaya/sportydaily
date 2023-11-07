@@ -66,6 +66,7 @@ const Home = () => {
                     </a>
                   </div>
                 </div>
+                
               )}
             </div>
             <div className="max_md:hidden col-span-1 mb-10">

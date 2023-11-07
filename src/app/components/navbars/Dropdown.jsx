@@ -12,7 +12,11 @@ const DropdownMenu = () => {
   return (
     <div className="py-3 max_md:mb-5 mb--10 mx-auto">
       <div className="flex items-center gap-x-2 px-1">
-        <p className="bg-white px-2 text-black rounded cursor-pointer">News</p>
+        <Link href="/">
+          <h3 className="bg-white px-2 text-black rounded cursor-pointer">
+            News
+          </h3>
+        </Link>
         {/* <Link href="/">
           <p className="px-2  cursor-pointer">Fixtures</p>
         </Link> */}

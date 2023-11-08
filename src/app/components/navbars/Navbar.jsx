@@ -6,9 +6,21 @@ const Navbar = () => {
   const [hight, setHight] = useState(false);
 
   useEffect(() => {
+    // function displayCurrentTime() {
+    //   const currentTime = new Date().toLocaleString();
+    //   setTime(currentTime);
+    // }
     function displayCurrentTime() {
-      const currentTime = new Date().toLocaleString();
-      setTime(currentTime);
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      const minutes = currentTime.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+      // Convert hours to 12-hour format if needed
+      const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+    
+      const timeString = `${formattedHours}:${minutes} ${ampm}`;
+      setTime(timeString);
     }
 
     function activeLights() {
@@ -38,7 +50,7 @@ const Navbar = () => {
         <div className="flex w-[60%] justify-end items-center mr-2">
           {/* <p>Sign In</p> */}
           <h2 className="text-[0.7rem] font-bold text-black">
-            Date: <span className="mr-1 text-wh">{time}</span>EAT
+            Time: <span className="mr-1 text-wh">{time}</span>EAT
           </h2>
           <div className="flex grid grid-cols-2 gap-x-2 ml-3 rounded items-center">
             <p

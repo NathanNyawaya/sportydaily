@@ -25,13 +25,24 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://news.score808.football/1-napoli-vs-union-berlin/",
-        host_name: "Footybite Streams",
+        url: "https://coolrea.link/flash33",
+        host_name: "Flsh Streams",
         reputation: "Platinum",
         stream_quality: "HD",
         stream_ads: "1",
-        stream_channel: "Sky Sports",
+        stream_channel: "Tnt Sports",
         stream_language: "English",
+        
+      },
+      {
+        url: "https://istorm.live/flash20",
+        host_name: "Flsh Streams",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Tnt Sports",
+        stream_language: "English",
+        
       },
     ],
   },
@@ -63,6 +74,7 @@ export const uefa_fixture = [
         stream_channel: "Sky Sports",
         stream_language: "English",
       },
+
     ],
   },
   {

@@ -66,7 +66,16 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://news.score808.football/2-real-sociedad-vs-benfica/",
+        url: "https://coolrea.link/flash4",
+        host_name: "Top Streams",
+        reputation: "Platinum",
+        stream_quality: "HD",
+        stream_ads: "1",
+        stream_channel: "Sky Sports",
+        stream_language: "English",
+      },
+      {
+        url: "https://istorm.live/flash10",
         host_name: "Top Streams",
         reputation: "Platinum",
         stream_quality: "HD",

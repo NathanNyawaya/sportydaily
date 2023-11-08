@@ -16,7 +16,7 @@ export const uefa_fixture = [
     title: "UEFA Champions League",
     stream_links: [
       {
-        url: "#",
+        url: "https://news.score808.football/1-napoli-vs-union-berlin/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -25,7 +25,7 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "#",
+        url: "https://news.score808.football/1-napoli-vs-union-berlin/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -46,8 +46,8 @@ export const uefa_fixture = [
     title: "UEFA Champions League",
     stream_links: [
       {
-        url: "#",
-        host_name: "WEAK STREAMS",
+        url: "https://news.score808.football/2-real-sociedad-vs-benfica/",
+        host_name: "Stream Live" ,
         reputation: "Platinum",
         stream_quality: "HD",
         stream_ads: "1",
@@ -55,7 +55,7 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "#",
+        url: "https://news.score808.football/2-real-sociedad-vs-benfica/",
         host_name: "Top Streams",
         reputation: "Platinum",
         stream_quality: "HD",

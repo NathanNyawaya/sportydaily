@@ -32,12 +32,14 @@ const Navbar = () => {
       <div className=" flex justify-between items-center">
         <div className="flex justify-between w-[40%] items-center">
           <p className="text-2xl font-bold bg-[#FCD107] rounded p-1 text-black">
-          ThePitchBasket
+            ThePitchBasket
           </p>
         </div>
         <div className="flex w-[60%] justify-end items-center mr-2">
           {/* <p>Sign In</p> */}
-          {/* {time} */}
+          <h2 className="text-[0.7rem] font-bold text-black">
+            Date: <span className="mr-1 text-wh">{time}</span>EAT
+          </h2>
           <div className="flex grid grid-cols-2 gap-x-2 ml-3 rounded items-center">
             <p
               className={`${high ? "bg-black" : "bg-white"} p-1 rounded-full`}

@@ -2,7 +2,7 @@ import React from "react";
 // import Link from "next/link";
 const Footer = () => {
   return (
-    <footer className="p-3 bg-gray-800 dark:bg-gray-800">
+    <footer id="footer" className="p-3 bg-gray-800 dark:bg-gray-800">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between items-center">
           <div className="md:mb-0">

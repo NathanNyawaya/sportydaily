@@ -27,23 +27,8 @@ const Predictions = () => {
             <HorizontalAds />
           </div>
           {/* side-bar */}
-          <div className="col-span-2">
-            <div className="sticky top-40 bg-white flex flex-col justify-between min-h-[30vh] p-3">
-              <p className="p-1 rounded bg-gray-300 cursor-pointer w-[50%] font-bold text m-1">
-                All
-              </p>
-              {/* <p className="p-1 rounded bg-gray-300 cursor-pointer w-[50%] font-bold text m-1">
-                Premier League
-              </p>
-              <p className="p-1 rounded bg-gray-300 cursor-pointer w-[50%] font-bold text m-1">
-                Bundesliga
-              </p>
-              <p className="p-1 rounded bg-gray-300 cursor-pointer w-[50%] font-bold text m-1">
-                Laliga
-              </p> */}
-            </div>
-          </div>
-          <div className="col-span-7 z-0">
+          
+          <div className="col-span-9 m-1 z-0">
             <PredictionContent />
           </div>
           <div className="col-span-3 mb-20">

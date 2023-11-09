@@ -32,7 +32,6 @@ export const uefa_fixture = [
         stream_ads: "1",
         stream_channel: "Tnt Sports",
         stream_language: "English",
-        
       },
       {
         url: "https://istorm.live/flash20",
@@ -42,7 +41,6 @@ export const uefa_fixture = [
         stream_ads: "1",
         stream_channel: "Tnt Sports",
         stream_language: "English",
-        
       },
     ],
   },
@@ -58,7 +56,7 @@ export const uefa_fixture = [
     stream_links: [
       {
         url: "https://news.score808.football/2-real-sociedad-vs-benfica/",
-        host_name: "Stream Live" ,
+        host_name: "Stream Live",
         reputation: "Platinum",
         stream_quality: "HD",
         stream_ads: "1",
@@ -83,7 +81,6 @@ export const uefa_fixture = [
         stream_channel: "Sky Sports",
         stream_language: "English",
       },
-
     ],
   },
   {
@@ -116,7 +113,7 @@ export const uefa_fixture = [
       },
     ],
   },
-  
+
   {
     match_status: "Kickoff",
     home_team: "Arsenal",
@@ -286,7 +283,7 @@ const LinksMain = () => {
               UEFA Champions League
             </h2>
           </div>
-          {uefa_fixture.length > 0 &&
+          {uefa_fixture.length === 0 ? (
             uefa_fixture.flatMap((stream, index) => (
               <div
                 className="flex flex-col text-white cursor-pointer"
@@ -346,7 +343,15 @@ const LinksMain = () => {
                   {/*  */}
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <div className="flex text-white">
+              <p>
+                Oops! .. ThePitchBasket Livestream corner is under Maintainance,
+                please come back later.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

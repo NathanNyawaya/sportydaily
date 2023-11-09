@@ -32,9 +32,9 @@ const DropdownMenu = () => {
         {/* <Link href="/">
           <p className="px-2  cursor-pointer">Highlights</p>
         </Link> */}
-        {/* <Link href="/predictions">
-          <p className="px-2  cursor-pointer">Predictions</p>
-        </Link> */}
+        <Link href="/predictions">
+          <p className="px-2 text-white cursor-pointer">Predictions</p>
+        </Link>
       </div>
     </div>
   );

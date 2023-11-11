@@ -7,17 +7,17 @@ import LaunchIcon from "@mui/icons-material/Launch";
 export const uefa_fixture = [
   {
     match_status: "Live",
-    home_team: "Napoli",
-    away_team: "Union Berlin",
-    home_flag: "https://l.ivesoccer.sx/teams/napoli.png",
-    away_flag: "https://l.ivesoccer.sx/teams/union-berlin.png",
-    starting_time: "20:45pm EAT",
+    home_team: "Wolves",
+    away_team: "Tottenham",
+    home_flag: "https://l.ivesoccer.sx/teams/default.png",
+    away_flag: "https://l.ivesoccer.sx/teams/tottenham.png",
+    starting_time: "03:30pm EAT",
     match_id: "02929",
-    title: "UEFA Champions League",
+    title: "English Premier League",
     stream_links: [
       {
-        url: "https://news.score808.football/1-napoli-vs-union-berlin/",
-        host_name: "WEAK STREAMS",
+        url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur",
+        host_name: "WORLD STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
         stream_ads: "1",
@@ -25,8 +25,8 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://coolrea.link/flash33",
-        host_name: "Flsh Streams",
+        url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur",
+        host_name: "Flash Streams",
         reputation: "Platinum",
         stream_quality: "HD",
         stream_ads: "1",
@@ -44,54 +44,16 @@ export const uefa_fixture = [
       },
     ],
   },
-  {
-    match_status: "Live",
-    home_team: "Real Sociedad",
-    away_team: "Benfica",
-    home_flag: "https://l.ivesoccer.sx/teams/real-sociedad.png",
-    away_flag: "https://l.ivesoccer.sx/teams/benfica.png",
-    starting_time: "20:45pm EAT",
-    match_id: "02929",
-    title: "UEFA Champions League",
-    stream_links: [
-      {
-        url: "https://news.score808.football/2-real-sociedad-vs-benfica/",
-        host_name: "Stream Live",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://coolrea.link/flash4",
-        host_name: "Top Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://istorm.live/flash10",
-        host_name: "Top Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-    ],
-  },
+  
   {
     match_status: "Kickoff",
-    home_team: "Bayerm Munchen",
-    away_team: "Galatasaray",
-    home_flag: "https://l.ivesoccer.sx/teams/bayern-munchen.png",
-    away_flag: "https://l.ivesoccer.sx/teams/galatasaray.png",
-    starting_time: "23:00pm EAT",
+    home_team: "Arsenal",
+    away_team: "Burnley",
+    home_flag: "https://l.ivesoccer.sx/teams/arsenal.png",
+    away_flag: "https://l.ivesoccer.sx/teams/burnley.png",
+    starting_time: "06:00pm EAT",
     match_id: "02929",
-    title: "UEFA Champions League",
+    title: "English Premier League",
     stream_links: [
       {
         url: "#",
@@ -116,13 +78,13 @@ export const uefa_fixture = [
 
   {
     match_status: "Kickoff",
-    home_team: "Arsenal",
-    away_team: "Sevilla",
-    home_flag: "https://l.ivesoccer.sx/teams/arsenal.png",
-    away_flag: "https://l.ivesoccer.sx/teams/sevilla.png",
-    starting_time: "23:00pm EAT",
+    home_team: "Crystal Palace",
+    away_team: "Everton",
+    home_flag: "https://l.ivesoccer.sx/teams/crystal-palace.png",
+    away_flag: "https://l.ivesoccer.sx/teams/everton.png",
+    starting_time: "06:00pm EAT",
     match_id: "02929",
-    title: "UEFA Champions League",
+    title: "English Premier League",
     stream_links: [
       {
         url: "#",
@@ -146,13 +108,13 @@ export const uefa_fixture = [
   },
   {
     match_status: "Kickoff",
-    home_team: "Real Madrid",
-    away_team: "Sporting Braga",
-    home_flag: "https://l.ivesoccer.sx/teams/real-madrid.png",
-    away_flag: "https://l.ivesoccer.sx/teams/sporting-braga.png",
-    starting_time: "23:00pm EAT",
+    home_team: "Manchester United",
+    away_team: "Luton Town",
+    home_flag: "https://l.ivesoccer.sx/teams/manchester-united.png",
+    away_flag: "https://l.ivesoccer.sx/teams/luton-town.png",
+    starting_time: "06:00pm EAT",
     match_id: "02929",
-    title: "UEFA Champions League",
+    title: "English Premier League",
     stream_links: [
       {
         url: "#",
@@ -176,13 +138,13 @@ export const uefa_fixture = [
   },
   {
     match_status: "Kickoff",
-    home_team: "Salzburg",
-    away_team: "Internazionale",
-    home_flag: "https://1.ivesoccer.sx/teams/default.png",
-    away_flag: "https://l.ivesoccer.sx/teams/default.png",
-    starting_time: "23:00pm EAT",
+    home_team: "Bournemouth",
+    away_team: "Newcastle United",
+    home_flag: "https://1.ivesoccer.sx/teams/bournemouth.png",
+    away_flag: "https://l.ivesoccer.sx/teams/newcastle.png",
+    starting_time: "08:30pm EAT",
     match_id: "02929",
-    title: "UEFA Champions League",
+    title: "English Premier League",
     stream_links: [
       {
         url: "#",
@@ -204,36 +166,8 @@ export const uefa_fixture = [
       },
     ],
   },
-  {
-    match_status: "Kickoff",
-    home_team: "Copenhagen",
-    away_team: "Manchester United",
-    home_flag: "https://l.ivesoccer.sx/teams/copenhagen.png",
-    away_flag: "https://l.ivesoccer.sx/teams/manchester-united.png",
-    starting_time: "23:00pm EAT",
-    match_id: "02929",
-    title: "UEFA Champions League",
-    stream_links: [
-      {
-        url: "#",
-        host_name: "WEAK STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "#",
-        host_name: "Footybite Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-    ],
-  },
+  
+
 ];
 
 const LinksMain = () => {
@@ -280,10 +214,10 @@ const LinksMain = () => {
         <div className="flex flex-col justify-center">
           <div className="flex mx-2 my-4">
             <h2 className="text-gray-400 font-bold text-[1rem]">
-              UEFA Champions League
+              English Premier League
             </h2>
           </div>
-          {uefa_fixture.length === 0 ? (
+          {uefa_fixture.length > 0 ? (
             uefa_fixture.flatMap((stream, index) => (
               <div
                 className="flex flex-col text-white cursor-pointer"

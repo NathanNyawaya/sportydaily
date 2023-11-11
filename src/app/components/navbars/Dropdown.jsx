@@ -10,7 +10,7 @@ const DropdownMenu = () => {
   };
 
   return (
-    <div className="py-3 max_md:mb-5 mb--10 mx-auto">
+    <div className="py-3 max_md..:mb-5 mb--10 mx-auto">
       <div className="flex items-center gap-x-2 px-1">
         <Link href="/">
           <h3 className="bg-white px-2 text-black rounded cursor-pointer">

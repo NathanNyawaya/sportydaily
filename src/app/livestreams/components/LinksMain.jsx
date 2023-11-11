@@ -6,7 +6,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 export const uefa_fixture = [
   {
-    match_status: "Kickoff",
+    match_status: "Match ended",
     home_team: "Wolves",
     away_team: "Tottenham Spurs",
     home_flag: "https://l.ivesoccer.sx/teams/default.png",
@@ -239,6 +239,8 @@ const LinksMain = () => {
                       {stream.match_status}{" "}
                       {stream.match_status === "Live"
                         ? ``
+                        : stream.match_status === "Match ended"
+                        ? "2-1"
                         : `${stream.starting_time}`}
                     </h2>
                   </div>

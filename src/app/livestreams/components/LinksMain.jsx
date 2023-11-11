@@ -6,7 +6,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 export const uefa_fixture = [
   {
-    match_status: "Live",
+    match_status: "Kickoff",
     home_team: "Wolves",
     away_team: "Tottenham",
     home_flag: "https://l.ivesoccer.sx/teams/default.png",

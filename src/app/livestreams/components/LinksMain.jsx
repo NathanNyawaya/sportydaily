@@ -46,7 +46,7 @@ export const uefa_fixture = [
   },
 
   {
-    match_status: "Kickoff",
+    match_status: "Live",
     home_team: "Arsenal",
     away_team: "Burnley",
     home_flag: "https://l.ivesoccer.sx/teams/arsenal.png",
@@ -77,7 +77,7 @@ export const uefa_fixture = [
   },
 
   {
-    match_status: "Kickoff",
+    match_status: "Live",
     home_team: "Crystal Palace",
     away_team: "Everton",
     home_flag: "https://l.ivesoccer.sx/teams/crystal-palace.png",
@@ -107,7 +107,7 @@ export const uefa_fixture = [
     ],
   },
   {
-    match_status: "Kickoff",
+    match_status: "Live",
     home_team: "Manchester United",
     away_team: "Luton Town",
     home_flag: "https://l.ivesoccer.sx/teams/manchester-united.png",

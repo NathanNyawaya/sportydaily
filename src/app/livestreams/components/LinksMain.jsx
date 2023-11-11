@@ -14,6 +14,7 @@ export const uefa_fixture = [
     starting_time: "03:30pm EAT",
     match_id: "02929",
     title: "English Premier League",
+    scores: "2-1",
     stream_links: [
       {
         url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
@@ -54,6 +55,7 @@ export const uefa_fixture = [
     starting_time: "06:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
+    scores: "0-0",
     stream_links: [
       {
         url: "https://headlines.reddit-soccerstreams.com/3-arsenal-vs-burnley/",
@@ -85,6 +87,7 @@ export const uefa_fixture = [
     starting_time: "06:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
+    scores: "1-1",
     stream_links: [
       {
         url: "https://headlines.reddit-soccerstreams.com/4-crystal-palace-vs-everton/",
@@ -115,6 +118,7 @@ export const uefa_fixture = [
     starting_time: "06:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
+    scores: "0-0",
     stream_links: [
       {
         url: "https://hockeyworld.site/daily/news/manvlut/",
@@ -145,6 +149,7 @@ export const uefa_fixture = [
     starting_time: "08:30pm EAT",
     match_id: "02929",
     title: "English Premier League",
+    scores: "",
     stream_links: [
       {
         url: "#",
@@ -240,7 +245,7 @@ const LinksMain = () => {
                       {stream.match_status === "Live"
                         ? ``
                         : stream.match_status === "Match ended"
-                        ? "2-1"
+                        ? stream.scores
                         : `${stream.starting_time}`}
                     </h2>
                   </div>

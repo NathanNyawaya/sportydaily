@@ -6,7 +6,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 export const uefa_fixture = [
   {
-    match_status: "Live",
+    match_status: "Kickoff",
     home_team: "Wolves",
     away_team: "Tottenham Spurs",
     home_flag: "https://l.ivesoccer.sx/teams/default.png",
@@ -56,7 +56,7 @@ export const uefa_fixture = [
     title: "English Premier League",
     stream_links: [
       {
-        url: "#",
+        url: "https://headlines.reddit-soccerstreams.com/3-arsenal-vs-burnley/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -65,7 +65,7 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "#",
+        url: "https://headlines.footybite.to/3-arsenal-vs-burnley/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -87,7 +87,7 @@ export const uefa_fixture = [
     title: "English Premier League",
     stream_links: [
       {
-        url: "#",
+        url: "https://headlines.reddit-soccerstreams.com/4-crystal-palace-vs-everton/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -96,7 +96,7 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "#",
+        url: "https://headlines.footybite.to/4-crystal-palace-vs-everton/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -117,7 +117,7 @@ export const uefa_fixture = [
     title: "English Premier League",
     stream_links: [
       {
-        url: "#",
+        url: "https://hockeyworld.site/daily/news/manvlut/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -126,7 +126,7 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "#",
+        url: "https://headlines.footybite.to/5-manchester-united-vs-luton-town/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",

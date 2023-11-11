@@ -16,7 +16,7 @@ export const uefa_fixture = [
     title: "English Premier League",
     stream_links: [
       {
-        url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur",
+        url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
         host_name: "WORLD STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -25,16 +25,16 @@ export const uefa_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur",
-        host_name: "Flash Streams",
+        url: "https://sports.chelsealivestream.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
+        host_name: "TOP STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
         stream_ads: "1",
-        stream_channel: "Tnt Sports",
+        stream_channel: "BT Sports",
         stream_language: "English",
       },
       {
-        url: "https://istorm.live/flash20",
+        url: "https://sports.chelsealivestream.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
         host_name: "Flsh Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -44,7 +44,7 @@ export const uefa_fixture = [
       },
     ],
   },
-  
+
   {
     match_status: "Kickoff",
     home_team: "Arsenal",
@@ -166,8 +166,6 @@ export const uefa_fixture = [
       },
     ],
   },
-  
-
 ];
 
 const LinksMain = () => {

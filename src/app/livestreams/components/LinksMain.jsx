@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-export const uefa_fixture = [
+export const epl_fixture = [
   {
     match_status: "Match ended",
     home_team: "Wolves",
@@ -210,18 +210,18 @@ const LinksMain = () => {
     }
   }
   return (
-    <div className="grid  grid-cols-12 gap-x-2">
+    <div className="grid  grid-cols-12 gap-x-2 mx-2">
       {/* links */}
 
       <div className="col-span-12">
         <div className="flex flex-col justify-center">
           <div className="flex mx-2 my-4">
             <h2 className="text-gray-400 font-bold text-[1rem]">
-              English Premier League
+              {/* English Premier League */}
             </h2>
           </div>
-          {uefa_fixture.length > 0 ? (
-            uefa_fixture.flatMap((stream, index) => (
+          {epl_fixture.length === 0 ? (
+            epl_fixture.flatMap((stream, index) => (
               <div
                 className="flex flex-col text-white cursor-pointer"
                 key={index}
@@ -286,8 +286,7 @@ const LinksMain = () => {
           ) : (
             <div className="flex text-white">
               <p>
-                Oops! .. ThePitchBasket Livestream corner is under Maintainance,
-                please come back later.
+                No Livestreams currently, come back later.
               </p>
             </div>
           )}

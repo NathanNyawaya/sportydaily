@@ -2,7 +2,7 @@ import React from "react";
 
 const LiveStreamDisclaimer = () => {
   return (
-    <div className="bg-yellow-500/[0.1] p-2" >
+    <div className="bg-yellow-500/[0.1] p-2 m-2" >
       <h2 className="text-sm font-bold text-red-500">Disclaimer!</h2>
       <p className="text-[0.7rem] text-gray-300">
         None of the videos is hosted by this site. Streams hosted on external

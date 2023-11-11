@@ -27,7 +27,7 @@ const LiveStream = () => {
         {/* main content */}
         <div className="grid grid-cols-12 gap-x-2">
           <div className="col-span-12 mt-4 mb-6">
-            <HorizontalAds />
+            {/* <HorizontalAds3 /> */}
           </div>
           {/* side-bar */}
           <div className="col-span-1 hidden">
@@ -49,10 +49,10 @@ const LiveStream = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col max_md:col-span-12 col-span-9 z-0">
+          <div className="flex flex-col max_md:col-span-12 min-h-[50vh] col-span-9 z-0">
             <LinksMain />
             <div className="flex flex-col mt-4 gap-y-3">
-              <HorizontalAds3 />
+              {/* <HorizontalAds3 /> */}
               <LiveStreamDisclaimer />
             </div>
           </div>

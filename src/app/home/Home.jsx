@@ -6,6 +6,7 @@ import BottomNav from "../components/navbars/Dropdown";
 import SideBarAds from "../components/ads/SideBarAds";
 import HorizontalAds from "../components/ads/HorizontalAds";
 import Footer from "../components/Footer";
+import HorizontalAds3 from "../components/ads/Horizonatal3";
 
 const Home = () => {
   const [showAds, setShowAds] = useState(false);
@@ -18,7 +19,6 @@ const Home = () => {
 
   return (
     <main className="relative">
-      
       <div className="mx-auto max-w-screen-xl">
         <div className="sticky top-0 z-50 ">
           {/* navigations */}
@@ -34,39 +34,16 @@ const Home = () => {
           <div className="grid grid-cols-4 gap-x-2">
             {showAds && (
               <div className="col-span-4 mt-4 mb-6">
-                <HorizontalAds />
+                {/* <HorizontalAds3 /> */}
               </div>
             )}
 
             <div className="col-span-4 flex flex-col md:col-span-3 z-0">
               <Blogs />
               {showAds && (
-                <div className="my-2 flex justify-center">
-                  <div className="hidden">
-                    <a
-                      target="_blank"
-                      href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T"
-                    >
-                      <img
-                        alt="banner"
-                        src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
-                      />
-                    </a>
-                  </div>
-
-                  <div className="md:hidden">
-                    <a
-                      target="_blank"
-                      href="https://beta.publishers.adsterra.com/referral/RRkKmkFg3T"
-                    >
-                      <img
-                        alt="banner"
-                        src="https://landings-cdn.adsterratech.com/referralBanners/png/700%20x%2090%20px.png"
-                      />
-                    </a>
-                  </div>
+                <div className="mx-2">
+                  <HorizontalAds3 />
                 </div>
-                
               )}
             </div>
             <div className="max_md:hidden col-span-1 mb-10">

@@ -29,9 +29,9 @@ const DropdownMenu = () => {
         <Link href="/livestreams">
           <p className="px-2 text-white cursor-pointer">Live Streams</p>
         </Link>
-        <Link href="/highlights">
+        {/* <Link href="/highlights">
           <p className="px-2 text-white cursor-pointer">Highlights</p>
-        </Link>
+        </Link> */}
         {/* <Link href="/predictions">
           <p className="px-2 text-white cursor-pointer">Predictions</p>
         </Link> */}

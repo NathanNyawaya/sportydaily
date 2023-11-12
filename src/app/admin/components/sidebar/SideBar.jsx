@@ -33,6 +33,14 @@ const SideBar = ({ setSelectedPage, activeView }) => {
         >
           Blogs
         </p>
+        <p
+          className={`${
+            checkActiveView("all_livestreams") && "bg-gray-200"
+          } cursor-pointer my-2`}
+          onClick={() => handledClick("all_livestreams")}
+        >
+          Livestreams
+        </p>
       </div>
     </div>
   );

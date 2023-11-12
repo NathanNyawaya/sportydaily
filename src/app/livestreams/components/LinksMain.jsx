@@ -6,7 +6,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 export const epl_fixture = [
   {
-    match_status: "Live",
+    match_status: "Match ended",
     home_team: "Aston Villa",
     away_team: "Fulham",
     home_flag: "https://l.ivesoccer.sx/teams/aston-villa.png",
@@ -14,7 +14,7 @@ export const epl_fixture = [
     starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
-    scores: "Not started",
+    scores: "3-1",
     stream_links: [
       {
         url: "https://top.worldcupglory.com/2-aston-villa-vs-fulham/",
@@ -47,7 +47,7 @@ export const epl_fixture = [
   },
 
   {
-    match_status: "Live",
+    match_status: "Match ended",
     home_team: "Brighton",
     away_team: "Sheffield United",
     home_flag: "https://l.ivesoccer.sx/teams/brighton.png",
@@ -55,7 +55,7 @@ export const epl_fixture = [
     starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
-    scores: "0-0",
+    scores: "1-1",
     stream_links: [
       {
         url: "https://headlines.reddit-soccerstreams.com/3-brighton-&-hove-albion-vs-sheffield-united/",
@@ -79,7 +79,7 @@ export const epl_fixture = [
   },
 
   {
-    match_status: "Live",
+    match_status: "Match ended",
     home_team: "West Ham",
     away_team: "Nottm Forest",
     home_flag: "https://l.ivesoccer.sx/teams/west-ham-united.png",
@@ -87,7 +87,7 @@ export const epl_fixture = [
     starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
-    scores: "1-1",
+    scores: "3-2",
     stream_links: [
       {
         url: "https://top.worldcupglory.com/5-west-ham-united-vs-nottingham-forest/",
@@ -110,7 +110,7 @@ export const epl_fixture = [
     ],
   },
   {
-    match_status: "Live",
+    match_status: "Match ended",
     home_team: "Liverpool",
     away_team: "Brentford",
     home_flag: "https://l.ivesoccer.sx/teams/liverpool.png",
@@ -118,7 +118,7 @@ export const epl_fixture = [
     starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
-    scores: "0-0",
+    scores: "3-0",
     stream_links: [
       {
         url: "https://top.worldcupglory.com/4-liverpool-vs-brentford/",
@@ -141,7 +141,7 @@ export const epl_fixture = [
     ],
   },
   {
-    match_status: "Kickoff",
+    match_status: "Live",
     home_team: "Chelsea",
     away_team: "Man City",
     home_flag: "https://1.ivesoccer.sx/teams/chelsea.png",
@@ -152,7 +152,7 @@ export const epl_fixture = [
     scores: "",
     stream_links: [
       {
-        url: "#",
+        url: "https://top.worldcupglory.com/6-chelsea-vs-manchester-city/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -161,7 +161,7 @@ export const epl_fixture = [
         stream_language: "English",
       },
       {
-        url: "#",
+        url: "https://headlines.footybite.to/6-chelsea-vs-manchester-city/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",

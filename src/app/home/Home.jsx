@@ -40,11 +40,9 @@ const Home = () => {
 
             <div className="col-span-4 flex flex-col md:col-span-3 z-0">
               <Blogs />
-              {showAds && (
-                <div className="mx-2">
-                  <HorizontalAds3 />
-                </div>
-              )}
+              {/* {showAds && (
+                
+              )} */}
             </div>
             <div className="max_md:hidden col-span-1 mb-10">
               <div className="flex flex-col gap-y-2 sticky top-40">

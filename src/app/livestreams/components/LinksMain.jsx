@@ -6,18 +6,18 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 export const epl_fixture = [
   {
-    match_status: "Match ended",
-    home_team: "Wolves",
-    away_team: "Tottenham Spurs",
-    home_flag: "https://l.ivesoccer.sx/teams/default.png",
-    away_flag: "https://l.ivesoccer.sx/teams/tottenham.png",
-    starting_time: "03:30pm EAT",
+    match_status: "Live",
+    home_team: "Aston Villa",
+    away_team: "Fulham",
+    home_flag: "https://l.ivesoccer.sx/teams/aston-villa.png",
+    away_flag: "https://l.ivesoccer.sx/teams/fulham.png",
+    starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
-    scores: "2-1",
+    scores: "Not started",
     stream_links: [
       {
-        url: "https://headlines.reddit-soccerstreams.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
+        url: "https://top.worldcupglory.com/2-aston-villa-vs-fulham/",
         host_name: "WORLD STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -26,7 +26,7 @@ export const epl_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://sports.chelsealivestream.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
+        url: "https://headlines.reddit-soccerstreams.com/2-aston-villa-vs-fulham/",
         host_name: "TOP STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -35,7 +35,7 @@ export const epl_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://sports.chelsealivestream.com/2-wolverhampton-wanderers-vs-tottenham-hotspur/",
+        url: "https://headlines.reddit-soccerstreams.com/2-aston-villa-vs-fulham/",
         host_name: "Flsh Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -48,17 +48,17 @@ export const epl_fixture = [
 
   {
     match_status: "Live",
-    home_team: "Arsenal",
-    away_team: "Burnley",
-    home_flag: "https://l.ivesoccer.sx/teams/arsenal.png",
-    away_flag: "https://l.ivesoccer.sx/teams/burnley.png",
-    starting_time: "06:00pm EAT",
+    home_team: "Brighton",
+    away_team: "Sheffield United",
+    home_flag: "https://l.ivesoccer.sx/teams/brighton.png",
+    away_flag: "https://l.ivesoccer.sx/teams/sheffield-united.png",
+    starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
     scores: "0-0",
     stream_links: [
       {
-        url: "https://headlines.reddit-soccerstreams.com/3-arsenal-vs-burnley/",
+        url: "https://headlines.reddit-soccerstreams.com/3-brighton-&-hove-albion-vs-sheffield-united/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -67,7 +67,7 @@ export const epl_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://headlines.footybite.to/3-arsenal-vs-burnley/",
+        url: "https://sports.worldcupglory.com/3-brighton-&-hove-albion-vs-sheffield-united/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -80,17 +80,17 @@ export const epl_fixture = [
 
   {
     match_status: "Live",
-    home_team: "Crystal Palace",
-    away_team: "Everton",
-    home_flag: "https://l.ivesoccer.sx/teams/crystal-palace.png",
-    away_flag: "https://l.ivesoccer.sx/teams/everton.png",
-    starting_time: "06:00pm EAT",
+    home_team: "West Ham",
+    away_team: "Nottm Forest",
+    home_flag: "https://l.ivesoccer.sx/teams/west-ham-united.png",
+    away_flag: "https://l.ivesoccer.sx/teams/nottingham-forest.png",
+    starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
     scores: "1-1",
     stream_links: [
       {
-        url: "https://headlines.reddit-soccerstreams.com/4-crystal-palace-vs-everton/",
+        url: "https://top.worldcupglory.com/5-west-ham-united-vs-nottingham-forest/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -99,7 +99,7 @@ export const epl_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://headlines.footybite.to/4-crystal-palace-vs-everton/",
+        url: "https://headlines.footybite.to/5-west-ham-united-vs-nottingham-forest/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -111,17 +111,17 @@ export const epl_fixture = [
   },
   {
     match_status: "Live",
-    home_team: "Manchester United",
-    away_team: "Luton Town",
-    home_flag: "https://l.ivesoccer.sx/teams/manchester-united.png",
-    away_flag: "https://l.ivesoccer.sx/teams/luton-town.png",
-    starting_time: "06:00pm EAT",
+    home_team: "Liverpool",
+    away_team: "Brentford",
+    home_flag: "https://l.ivesoccer.sx/teams/liverpool.png",
+    away_flag: "https://l.ivesoccer.sx/teams/brentford.png",
+    starting_time: "05:00pm EAT",
     match_id: "02929",
     title: "English Premier League",
     scores: "0-0",
     stream_links: [
       {
-        url: "https://hockeyworld.site/daily/news/manvlut/",
+        url: "https://top.worldcupglory.com/4-liverpool-vs-brentford/",
         host_name: "WEAK STREAMS",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -130,7 +130,7 @@ export const epl_fixture = [
         stream_language: "English",
       },
       {
-        url: "https://headlines.footybite.to/5-manchester-united-vs-luton-town/",
+        url: "https://news.worldcupglory.com/4-liverpool-vs-brentford/",
         host_name: "Footybite Streams",
         reputation: "Platinum",
         stream_quality: "HD",
@@ -142,11 +142,11 @@ export const epl_fixture = [
   },
   {
     match_status: "Kickoff",
-    home_team: "Bournemouth",
-    away_team: "Newcastle United",
-    home_flag: "https://1.ivesoccer.sx/teams/bournemouth.png",
-    away_flag: "https://l.ivesoccer.sx/teams/newcastle.png",
-    starting_time: "08:30pm EAT",
+    home_team: "Chelsea",
+    away_team: "Man City",
+    home_flag: "https://1.ivesoccer.sx/teams/chelsea.png",
+    away_flag: "https://l.ivesoccer.sx/teams/manchester-city.png",
+    starting_time: "07:30pm EAT",
     match_id: "02929",
     title: "English Premier League",
     scores: "",
@@ -210,7 +210,7 @@ const LinksMain = () => {
     }
   }
   return (
-    <div className="grid  grid-cols-12 gap-x-2 mx-2">
+    <div className="grid  grid-cols-12 gap-x-2">
       {/* links */}
 
       <div className="col-span-12">
@@ -220,7 +220,7 @@ const LinksMain = () => {
               {/* English Premier League */}
             </h2>
           </div>
-          {epl_fixture.length === 0 ? (
+          {epl_fixture.length > 0 ? (
             epl_fixture.flatMap((stream, index) => (
               <div
                 className="flex flex-col text-white cursor-pointer"
@@ -285,9 +285,7 @@ const LinksMain = () => {
             ))
           ) : (
             <div className="flex text-white">
-              <p>
-                No Livestreams currently, come back later.
-              </p>
+              <p>No Livestreams currently, come back later.</p>
             </div>
           )}
         </div>

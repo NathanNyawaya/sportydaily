@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getBlogs } from "../funcStore/controllers/blogs/blog_controllers";
 import { getTimeAgo } from "../funcStore/momentTimeProcess";
 import LoadingStatus from "../status/Loading";
+import HorizontalAds3 from "./ads/Horizonatal3";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
@@ -40,7 +41,7 @@ const Blogs = () => {
               key={index}
               className="flex max_lg:flex-col justify-center text-white group mb-2 rounded bg-gray-800 relative cursor-pointer max_sm:m-2"
               onClick={() => {
-                setLoading(true)
+                setLoading(true);
                 localStorage.setItem("b_id", post._id);
                 location.replace(`/blog/${index + 1}`);
               }}
@@ -71,6 +72,7 @@ const Blogs = () => {
           );
         })
       )}
+      <div className="mx-2">{!loading && <HorizontalAds3 />}</div>
     </div>
   );
 };

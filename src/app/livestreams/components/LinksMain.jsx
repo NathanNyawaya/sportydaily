@@ -237,7 +237,7 @@ const LinksMain = () => {
                   }
                 }}
               >
-                <div className="flex flex-col justify-start rounded my-1 mx-2">
+                <div className="flex flex-col justify-start rounded my-1">
                   {/* title / league */}
                   <div className="flex items-center my-1">
                     <h2 className="text-[0.7rem] text-gray-300">

@@ -3,8 +3,8 @@ import { clubs } from "@/app/constants/clubs";
 
 const AddLivestream = () => {
   const [formData, setFormData] = useState({
-    club_home: "",
-    club_away: "",
+    club_home: {},
+    club_away: {},
     livestream_link_1: "",
     livestream_link_2: "",
     livestream_link_3: "",

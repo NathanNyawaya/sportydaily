@@ -220,7 +220,7 @@ const LinksMain = () => {
               {/* English Premier League */}
             </h2>
           </div>
-          {epl_fixture.length > 0 ? (
+          {epl_fixture.length === 0 ? (
             epl_fixture.flatMap((stream, index) => (
               <div
                 className="flex flex-col text-white cursor-pointer"

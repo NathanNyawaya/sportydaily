@@ -30,25 +30,7 @@ const Highlights = () => {
             {/* <HorizontalAds /> */}
           </div>
           {/* side-bar */}
-          <div className="col-span-1 hidden">
-            <div className="sticky top-40 bg-white flex flex-col gap-y-4 min-h-[30vh] p-1">
-              <p className="px-2 rounded bg-gray-300 cursor-pointer font-bold text m-1">
-                EPL
-              </p>
-              <p className="px-2 rounded bg-gray-300 cursor-pointer font-bold text m-1">
-                UEFA
-              </p>
-              <p className="px-2 rounded bg-gray-300 cursor-pointer font-bold text m-1">
-                EUROPA
-              </p>
-              <p className="px-2 rounded bg-gray-300 cursor-pointer font-bold text m-1">
-                LALIGA
-              </p>
-              <p className="px-2 rounded bg-gray-300 cursor-pointer font-bold text m-1">
-                SERIA
-              </p>
-            </div>
-          </div>
+
           <div className="flex flex-col max_md:col-span-12 col-span-9 z-0">
             <LinksMain />
             <div className="flex flex-col mt-4 gap-y-3">

@@ -5,13 +5,13 @@ import ReactPlayer from "react-player/lazy";
 const LinksMain = () => {
   const highlights = [
     {
-      video_url: "https://youtu.be/pO1BCXC0v_w?si=w7_yxdBMX_esoguB",
+      video_url: "https://youtu.be/Nu59inXKT1A?si=qCtBIYTqTlo_5wp3",
     },
     {
-      video_url: "https://youtu.be/cMYCxpv-SJ8?si=Wxw0DPX_HomN3jbz",
+      video_url: "https://youtu.be/4JfugsI9fYU?si=1QxXDVE1RqAMA49M",
     },
     {
-      video_url: "https://youtu.be/9YaA-IOyJSI?si=mI3nF8S-k9y4_wUz",
+      video_url: "https://youtu.be/zTIl9xxOMgM?si=vaM1mVBaFAkhJdaf",
     },
     {
       video_url: "https://youtu.be/_BJy3tVc6QE?si=6gfxDcy2bf8ovFny",

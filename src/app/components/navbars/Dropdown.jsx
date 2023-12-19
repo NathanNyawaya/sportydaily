@@ -20,7 +20,7 @@ const DropdownMenu = () => {
         {/* <Link href="/">
           <p className="px-2  cursor-pointer">Fixtures</p>
         </Link> */}
-        
+
         <Link href="/livestreams">
           <p className="px-2 text-white cursor-pointer">Live Streams</p>
         </Link>
@@ -32,8 +32,8 @@ const DropdownMenu = () => {
         </Link> */}
         <Link href="/highlights">
           <p className="px-2 flex flex-col justify-center items-center cursor-pointer">
-            
-            <span className="text-">Highlights</span>
+
+            <span className="text-white">Highlights</span>
           </p>
         </Link>
       </div>

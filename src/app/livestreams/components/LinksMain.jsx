@@ -268,7 +268,7 @@ const LinksMain = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="col-span-5 md:col-span-3 flex items-center gap-2" >
+                    <div className="col-span-6 md:col-span-3 flex items-center gap-1" >
                       <div className="flex flex-col">
                         <p className="text-[0.8rem] text-gray-200">Kickoff</p>
                         <p className="text-[0.7rem] text-gray-200">{stream.time}
@@ -276,12 +276,12 @@ const LinksMain = () => {
 
                       </div>
                       <div className="">
-                        <p className="rounded bg-gray-400 text-[0.8rem] p-1">{
+                        <p className="rounded bg-gray-400 text-[0.8rem] p-1 text-center">{
                           stream.status === "Uncoming" ? "Not Started" : stream.status
                         }</p>
                       </div>
                     </div>
-                    <div className="col-span-2 flex justify-center">
+                    <div className="col-span-1 md:col-span-2 flex justify-center">
                       <LaunchIcon
                         size="small"
                         className="hover:text-green-400 text-green-700"

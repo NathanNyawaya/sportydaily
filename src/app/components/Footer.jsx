@@ -69,7 +69,6 @@ const Footer = () => {
             <a href="#" className="hover:underline">
               ThePitchBasket™
             </a>
-            . All Rights Reserved.
           </p>
           <p className="text-[0.7rem] text-gray-500">v2</p>
 

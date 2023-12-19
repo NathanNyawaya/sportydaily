@@ -2,7 +2,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { formatDateTimeEAT } from "@/app/funcStore/toReadableTime";
-
+import { Group, Collapse, Box } from "@mantine/core";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import FixtureCollapse from "./Collapse";
 
 const LeaguesFixtures = ({ activeLeague }) => {
   const [leagues, setLeagues] = useState([])
@@ -53,6 +56,8 @@ const LeaguesFixtures = ({ activeLeague }) => {
     filterEvents()
   }, [leagues, activeLeague])
 
+
+
   return (
     <div className="grid  grid-cols-12 gap-x-2">
       {/* links */}
@@ -71,34 +76,8 @@ const LeaguesFixtures = ({ activeLeague }) => {
               eventsData && eventsData.length > 0 ? eventsData.map((event_, index) => {
                 const kickoff_time_obj = formatDateTimeEAT(event_.start_time)
                 return (
-                  <div key={index} className="grid grid-cols-12 text-white text-[0.9rem] mx-2 mb-1 bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
-                    <div className="md:col-span-7 col-span-7 flex flex-col gap-y-2">
-                      <div className="flex gap-3">
-                        <p className="text-[0.8rem] text-white">
-                          {event_.home_team.name}
-                        </p>
-                      </div>
-                      <div className="flex gap-3">
 
-                        <p className="text-[0.8rem] text-white">
-                          {event_.away_team.name}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-span-5 max_sm:col-span-5 md:col-span-3 flex gap-2 items-center max_sm:justify-between" >
-                      <div className="flex flex-col">
-                        <p className="text-[0.8rem] text-gray-200">Kickoff</p>
-                        <p className="text-[0.7rem] text-gray-200">{kickoff_time_obj.date_}{" "}{kickoff_time_obj.time_}{" "}{kickoff_time_obj.timezone}
-                        </p>
-
-                      </div>
-                      <div className="">
-                        {/* <p className="rounded bg-gray-400 text-[0.8rem] p-1 text-center">{
-                        stream.status === "Uncoming" ? "Not Started" : stream.status
-                      }</p> */}
-                      </div>
-                    </div>
-                  </div>
+                  <FixtureCollapse opened={false} event_={event_} kickoff_time_obj={kickoff_time_obj} key={index} />
                 )
               }) :
 
@@ -110,7 +89,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

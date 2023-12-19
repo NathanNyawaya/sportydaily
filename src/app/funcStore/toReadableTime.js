@@ -1,27 +1,28 @@
-export const formatDateTimeEAT = (inputDateTime) => {
-    const inputDate = new Date(inputDateTime);
 
-    // Apply the UTC+3 offset for East Africa Time (EAT)
-    const eastAfricaOffset = 3;
-    const utcTime = inputDate.getTime();
-    const eatTime = utcTime + (eastAfricaOffset * 60 * 60 * 1000);
 
-    const eatDate = new Date(eatTime);
 
-    // Get day and month
-    const day = eatDate.getDate();
-    const month = eatDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+export const formatDateTimeEAT = (isoString) => {
+    // Check if the input is a valid ISO string
+    if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(isoString)) {
+        throw new Error('Invalid ISO 8601 string');
+    }
 
-    // Format the time (HH:mm)
-    const hours = String(eatDate.getHours()).padStart(2, '0');
-    const minutes = String(eatDate.getMinutes()).padStart(2, '0');
+    // Parse the date and time components
+    const date = new Date(isoString);
 
-    // Construct the formatted string
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const month = monthNames[date.getMonth()];
+    const day = date.getDate();
+    const hour = `0${date.getHours()}`.slice(-2);
+    const minute = `0${date.getMinutes()}`.slice(-2);
+    const seconds = date.getSeconds();
+
+
     const formattedDateTime = {
-        date_: `${day}/${month}`,
-        time_: `${hours}:${minutes}`,
-        timezone: 'EAT'
+        date_: `${month} ${day}`,
+        time_: `${hour}:${minute}`,
+        timezone: "EAT"
     };
-
-    return formattedDateTime;
+    return formattedDateTime
 }
+

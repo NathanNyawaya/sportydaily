@@ -37,7 +37,7 @@ const DropdownMenu = () => {
             <p
               onClick={() => linkShot(link.href)}
               className={` ${activeView === link.href ? "bg-white text-black" : "text-white"
-                } px-2 rounded cursor-pointer`}
+                } px-2 rounded cursor-pointer text-[0.9rem]`}
             >
               {link.label}
             </p>

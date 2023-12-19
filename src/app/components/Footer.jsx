@@ -47,7 +47,7 @@ const Footer = () => {
                 <li>
                   <a
                     target="_blank"
-                    href="https://twitter.com/NNyawaya"
+                    href="https://twitter.com/ThePitchBasket"
                     className="hover:underline"
                   >
                     Twitter

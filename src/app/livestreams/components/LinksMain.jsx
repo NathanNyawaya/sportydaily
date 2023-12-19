@@ -3,178 +3,12 @@ import axios from "axios";
 
 import React, { useEffect, useState } from "react";
 import LaunchIcon from "@mui/icons-material/Launch";
+import LoadingStatus from "@/app/status/Loading";
 
-export const epl_fixture = [
-  {
-    match_status: "Match ended",
-    home_team: "Aston Villa",
-    away_team: "Fulham",
-    home_flag: "https://l.ivesoccer.sx/teams/aston-villa.png",
-    away_flag: "https://l.ivesoccer.sx/teams/fulham.png",
-    starting_time: "05:00pm EAT",
-    match_id: "02929",
-    title: "English Premier League",
-    scores: "3-1",
-    stream_links: [
-      {
-        url: "https://top.worldcupglory.com/2-aston-villa-vs-fulham/",
-        host_name: "WORLD STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://headlines.reddit-soccerstreams.com/2-aston-villa-vs-fulham/",
-        host_name: "TOP STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "BT Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://headlines.reddit-soccerstreams.com/2-aston-villa-vs-fulham/",
-        host_name: "Flsh Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Tnt Sports",
-        stream_language: "English",
-      },
-    ],
-  },
-
-  {
-    match_status: "Match ended",
-    home_team: "Brighton",
-    away_team: "Sheffield United",
-    home_flag: "https://l.ivesoccer.sx/teams/brighton.png",
-    away_flag: "https://l.ivesoccer.sx/teams/sheffield-united.png",
-    starting_time: "05:00pm EAT",
-    match_id: "02929",
-    title: "English Premier League",
-    scores: "1-1",
-    stream_links: [
-      {
-        url: "https://headlines.reddit-soccerstreams.com/3-brighton-&-hove-albion-vs-sheffield-united/",
-        host_name: "WEAK STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://sports.worldcupglory.com/3-brighton-&-hove-albion-vs-sheffield-united/",
-        host_name: "Footybite Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-    ],
-  },
-
-  {
-    match_status: "Match ended",
-    home_team: "West Ham",
-    away_team: "Nottm Forest",
-    home_flag: "https://l.ivesoccer.sx/teams/west-ham-united.png",
-    away_flag: "https://l.ivesoccer.sx/teams/nottingham-forest.png",
-    starting_time: "05:00pm EAT",
-    match_id: "02929",
-    title: "English Premier League",
-    scores: "3-2",
-    stream_links: [
-      {
-        url: "https://top.worldcupglory.com/5-west-ham-united-vs-nottingham-forest/",
-        host_name: "WEAK STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://headlines.footybite.to/5-west-ham-united-vs-nottingham-forest/",
-        host_name: "Footybite Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-    ],
-  },
-  {
-    match_status: "Match ended",
-    home_team: "Liverpool",
-    away_team: "Brentford",
-    home_flag: "https://l.ivesoccer.sx/teams/liverpool.png",
-    away_flag: "https://l.ivesoccer.sx/teams/brentford.png",
-    starting_time: "05:00pm EAT",
-    match_id: "02929",
-    title: "English Premier League",
-    scores: "3-0",
-    stream_links: [
-      {
-        url: "https://top.worldcupglory.com/4-liverpool-vs-brentford/",
-        host_name: "WEAK STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://news.worldcupglory.com/4-liverpool-vs-brentford/",
-        host_name: "Footybite Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-    ],
-  },
-  {
-    match_status: "Live",
-    home_team: "Chelsea",
-    away_team: "Man City",
-    home_flag: "https://1.ivesoccer.sx/teams/chelsea.png",
-    away_flag: "https://l.ivesoccer.sx/teams/manchester-city.png",
-    starting_time: "07:30pm EAT",
-    match_id: "02929",
-    title: "English Premier League",
-    scores: "",
-    stream_links: [
-      {
-        url: "https://top.worldcupglory.com/6-chelsea-vs-manchester-city/",
-        host_name: "WEAK STREAMS",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-      {
-        url: "https://headlines.footybite.to/6-chelsea-vs-manchester-city/",
-        host_name: "Footybite Streams",
-        reputation: "Platinum",
-        stream_quality: "HD",
-        stream_ads: "1",
-        stream_channel: "Sky Sports",
-        stream_language: "English",
-      },
-    ],
-  },
-];
 
 const LinksMain = () => {
   const [liveEvents, setLiveEvents] = useState([]);
+  const [empty, setEmpty] = useState(false);
 
   useEffect(() => {
     const asyncRunner = async () => {
@@ -187,6 +21,7 @@ const LinksMain = () => {
           setLiveEvents(res.data[0].live_events_data);
         } else {
           setLiveEvents([]);
+          setEmpty(true)
         }
       } catch (error) {
         console.error(error);
@@ -225,18 +60,18 @@ const LinksMain = () => {
               <div
                 className="flex flex-col text-white cursor-pointer"
                 key={index}
-              onClick={() => {
-                alert("Service is under maintainance come back later!");
-                // if (stream.stream_links[0].url != "#") {
-                //   localStorage.setItem(
-                //     "e_data",
-                //     JSON.stringify(stream.stream_links)
-                //   );
-                //   window.location.replace(`/livestreams/${index}`);
-                // } else {
-                //   alert("Match not yet started");
-                // }
-              }}
+                onClick={() => {
+                  alert("Service is under maintainance come back later!");
+                  // if (stream.stream_links[0].url != "#") {
+                  //   localStorage.setItem(
+                  //     "e_data",
+                  //     JSON.stringify(stream.stream_links)
+                  //   );
+                  //   window.location.replace(`/livestreams/${index}`);
+                  // } else {
+                  //   alert("Match not yet started");
+                  // }
+                }}
               >
                 <div className="flex flex-col justify-start rounded my-1">
                   {/* title / league */}
@@ -294,12 +129,19 @@ const LinksMain = () => {
             ))
           ) : (
             <div className="flex text-white">
-              <p>No Livestreams currently, come back later.</p>
+              {
+                liveEvents.length === 0 && empty ?
+                  <p>No Livestreams currently, come back later.</p> :
+                  <div className="flex justify-center items-center w-full">
+                    <LoadingStatus />
+                  </div>
+              }
             </div>
           )}
         </div>
       </div>
     </div>
+
   );
 };
 

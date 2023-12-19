@@ -27,24 +27,39 @@ const LeaguesNavigation = ({ setActiveLeague, activeLeague }) => {
 
     }, [])
 
-
+    const shortTitle = (league_title) => {
+        switch (league_title) {
+            case "Seria A":
+                return league_title;
+            case "Premier League":
+                return "EPL";
+            case "UEFA Europa League":
+                return "Europa"
+            case "UEFA Champions League":
+                return "UEFA"
+            case "UEFA EURO":
+                return "EURO"
+            default:
+                return league_title
+        }
+    }
     return (
-        <div className="sticky top-40 bg-gray-900 flex w-full flex-col gap-y-4 min-h-[30vh] p-1 rounded ">
+        <div className="md:sticky top-40 bg-gray-900 flex w-full md:flex-col gap-y-4 md:min-h-[30vh] p-1 rounded ">
 
             {
                 leagues && leagues.length > 0 && leagues.map((league, index) => (
                     <div
-                        className={`
+                        className={`league.name
                         flex flex-col w-full hover:bg-yellow-500/[0.2] cursor-pointer
-                        ${league.name == activeLeague && `bg-yellow-500/[0.5]`}
+                        ${league.name == activeLeague && `bg-yellow-700/[0.5] rounded`}
                         `}
                         key={index}
                         onClick={() => setActiveLeague(league.name)}
                     >
                         <p
-                            className="p-1 rounded  cursor-pointer font-bold text-[0.8rem] text-gray-100"
+                            className="p-1 cursor-pointer font-bold text-[0.8rem] text-gray-100"
                         >
-                            {league.name}
+                            {shortTitle(league.name)}
                         </p>
                     </div>
                 ))

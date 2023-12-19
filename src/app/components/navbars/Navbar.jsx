@@ -14,7 +14,6 @@ const Navbar = () => {
     }
 
     const intervalID = setInterval(displayCurrentTime, 1000);
-
     return () => {
       clearInterval(intervalID);
     };

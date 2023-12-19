@@ -26,7 +26,7 @@ const Fixtures = () => {
         <div className="grid grid-cols-12 gap-x-2">
 
           {/* side-bar */}
-          <div className="col-span-3">
+          <div className="md:col-span-3 col-span-12">
             <LeaguesNavigation
               activeLeague={activeLeague}
               setActiveLeague={setActiveLeague}

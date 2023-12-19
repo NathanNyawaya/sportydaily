@@ -1,41 +1,48 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router"; // Use useRouter instead of useParams
+import React, { useEffect, useState } from "react";
+
+const links = [
+  { id: "news", label: "News", href: "/" },
+  { id: "livestreams", label: "Live Streams", href: "/livestreams" },
+  { id: "fixtures", label: "Fixture", href: "/fixtures" },
+  { id: "highlights", label: "Highlights", href: "/highlights" },
+  // Add more links as needed
+];
 
 const DropdownMenu = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeView, setActiveView] = useState("/")
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+
+  useEffect(() => {
+    const l_raw = localStorage.getItem("l_")
+    if (l_raw) {
+      const activeView_ = JSON.parse(l_raw)
+      setActiveView(activeView_)
+    }
+  }, [])
+
+  const linkShot = (link_) => {
+    localStorage.setItem("l_", JSON.stringify(link_))
+  }
+
+
 
   return (
     <div className="py-3 max_md..:mb-5 mb--10 mx-auto">
       <div className="flex items-center gap-x-2 px-1">
-        <Link href="/">
-          <h3 className="bg-white px-2 text-black rounded cursor-pointer">
-            News
-          </h3>
-        </Link>
-        {/* <Link href="/">
-          <p className="px-2  cursor-pointer">Fixtures</p>
-        </Link> */}
-
-        <Link href="/livestreams">
-          <p className="px-2 text-white cursor-pointer">Live Streams</p>
-        </Link>
-        <Link href="/fixtures">
-          <p className="px-2 text-white cursor-pointer">Fixture</p>
-        </Link>
-        {/* <Link href="/predictions">
-          <p className="px-2 text-white cursor-pointer">Predictions</p>
-        </Link> */}
-        <Link href="/highlights">
-          <p className="px-2 flex flex-col justify-center items-center cursor-pointer">
-
-            <span className="text-white">Highlights</span>
-          </p>
-        </Link>
+        {links.map((link) => (
+          <Link key={link.id} href={link.href}>
+            <p
+              onClick={() => linkShot(link.href)}
+              className={` ${activeView === link.href ? "bg-white text-black" : "text-white"
+                } px-2 rounded cursor-pointer`}
+            >
+              {link.label}
+            </p>
+          </Link>
+        ))}
       </div>
     </div>
   );

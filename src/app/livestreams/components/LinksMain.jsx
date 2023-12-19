@@ -81,7 +81,7 @@ const LinksMain = () => {
                     </h2>
                   </div>
                   <div className="grid grid-cols-12 text-white text-[0.9rem] mx-2 bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
-                    <div className="md:col-span-7 col-span-5 flex flex-col gap-y-2">
+                    <div className="md:col-span-7 col-span-6 flex flex-col gap-y-2">
                       <div className="flex gap-3">
                         <img
                           src={correctImageLink(stream.home_flag)}
@@ -103,7 +103,7 @@ const LinksMain = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="col-span-6 md:col-span-3 flex items-center gap-1" >
+                    <div className="col-span-5 max_sm:col-span-6 md:col-span-3 flex gap-2 items-center max_sm:justify-between" >
                       <div className="flex flex-col">
                         <p className="text-[0.8rem] text-gray-200">Kickoff</p>
                         <p className="text-[0.7rem] text-gray-200">{stream.time}
@@ -116,7 +116,7 @@ const LinksMain = () => {
                         }</p>
                       </div>
                     </div>
-                    <div className="col-span-1 md:col-span-2 flex justify-center">
+                    <div className="col-span-1  md:col-span-2 flex justify-end max_sm:hidden ">
                       <LaunchIcon
                         size="small"
                         className="hover:text-green-400 text-green-700"

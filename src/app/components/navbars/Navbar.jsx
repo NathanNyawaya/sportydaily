@@ -30,12 +30,12 @@ const Navbar = () => {
       setHight((prev) => !prev);
     }
     const intervalID = setInterval(displayCurrentTime, 1000);
-    const intervalid = setInterval(activeLights, 100);
-    const intervalid2 = setInterval(activeLights2, 1500);
+    // const intervalid = setInterval(activeLights, 100);
+    // const intervalid2 = setInterval(activeLights2, 1500);
     return () => {
       clearInterval(intervalID);
-      clearInterval(intervalid);
-      clearInterval(intervalid2);
+      // clearInterval(intervalid);
+      // clearInterval(intervalid2);
     };
   }, []);
 
@@ -57,11 +57,11 @@ const Navbar = () => {
               className={`${high ? "bg-black" : "bg-white"} p-1 rounded-full`}
             ></p> */}
 
-            <p
+            {/* <p
               className={`${
                 hight ? "bg-green-600" : "bg-red-500"
               } p-1 rounded-full`}
-            ></p>
+            ></p> */}
           </div>
         </div>
       </div>

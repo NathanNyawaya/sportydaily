@@ -53,9 +53,9 @@ const Navbar = () => {
             Time: <span className="mr-1 text-wh">{time}</span>EAT
           </h2>
           <div className="flex grid grid-cols-2 gap-x-2 ml-3 rounded items-center">
-            <p
+            {/* <p
               className={`${high ? "bg-black" : "bg-white"} p-1 rounded-full`}
-            ></p>
+            ></p> */}
 
             <p
               className={`${

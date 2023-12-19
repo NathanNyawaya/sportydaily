@@ -182,7 +182,7 @@ const LinksMain = () => {
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_SERVER}/api/livestreams`
         );
-        console.log(res.data[0].live_events_data[0]);
+        // console.log(res.data[0].live_events_data[0]);
         if (res.data != "Empty streams") {
           setLiveEvents(res.data[0].live_events_data);
         } else {
@@ -245,8 +245,8 @@ const LinksMain = () => {
 
                     </h2>
                   </div>
-                  <div className="grid grid-cols-12 text-white bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center">
-                    <div className="col-span-7 flex flex-col gap-y-2">
+                  <div className="grid grid-cols-12 text-white text-[0.9rem] mx-2 bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
+                    <div className="md:col-span-7 col-span-5 flex flex-col gap-y-2">
                       <div className="flex gap-3">
                         <img
                           src={correctImageLink(stream.home_flag)}
@@ -268,7 +268,7 @@ const LinksMain = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="col-span-3 flex items-center gap-2" >
+                    <div className="col-span-5 md:col-span-3 flex items-center gap-2" >
                       <div className="flex flex-col">
                         <p className="text-[0.8rem] text-gray-200">Kickoff</p>
                         <p className="text-[0.7rem] text-gray-200">{stream.time}

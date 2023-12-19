@@ -58,7 +58,6 @@ const LeaguesFixtures = ({ activeLeague }) => {
       {/* links */}
       <div className="col-span-12 flex items-center text-white m-2 text-[0.8rem] gap-x-1">
         <p className="bg-gray-500 p-1 rounded">All</p>
-        <p className="bg-gray-700 p-1 rounded">Today</p>
 
       </div>
 

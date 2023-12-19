@@ -32,20 +32,21 @@ const HorizontalAds3 = () => {
     },
   ];
   return (
-    <div className="mx-auto h-auto w-full flex flex-col ">
+    <div className="hidden mx-auto h-auto w-full flex flex-col ">
       <div className="w-full text-white my-2">
         <p className="text-[0.6rem]">Ads</p>
       </div>
       <div className="flex gap-2 items-center">
         {ads_list.map((ads_obj, index) => (
           <div className="relative" key={index}>
-            <a target="_blank" href={ads_obj.target_url}>
+            <h2 className="text-xl font-bold">ThePitchBasket</h2>
+            {/* <a target="_blank" href={ads_obj.target_url}>
               <img
                 className=" object-contain md:max-h-[20vh]"
                 src={ads_obj.img_url}
                 alt={ads_obj.alt}
               />
-            </a>
+            </a> */}
           </div>
         ))}
       </div>

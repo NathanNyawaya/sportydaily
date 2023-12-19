@@ -41,20 +41,21 @@ const SideBarAds = () => {
   }, [currentAdIndex]);
 
   return (
-    <div className="flex rounded min-h-[10vh]">
+    <div className="hidden flex rounded min-h-[10vh]">
       <div className="m-3 text-white">
         <p className="opacity-80 text-sm">Ads</p>
         <div className="relative">
           <div className="h-auto w-full flex flex-col">
             <div className="flex gap-2 items-center">
               <div className="">
-                <a target="_blank" href={adsList[currentAdIndex].target_url}>
+              <h2 className="text-xl font-bold">ThePitchBasket</h2>
+                {/* <a target="_blank" href={adsList[currentAdIndex].target_url}>
                   <img
                     className=""
                     src={adsList[currentAdIndex].img_url}
                     alt={adsList[currentAdIndex].alt}
                   />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

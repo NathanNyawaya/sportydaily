@@ -182,7 +182,7 @@ const LinksMain = () => {
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_SERVER}/api/livestreams`
         );
-        console.log(res.data[0].live_events_data);
+        console.log(res.data[0].live_events_data[0]);
         if (res.data != "Empty streams") {
           setLiveEvents(res.data[0].live_events_data);
         } else {
@@ -220,59 +220,68 @@ const LinksMain = () => {
               {/* English Premier League */}
             </h2>
           </div>
-          {epl_fixture.length === 0 ? (
-            epl_fixture.flatMap((stream, index) => (
+          {liveEvents.length > 0 ? (
+            liveEvents.map((stream, index) => (
               <div
                 className="flex flex-col text-white cursor-pointer"
                 key={index}
-                onClick={() => {
-                  if (stream.stream_links[0].url != "#") {
-                    localStorage.setItem(
-                      "e_data",
-                      JSON.stringify(stream.stream_links)
-                    );
-                    window.location.replace(`/livestreams/${index}`);
-                  } else {
-                    alert("Match not yet started");
-                  }
-                }}
+              onClick={() => {
+                alert("Service is under maintainance come back later!");
+                // if (stream.stream_links[0].url != "#") {
+                //   localStorage.setItem(
+                //     "e_data",
+                //     JSON.stringify(stream.stream_links)
+                //   );
+                //   window.location.replace(`/livestreams/${index}`);
+                // } else {
+                //   alert("Match not yet started");
+                // }
+              }}
               >
                 <div className="flex flex-col justify-start rounded my-1">
                   {/* title / league */}
                   <div className="flex items-center my-1">
                     <h2 className="text-[0.7rem] text-gray-300">
-                      {stream.match_status}{" "}
-                      {stream.match_status === "Live"
-                        ? ``
-                        : stream.match_status === "Match ended"
-                        ? stream.scores
-                        : `${stream.starting_time}`}
+
                     </h2>
                   </div>
-                  <div className="flex justify-between text-white bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center">
-                    <div className="flex flex-col gap-y-2">
+                  <div className="grid grid-cols-12 text-white bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center">
+                    <div className="col-span-7 flex flex-col gap-y-2">
                       <div className="flex gap-3">
                         <img
-                          src={stream.home_flag}
+                          src={correctImageLink(stream.home_flag)}
                           alt="home_team_img"
                           className="w-[20px] h-auto rounded"
                         />
                         <p className="text-[0.8rem] text-white">
-                          {stream.home_team}
+                          {stream.home_name}
                         </p>
                       </div>
                       <div className="flex gap-3">
                         <img
-                          src={stream.away_flag}
+                          src={correctImageLink(stream.away_flag)}
                           alt="away_team_img"
                           className="w-[20px] h-auto rounded"
                         />
                         <p className="text-[0.8rem] text-white">
-                          {stream.away_team}
+                          {stream.away_name}
                         </p>
                       </div>
                     </div>
-                    <div className="">
+                    <div className="col-span-3 flex items-center gap-2" >
+                      <div className="flex flex-col">
+                        <p className="text-[0.8rem] text-gray-200">Kickoff</p>
+                        <p className="text-[0.7rem] text-gray-200">{stream.time}
+                        </p>
+
+                      </div>
+                      <div className="">
+                        <p className="rounded bg-gray-400 text-[0.8rem] p-1">{
+                          stream.status === "Uncoming" ? "Not Started" : stream.status
+                        }</p>
+                      </div>
+                    </div>
+                    <div className="col-span-2 flex justify-center">
                       <LaunchIcon
                         size="small"
                         className="hover:text-green-400 text-green-700"

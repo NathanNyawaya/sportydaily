@@ -6,17 +6,21 @@ import HorizontalAds3 from "@/app/components/ads/Horizonatal3";
 // import FeaturedBlogs from "@/app/components/featured/FeaturedBlogs";
 import axios from "axios";
 import LoadingStatus from "@/app/status/Loading";
+import { useParams } from "next/navigation";
 
 const Blog = () => {
   const [blogDoc, setBlogDoc] = useState({});
   const [loading, setLoading] = useState(true);
+  
+  const document_id_raw = useParams() 
+  const document_id = document_id_raw.id
   useEffect(() => {
     const asyncRunner = async () => {
       try {
-        const blog_id = localStorage.getItem("b_id");
-        if (blog_id) {
+        
+        if (document_id) {
           const res = await axios.get(
-            `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/single/${blog_id}`
+            `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/single/${document_id}`
           );
           if (res) {
             setBlogDoc(res.data.blog_doc);

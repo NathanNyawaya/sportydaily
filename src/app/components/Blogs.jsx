@@ -42,8 +42,7 @@ const Blogs = () => {
               className="flex max_lg:flex-col justify-center text-white group mb-2 rounded bg-gray-800 relative cursor-pointer max_sm:m-2"
               onClick={() => {
                 setLoading(true);
-                localStorage.setItem("b_id", post._id);
-                location.replace(`/blog/${index + 1}`);
+                location.replace(`/blog/${post._id}`);
               }}
             >
               <div className="lg:w-[30%]">

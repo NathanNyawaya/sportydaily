@@ -17,6 +17,7 @@ const TipsCollapse = ({ opened }) => {
                 away_team: "Brighton",
                 selection: "Home",
                 odds: 2.1,
+                outcome:"1-0",
                 start_time: { date_: "21/12", time_: "23:00" }
             },
             {
@@ -24,6 +25,7 @@ const TipsCollapse = ({ opened }) => {
                 away_team: "Sheffield United",
                 selection: "Home",
                 odds: 1.23,
+                outcome:"--",
                 start_time: { date_: "22/12", time_: "23:00" }
             },
 
@@ -116,7 +118,7 @@ const TipsCollapse = ({ opened }) => {
                                                 <p className='text-[0.6rem] w-full text-center'>
                                                     Outcome:
                                                 </p>
-                                                <p className='text-[0.6rem] w-full text-center'>--</p>
+                                                <p className='text-[0.6rem] w-full text-center'>{event_.outcome}</p>
                                             </div>
                                             <div className='grid grid-cols-2'>
                                                 <p className='text-[0.6rem] w-full text-center'>

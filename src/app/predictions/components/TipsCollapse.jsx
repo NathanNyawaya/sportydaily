@@ -33,13 +33,13 @@ const TipsCollapse = ({ opened }) => {
     }
 
     const getTotals = (event_) => {
-        let totalOdds = 1; // Initialize with 1 as we will multiply with odds
+        let totalOdds = 1;
 
         event_.events_bets.forEach(element => {
             totalOdds *= element.odds;
         });
 
-        return totalOdds.toFixed(2); // Round to 2 decimal places
+        return totalOdds.toFixed(2); 
     }
 
     const totalOdds = getTotals(freeBets);
@@ -89,7 +89,7 @@ const TipsCollapse = ({ opened }) => {
                             {/* events */}
                             {
                                 freeBets.events_bets.length > 0 ? freeBets.events_bets.map((event_, index) => (
-                                    <div className='flex flex-col w-full my-1'>
+                                    <div key={index} className='flex flex-col w-full my-1'>
                                         <div className="grid grid-cols-6 gap-1 items-center text-white bg-gray-900/[0.8] w-full rounded py-3 px-1 ">
                                             {/* games */}
                                             <div className="col-span-2">

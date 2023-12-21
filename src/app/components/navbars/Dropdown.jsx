@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/router"; // Use useRouter instead of useParams
 import React, { useEffect, useState } from "react";
 
 const links = [
@@ -8,6 +7,7 @@ const links = [
   { id: "livestreams", label: "Live Streams", href: "/livestreams" },
   { id: "fixtures", label: "Fixture", href: "/fixtures" },
   { id: "highlights", label: "Highlights", href: "/highlights" },
+  { id: "predictions", label: "Betting", href: "/predictions" },
   // Add more links as needed
 ];
 

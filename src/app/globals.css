@@ -19,4 +19,5 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgba(8, 8, 1, 0.919);
+  font-family: "Bebas Neue", sans-serif;
 }

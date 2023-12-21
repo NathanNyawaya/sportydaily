@@ -14,19 +14,19 @@ const TipsCollapse = ({ opened }) => {
         events_bets: [
             {
                 home_team: "Crystal Palace",
-                away_team: "Brighton Albion",
-                selection: "Double Chance 2X",
-                odds: 2.3,
-                start_time: { date_: "22/12", time_: "10:15" }
+                away_team: "Brighton",
+                selection: "Home",
+                odds: 2.1,
+                start_time: { date_: "21/12", time_: "23:00" }
             },
             {
-                home_team: "Newcastle",
-                away_team: "Everton",
+                home_team: "Aston Villa",
+                away_team: "Sheffield United",
                 selection: "Home",
-                odds: 1.97,
-                start_time: { date_: "22/12", time_: "10:15" }
-            }
-            ,
+                odds: 1.23,
+                start_time: { date_: "22/12", time_: "23:00" }
+            },
+
         ]
     }
 
@@ -51,7 +51,7 @@ const TipsCollapse = ({ opened }) => {
                         <div className="flex justify-between items-center text-white bg-gray-900/[0.8] my-3 p-2">
                             {/* tip name */}
                             <h1 className='text-2xl font-bold text-yellow-500'>{freeBets.offerName}</h1>
-                            
+
 
 
                             <div className='col-span-1 flex justify-end items-center'>

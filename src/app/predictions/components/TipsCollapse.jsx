@@ -17,7 +17,8 @@ const TipsCollapse = ({ opened }) => {
                 away_team: "Brighton",
                 selection: "Home",
                 odds: 2.1,
-                outcome:"1-0",
+                outcome: "1-1",
+                status: "Lost",
                 start_time: { date_: "21/12", time_: "23:00" }
             },
             {
@@ -25,7 +26,8 @@ const TipsCollapse = ({ opened }) => {
                 away_team: "Sheffield United",
                 selection: "Home",
                 odds: 1.23,
-                outcome:"--",
+                status: "--",
+                outcome: "--",
                 start_time: { date_: "22/12", time_: "23:00" }
             },
 
@@ -39,7 +41,7 @@ const TipsCollapse = ({ opened }) => {
             totalOdds *= element.odds;
         });
 
-        return totalOdds.toFixed(2); 
+        return totalOdds.toFixed(2);
     }
 
     const totalOdds = getTotals(freeBets);
@@ -124,7 +126,7 @@ const TipsCollapse = ({ opened }) => {
                                                 <p className='text-[0.6rem] w-full text-center'>
                                                     Status:
                                                 </p>
-                                                <p className='text-[0.6rem] w-full text-center'>--</p>
+                                                <p className='text-[0.6rem] w-full text-center'>{event_.status}</p>
                                             </div>
                                         </div>
                                     </div>

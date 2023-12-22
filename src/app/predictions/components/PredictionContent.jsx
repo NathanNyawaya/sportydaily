@@ -7,22 +7,6 @@ const PredictionContent = () => {
   const [opened, setOpened] = useState(false)
   const [predictions, setPredictions] = useState([]);
 
-  // useEffect(() => {
-  //   const asyncRunner = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         `${process.env.NEXT_PUBLIC_SERVER}/api/predictions`
-  //       );
-  //       if (res) {
-  //         console.log(res);
-  //         setPredictions(res.data);
-  //       }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   asyncRunner();
-  // }, []);
 
   return (
     <div className="text-white grid grid-cols-12 gap-x-2">

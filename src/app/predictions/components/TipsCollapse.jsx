@@ -12,15 +12,15 @@ const TipsCollapse = ({ opened }) => {
     const freeBets = {
         offerName: "ThePitchBasket Free Bets",
         events_bets: [
-            {
-                home_team: "Crystal Palace",
-                away_team: "Brighton",
-                selection: "Home",
-                odds: 2.1,
-                outcome: "1-1",
-                status: "Lost",
-                start_time: { date_: "21/12", time_: "23:00" }
-            },
+            // {
+            //     home_team: "Crystal Palace",
+            //     away_team: "Brighton",
+            //     selection: "Home",
+            //     odds: 2.1,
+            //     outcome: "1-1",
+            //     status: "Lost",
+            //     start_time: { date_: "21/12", time_: "23:00" }
+            // },
             {
                 home_team: "Aston Villa",
                 away_team: "Sheffield United",
@@ -51,7 +51,7 @@ const TipsCollapse = ({ opened }) => {
                 <Box mx="auto" className="w-full"  >
                     <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
-                        <div className="relative flex justify-between items-center text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-2 p-2 cursor-pointer ">
+                        <div className="relative flex justify-between items-center text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1 p-2 cursor-pointer ">
                             {/* tip name */}
                             <h1 className='text-3xl font-bold text-yellow-300 tracking-widest z-50'>
                                 {freeBets.offerName}
@@ -70,7 +70,7 @@ const TipsCollapse = ({ opened }) => {
                     </Group>
 
                     <Collapse in={openedd} className="text-white">
-                        <div className="flex flex-col text-white text-[0.9rem] mx-1 mb-1 bg-gray-800/[0.9] hover:bg-yellow-400/[0.1] p-2 items-center rounded">
+                        <div className="flex flex-col text-white text-[0.9rem] mx-1 my-2 bg-gray-800/[0.9] hover:bg-yellow-400/[0.1] p-2 items-center rounded">
 
                             {/* header */}
                             <div className="grid grid-cols-6 gap-1 p-2 items-center text-white my-1 w-full">

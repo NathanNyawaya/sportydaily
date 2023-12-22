@@ -23,6 +23,7 @@ const MainSectionDisplay = ({ active }) => {
         newComponentToRender = <AllBlogs />;
         break;
       case "all_livestreams":
+        // bets_tips
         newComponentToRender = <StreamsLayout />;
         break;
       default:

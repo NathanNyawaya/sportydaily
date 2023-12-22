@@ -5,7 +5,7 @@ import GoogleAnalytics from "./analytics/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "EPL (The Pitch Basket)",
+  title: "ThePitchBasket™",
   description: "Supported by Grenlyfe",
 };
 

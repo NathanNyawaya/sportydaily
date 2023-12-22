@@ -7,6 +7,8 @@ import HorizontalAds from "../components/ads/HorizontalAds";
 import Footer from "../components/Footer";
 import PredictionContent from "./components/PredictionContent";
 
+
+{/* <a href='https://pngtree.com/freepng/18-icon_8632027.html'>png image from pngtree.com/</a> */}
 const Predictions = () => {
   return (
 

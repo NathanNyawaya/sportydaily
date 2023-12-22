@@ -5,7 +5,6 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LoadingStatus from '@/app/status/Loading';
 
 
-
 const TipsCollapse = ({ opened }) => {
     const [openedd, setOpenedd] = useState(opened)
 
@@ -30,7 +29,6 @@ const TipsCollapse = ({ opened }) => {
                 outcome: "--",
                 start_time: { date_: "22/12", time_: "23:00" }
             },
-
         ]
     }
 
@@ -52,15 +50,19 @@ const TipsCollapse = ({ opened }) => {
                 <Box mx="auto" className="w-full"  >
                     <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
-                        <div className="flex justify-between items-center text-white bg-gray-900/[0.8] my-3 p-2">
+                        <div className="relative flex justify-between items-center text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-2 p-2 cursor-pointer ">
                             {/* tip name */}
-                            <h1 className='text-2xl font-bold text-yellow-500'>{freeBets.offerName}</h1>
+                            <h1 className='text-3xl font-bold text-yellow-300 z-50'>
+                                {freeBets.offerName}
+                            </h1>
 
-
-
-                            <div className='col-span-1 flex justify-end items-center'>
-                                {openedd ? <ArrowDropUpIcon fontSize='small' className='text-yellow-500' /> : <ArrowDropDownIcon fontSize='small' className='text-yellow-500' />}
+                            <div className='absolute bottom-0 right-0 left-0 p-2 flex justify-end items-center w-full z-0'>
+                                <h1 className='tracking-widest' >97% Winrate</h1>
                             </div>
+
+                            {/* <div className='col-span-1 flex justify-end items-center'>
+                                {openedd ? <ArrowDropUpIcon fontSize='small' className='text-yellow-500' /> : <ArrowDropDownIcon fontSize='small' className='text-yellow-500' />}
+                            </div> */}
                         </div>
                     </Group>
 

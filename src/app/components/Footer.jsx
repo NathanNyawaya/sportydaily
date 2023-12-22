@@ -18,20 +18,18 @@ const Footer = () => {
   return (
     <footer id="footer" className="p-3 bg-gray-800 dark:bg-gray-800">
       <div className="mx-auto max-w-screen-xl">
-        <div className="md:flex md:justify-between flex flex-col items-center">
-          <div className="md:mb-0 my-4">
-            <p className="text-[1.2rem] max-w-[200px] text-center font-bold bg-[#FCD107] rounded p-1 text-black">
-              ThePitchBasket™
-            </p>
-          </div>
-          <div className="mb-6 md:mb-0">
-            <p className="text-[0.7rem] max_md:max-w-[200px] text-center font-bold px-3 py-1 text-white rounded bg-green-500/[0.2]">
-              Powered by GrenLyfe™
-            </p>
-          </div>
-
-          <div className="hidden my-3 md:mb-0 max_md:max-w-[200px]">
-            <img src="/18+.png" className="h-[50px] w-[50px]" />
+        <div className="md:flex md:justify-between gap-y-4 items-center">
+          <div className="md:flex md:justify-between md:mr-5 items-center gap-4 w-full">
+            <div className="md:mb-0 w-full flex justify-center">
+              <p className="text-[1.2rem] max-w-[200px] text-center font-bold bg-[#FCD107] rounded p-1 text-black">
+                ThePitchBasket™
+              </p>
+            </div>
+            <div className="md:mb-0 flex justify-center max_md:my-4">
+              <p className="text-[0.7rem] max_md:max-w-[200px] text-center font-bold px-3 py-1 text-white rounded bg-green-500/[0.2]">
+                Powered by GrenLyfe™
+              </p>
+            </div>
           </div>
 
 
@@ -75,7 +73,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-span-1">
+            <div className="col-span-1 flex justify-center items-center">
               <img src="/18+.png" className={`${!eighteenPlus && "hidden"} h-[50px] w-[50px]`} />
             </div>
 

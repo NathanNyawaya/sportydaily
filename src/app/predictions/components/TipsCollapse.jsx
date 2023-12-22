@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Group, Collapse, Box } from "@mantine/core";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -7,6 +7,7 @@ import LoadingStatus from '@/app/status/Loading';
 
 const TipsCollapse = ({ opened }) => {
     const [openedd, setOpenedd] = useState(opened)
+
 
     const freeBets = {
         offerName: "ThePitchBasket Free Bets",
@@ -25,8 +26,8 @@ const TipsCollapse = ({ opened }) => {
                 away_team: "Sheffield United",
                 selection: "Home",
                 odds: 1.23,
-                status: "--",
-                outcome: "--",
+                status: "ON",
+                outcome: "0-0",
                 start_time: { date_: "22/12", time_: "23:00" }
             },
         ]
@@ -52,17 +53,19 @@ const TipsCollapse = ({ opened }) => {
 
                         <div className="relative flex justify-between items-center text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-2 p-2 cursor-pointer ">
                             {/* tip name */}
-                            <h1 className='text-3xl font-bold text-yellow-300 z-50'>
+                            <h1 className='text-3xl font-bold text-yellow-300 tracking-widest z-50'>
                                 {freeBets.offerName}
                             </h1>
 
                             <div className='absolute bottom-0 right-0 left-0 p-2 flex justify-end items-center w-full z-0'>
-                                <h1 className='tracking-widest' >97% Winrate</h1>
+                                <h1 className='tracking-widest'>
+                                    97% Winrate
+                                </h1>
                             </div>
 
-                            {/* <div className='col-span-1 flex justify-end items-center'>
-                                {openedd ? <ArrowDropUpIcon fontSize='small' className='text-yellow-500' /> : <ArrowDropDownIcon fontSize='small' className='text-yellow-500' />}
-                            </div> */}
+                            <div className='col-span-1 flex justify-end items-center z-50'>
+                                {openedd ? <ArrowDropUpIcon fontSize='small' className='text-white' /> : <ArrowDropDownIcon fontSize='small' className='text-white' />}
+                            </div>
                         </div>
                     </Group>
 
@@ -137,10 +140,6 @@ const TipsCollapse = ({ opened }) => {
                                 )
                             }
 
-
-
-
-
                             {/* More Infor */}
                             <div className="flex justify-end gap-x-2 items-center text-white bg-gray-900/[0.8] w-full rounded py-3 mt-8">
                                 <div className='grid grid-cols-2'>
@@ -159,9 +158,14 @@ const TipsCollapse = ({ opened }) => {
 
                         </div>
                     </Collapse>
+
                 </Box>
             ) : (
-                <LoadingStatus />
+                <>
+
+                    <LoadingStatus />
+
+                </>
             )}
         </>
     )

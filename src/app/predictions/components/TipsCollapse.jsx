@@ -83,7 +83,7 @@ const TipsCollapse = ({ opened }) => {
                                 <div className='flex my-6 flex-col'>
                                     <p className='text-[0.6rem] tracking-wide uppercase'>
                                         New customers only. Place your first bet on any sportsbook market; T&Cs apply.
-                                        {/* if it loses, we'll refund your stake in CASH, up to Ksh.200. Valid for deposits made with M-pesa. */}
+                                       
                                     </p>
                                     <p className='text-[0.6rem] tracking-wide my-2'>
                                         ThePitchBasket T&Cs apply.

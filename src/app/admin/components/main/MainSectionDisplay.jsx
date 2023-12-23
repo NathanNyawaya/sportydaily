@@ -4,6 +4,7 @@ import BlogForm from "../BlogForm";
 import AllBlogs from "../blogs/AllBlogs";
 import AllLivestreams from "../livestreams/AllLivestreams";
 import StreamsLayout from "../livestreams/StreamsLayout";
+import AllBetTips from "../predictions/AllTips";
 
 const MainSectionDisplay = ({ active }) => {
   const [loading, setLoading] = useState(true);
@@ -23,8 +24,11 @@ const MainSectionDisplay = ({ active }) => {
         newComponentToRender = <AllBlogs />;
         break;
       case "all_livestreams":
-        // bets_tips
+
         newComponentToRender = <StreamsLayout />;
+        break;
+      case "bets_tips":
+        newComponentToRender = <AllBetTips />;
         break;
       default:
         newComponentToRender = <p>Default</p>;

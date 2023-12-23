@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Group, Collapse, Box } from "@mantine/core";
+import { Group, Collapse, Box, TextInput, Button } from "@mantine/core";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LoadingStatus from '@/app/status/Loading';
@@ -7,28 +7,40 @@ import LoadingStatus from '@/app/status/Loading';
 
 const TipsCollapse = ({ opened }) => {
     const [openedd, setOpenedd] = useState(opened)
+    const [userChecked, setUserChecked] = useState(false)
+    const [inputCode, setInputCode] = useState('');
+    const [isCodeCorrect, setIsCodeCorrect] = useState(true);
 
+    const correctCode = '#231223W'; // Replace with your correct code
+
+
+
+    const handleCodeSubmit = () => {
+        if (inputCode === correctCode) {
+            setIsCodeCorrect(true);
+            setUserChecked(true)
+            setOpenedd(true);
+        } else {
+            setUserChecked(false)
+            setIsCodeCorrect(false);
+            setTimeout(() => {
+                setIsCodeCorrect(true);
+            }, 4000)
+        }
+    };
 
     const freeBets = {
         offerName: "ThePitchBasket Free Bets",
         events_bets: [
-            // {
-            //     home_team: "Crystal Palace",
-            //     away_team: "Brighton",
-            //     selection: "Home",
-            //     odds: 2.1,
-            //     outcome: "1-1",
-            //     status: "Lost",
-            //     start_time: { date_: "21/12", time_: "23:00" }
-            // },
+            
             {
-                home_team: "Aston Villa",
-                away_team: "Sheffield United",
+                home_team: "West Ham",
+                away_team: "Man United",
                 selection: "Home",
-                odds: 1.23,
-                status: "ON",
-                outcome: "0-0",
-                start_time: { date_: "22/12", time_: "23:00" }
+                odds: 2.60,
+                status: "--",
+                outcome: "--",
+                start_time: { date_: "23/12", time_: "15:30" }
             },
         ]
     }
@@ -68,9 +80,8 @@ const TipsCollapse = ({ opened }) => {
                             </div>
                         </div>
                     </Group>
-
                     <Collapse in={openedd} className="text-white">
-                        <div className="flex flex-col text-white text-[0.9rem] mx-1 my-2 bg-gray-800/[0.9] hover:bg-yellow-400/[0.1] p-2 items-center rounded">
+                        <div className="relative flex flex-col text-white text-[0.9rem] mx-1 my-2 bg-gray-800/[0.9] hover:bg-yellow-400/[0.1] p-2 items-center rounded">
 
                             {/* header */}
                             <div className="grid grid-cols-6 gap-1 p-2 items-center text-white my-1 w-full">
@@ -156,8 +167,29 @@ const TipsCollapse = ({ opened }) => {
                                 </div>
                             </div>
 
+                            {!userChecked && (
+                                <div className="absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center bg-gray-900/[1]">
+                                    <div className='flex flex-col'>
+                                        <lable htmlFor="pass_code text-[0.8rem]"> Pass Code</lable>
+                                        <input
+                                            id='pass_code'
+                                            type='text'
+                                            placeholder="Enter code"
+                                            value={inputCode}
+                                            onChange={(event) => setInputCode(event.target.value)}
+                                            className="mt-1 rounded text-black "
+                                        />
+                                        <div className='flex'>
+                                            <button type='button' onClick={handleCodeSubmit} className='bg-green-600 py-1 px-3  my-3 py-1 rounded'>Pass</button>
+                                        </div>
+                                        {!isCodeCorrect && <p className="text-red-500 text-[0.7rem]">Incorrect code. Please try again.</p>}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </Collapse>
+
+
 
                 </Box>
             ) : (

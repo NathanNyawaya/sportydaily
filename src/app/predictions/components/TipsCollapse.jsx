@@ -32,7 +32,7 @@ const TipsCollapse = ({ opened }) => {
     const freeBets = {
         offerName: "ThePitchBasket Free Bets",
         events_bets: [
-            
+
             {
                 home_team: "West Ham",
                 away_team: "Man United",
@@ -170,7 +170,8 @@ const TipsCollapse = ({ opened }) => {
                             {!userChecked && (
                                 <div className="absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center bg-gray-900/[1]">
                                     <div className='flex flex-col'>
-                                        <lable htmlFor="pass_code text-[0.8rem]"> Pass Code</lable>
+                                        <lable htmlFor="pass_code" className="text-[0.8rem]"> Pass Code</lable>
+
                                         <input
                                             id='pass_code'
                                             type='text'

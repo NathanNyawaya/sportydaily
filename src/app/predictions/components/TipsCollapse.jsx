@@ -63,19 +63,41 @@ const TipsCollapse = ({ opened }) => {
                 <Box mx="auto" className="w-full"  >
                     <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
-                        <div className="relative flex justify-between items-center text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1 p-2 cursor-pointer ">
-                            {/* tip name */}
-                            <h1 className='text-3xl font-bold text-yellow-300 tracking-widest z-50'>
-                                {freeBets.offerName}
-                            </h1>
+                        <div className="relative flex justify-between text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1  cursor-pointer h-full">
+                            <div className='m-3'>
+                                <div className="flex my-6 gap-x-4 items-center">
+                                    <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm line-through'>100% OFF</p>
+                                    <div>
+                                        <p className='border-l-[2px] border-gray-100/[1] shadow text-gray-100/[0.9] tracking-widest px-2 uppercase font-bold text-sm'>
+                                            PEDY.FIRE
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* tip name */}
+                                <div className="flex my-10">
+                                    <p className='text-3xl font-bold text-yellow-300 tracking-widest z-50 uppercase'>
+                                        {freeBets.offerName}
+                                    </p>
+                                </div>
 
-                            <div className='absolute bottom-0 right-0 left-0 p-2 flex justify-end items-center w-full z-0'>
-                                <h1 className='tracking-widest'>
-                                    97% Winrate
-                                </h1>
+                                <div className='flex my-6 flex-col'>
+                                    <p className='text-[0.6rem] tracking-wide uppercase'>
+                                        New customers only. Place your first bet on any sportsbook market; T&Cs apply.
+                                        {/* if it loses, we'll refund your stake in CASH, up to Ksh.200. Valid for deposits made with M-pesa. */}
+                                    </p>
+                                    <p className='text-[0.6rem] tracking-wide my-2'>
+                                        ThePitchBasket T&Cs apply.
+                                    </p>
+                                </div>
+
+                                <div className='absolute bottom-0 right-4 left-0 p-2 flex justify-end items-center w-full z-0'>
+                                    <h1 className='tracking-widest text-gray-100/[0.9] text-[0.7rem] shadow-lg'>
+                                        97% Winrate
+                                    </h1>
+                                </div>
                             </div>
 
-                            <div className='col-span-1 flex justify-end items-center z-50'>
+                            <div className='flex justify-end items-center z-50'>
                                 {openedd ? <ArrowDropUpIcon fontSize='small' className='text-white' /> : <ArrowDropDownIcon fontSize='small' className='text-white' />}
                             </div>
                         </div>

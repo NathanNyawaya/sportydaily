@@ -25,15 +25,11 @@ const Predictions = () => {
         </div>
         {/* main content */}
         <div className="grid grid-cols-12 gap-x-2">
-          <div className="col-span-12 mt-4 mb-6">
-            {/* <HorizontalAds /> */}
-          </div>
-          {/* side-bar */}
-
-          <div className="flex flex-col min-h-[65vh] max_md:col-span-12 col-span-9 z-0">
-
+          <div className="flex flex-col justify-center min-h-[60vh] max_md:col-span-12 col-span-9 z-0">
+            <div className="flex py-10">
+              <p className="mx-1 text-xl text-gray-100/[0.9] font-bold tracking-widest uppercase shadow-lg">Today's Offers:</p>
+            </div>
             <PredictionContent />
-
           </div>
 
 

@@ -60,13 +60,13 @@ const TipsCollapse = ({ opened }) => {
     return (
         <>
             {freeBets ? (
-                <Box mx="auto" className="w-full"  >
+                <Box mx="auto" className="w-full z-0"  >
                     <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
                         <div className="relative flex justify-between text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1  cursor-pointer h-full">
                             <div className='m-3'>
                                 <div className="flex my-6 gap-x-4 items-center">
-                                    <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm line-through'>100% OFF</p>
+                                    <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm'>100% OFF</p>
                                     <div>
                                         <p className='border-l-[2px] border-gray-100/[1] shadow text-gray-100/[0.9] tracking-widest px-2 uppercase font-bold text-sm'>
                                             Football

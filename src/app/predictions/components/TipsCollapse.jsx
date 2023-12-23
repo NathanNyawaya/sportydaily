@@ -69,7 +69,7 @@ const TipsCollapse = ({ opened }) => {
                                     <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm line-through'>100% OFF</p>
                                     <div>
                                         <p className='border-l-[2px] border-gray-100/[1] shadow text-gray-100/[0.9] tracking-widest px-2 uppercase font-bold text-sm'>
-                                            PEDY.FIRE
+                                            Football
                                         </p>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const links = [
   { id: "news", label: "News", href: "/" },
-  { id: "livestreams", label: "Live Streams", href: "/livestreams" },
+  // { id: "livestreams", label: "Live Streams", href: "/livestreams" },
   { id: "fixtures", label: "Fixture", href: "/fixtures" },
   { id: "highlights", label: "Highlights", href: "/highlights" },
   { id: "predictions", label: "Betting", href: "/predictions" },

@@ -19,10 +19,14 @@ const AllBetTips = () => {
     setLoading(true);
     // self invocking func
     (async () => {
-      const blogs = await getAllTips();
-      if (blogs) {
-        console.log(blogs.data);
-        setBetTips(blogs.data);
+      const betting_tips_offers = await getAllTips();
+      if (betting_tips_offers) {
+        console.log(betting_tips_offers.data);
+        if (betting_tips_offers.data === "Empty tips") {
+          setBetTips([]);
+        } else {
+          setBetTips(betting_tips_offers.data);
+        }
       }
     })();
   }, []);
@@ -78,7 +82,7 @@ const AllBetTips = () => {
   const [addTip, setAddTip] = useState(false)
 
 
-  
+
   function formatIsoTimestamp(isoTimestamp) {
     const date = new Date(isoTimestamp);
     return date.toLocaleString(); // Adjust toLocaleString options if needed

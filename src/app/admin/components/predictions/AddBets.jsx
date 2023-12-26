@@ -7,6 +7,9 @@ import axios from "axios";
 const AddBetsTips = () => {
   const [formData, setFormData] = useState({
     betOfferName: "",
+    price: "",
+    status: "",
+    passcode: "",
     events: [
       {
         club_home: "",
@@ -79,6 +82,7 @@ const AddBetsTips = () => {
     e.preventDefault();
 
     try {
+      console.log(formData)
       // Send data to the backend using axios
       const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/add_tip`, formData);
 
@@ -88,7 +92,7 @@ const AddBetsTips = () => {
       } else {
         console.error('Failed to add Bet Tip');
       }
-      
+
     } catch (error) {
       console.error('Error adding Bet Tip:', error);
     }
@@ -207,6 +211,39 @@ const AddBetsTips = () => {
               id={`outcome_${index}`}
               value={event.outcome}
               onChange={(e) => handleEventChange(index, e)}
+              className="text-black p-1"
+            />
+          </div>
+          <div className="my-2 gap-x-2 flex">
+            <label htmlFor={`price_${index}`}>Price</label>
+            <input
+              type="text"
+              name="price"
+              id={`price_${index}`}
+              value={formData.price}
+              onChange={handleInputChange}
+              className="text-black p-1"
+            />
+          </div>
+          <div className="my-2 gap-x-2 flex">
+            <label htmlFor={`status_${index}`}>Status</label>
+            <input
+              type="text"
+              name="status"
+              id={`status_${index}`}
+              value={formData.status}
+              onChange={handleInputChange}
+              className="text-black p-1"
+            />
+          </div>
+          <div className="my-2 gap-x-2 flex">
+            <label htmlFor={`passcode_${index}`}>Passcode</label>
+            <input
+              type="text"
+              name="passcode"
+              id={`passcode_${index}`}
+              value={formData.passcode}
+              onChange={handleInputChange}
               className="text-black p-1"
             />
           </div>

@@ -93,7 +93,7 @@ const TipsCollapse = ({ opened }) => {
         <>
             {tipsOffers && tipsOffers.length > 0 ? tipsOffers.map((offer_, index) => {
                 return (
-                    <Box mx="auto" className="w-full z-0"  >
+                    <Box mx="auto" className="w-full z-0"  key={index}>
                         <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
                             <div className="z-0  flex justify-between text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1  cursor-pointer h-full">

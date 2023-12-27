@@ -5,12 +5,11 @@ import Register from "./Register";
 
 export const Layout = () => {
   return (
-    <div className="">
+    <div className="mx-auto max-w-screen-xl">
       <Navbar />
-      <div className="mx-auto max-w-screen-xl my-10">
+      <div className="my-4">
         {/* <Register /> */}
-        <Register/>
-
+        <Register />
       </div>
       <Footer />
     </div>

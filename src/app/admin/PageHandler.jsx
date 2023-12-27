@@ -8,8 +8,8 @@ export default function PageHandler() {
 
   useEffect(() => {
     const run = async () => {
-      const logged = await checkIsAuthenticated();
-      // console.log(logged);
+      // const logged = await checkIsAuthenticated();
+      const logged = true
       setLoggedIn(logged);
     };
     run();

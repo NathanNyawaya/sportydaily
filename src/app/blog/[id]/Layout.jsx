@@ -8,7 +8,7 @@ const Layout = () => {
     <div className="">
       <main className="relative">
         <div className="mx-auto max-w-screen-xl">
-          <div className="z-100 sticky top-0 z-50 ">
+          <div className="z-100 sticky top-0 z-40 ">
             {/* navigations */}
             <Navbar />
           </div>

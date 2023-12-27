@@ -4,9 +4,8 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import Link  from "next/link";
-// import ReactGA from "react-ga4";
+import ReactGA from "react-ga4";
 import jwt_decode from "jwt-decode";
-import { Helmet } from "react-helmet";
 
 export default function Login() {
   const email = useRef();
@@ -31,14 +30,14 @@ export default function Login() {
 
       if (res.data) {
         // Send a custom event google-Analytics
-        // ReactGA.event({
-        //   category: "login_category",
-        //   action: "login_action",
-        //   label: "login_lable", // optional
-        //   value: 101, // optional, must be a number
-        //   nonInteraction: false, // optional, true/false
-        //   transport: "xhr", // optional, beacon/xhr/image
-        // });
+        ReactGA.event({
+          category: "login_category",
+          action: "login_action",
+          label: "login_lable", // optional
+          value: 101, // optional, must be a number
+          nonInteraction: false, // optional, true/false
+          transport: "xhr", // optional, beacon/xhr/image
+        });
         // Redirect to the dashboard
         setLoggedIn(true);
         if (res.data.token) {
@@ -74,14 +73,8 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen">
-      <Helmet>
-        <title>SpottyDaily Login</title>
-        <meta
-          name="description"
-          content="Log in to your account."
-        />
-      </Helmet>
+    <div className="">
+     
       <div className="min-h-[70vh] flex flex-col justify-center">
         <div className="flex mx-auto flex-col gap-2 bg-white p-3 rounded">
           <p className="text-lg mb-3">Login</p>

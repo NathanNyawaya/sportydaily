@@ -5,6 +5,7 @@ import AllBlogs from "../blogs/AllBlogs";
 import AllLivestreams from "../livestreams/AllLivestreams";
 import StreamsLayout from "../livestreams/StreamsLayout";
 import AllBetTips from "../predictions/AllTips";
+import HomeDashboard from "../HomeDashboard";
 
 const MainSectionDisplay = ({ active }) => {
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,7 @@ const MainSectionDisplay = ({ active }) => {
 
     // open_edit
     switch (active) {
-      case "home":
+      case "add_blog":
         newComponentToRender = <BlogForm />;
         break;
       case "all_blogs":
@@ -29,6 +30,9 @@ const MainSectionDisplay = ({ active }) => {
         break;
       case "bets_tips":
         newComponentToRender = <AllBetTips />;
+        break;
+      case "home_dashboard":
+        newComponentToRender = <HomeDashboard />;
         break;
       default:
         newComponentToRender = <p>Default</p>;

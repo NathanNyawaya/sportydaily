@@ -89,7 +89,9 @@ const AllBetTips = () => {
   }
   return (
     <div>
-      <p onClick={() => setAddTip(prev => !prev)}>Add</p>
+      <div className="flex">
+      <p className="bg-gray-100 px-3 py-1" onClick={() => setAddTip(prev => !prev)}>Add</p>
+      </div>
       {
         addTip && <AddBetsTips />
       }

@@ -100,7 +100,7 @@ const AddBetsTips = () => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="border my-4 p-3 rounded">
       {/* Bet Offer Name */}
       <div className="my-2 gap-x-2 flex">
         <label htmlFor="betOfferName">Offer Name</label>
@@ -116,151 +116,172 @@ const AddBetsTips = () => {
 
       {/* Events */}
       {formData.events.map((event, index) => (
-        <div key={index}>
-          <div className="flex gap-1">
-            <select
-              name="club_home"
-              id={`club_home_${index}`}
-              value={event.club_home || ""}
-              onChange={(e) => handleEventChange(index, e)}
-              className={css_1}
-            >
-              <option value="">Select home team</option>
-              {clubs.map((team, teamIndex) => (
-                <option key={teamIndex} value={team.club_name}>
-                  {team.club_name}
-                </option>
-              ))}
-            </select>
+        <div key={index} className="flex flex-col">
+          <div className="flex flex-col border rounded p-3 mb-2">
+            <div className="flex gap-1">
+              <select
+                name="club_home"
+                id={`club_home_${index}`}
+                value={event.club_home || ""}
+                onChange={(e) => handleEventChange(index, e)}
+                className={css_1}
+              >
+                <option value="">Select home team</option>
+                {clubs.map((team, teamIndex) => (
+                  <option key={teamIndex} value={team.club_name}>
+                    {team.club_name}
+                  </option>
+                ))}
+              </select>
 
-            <select
-              name="club_away"
-              id={`club_away_${index}`}
-              value={event.club_away || ""}
-              onChange={(e) => handleEventChange(index, e)}
-              className={css_1}
-            >
-              <option value="">Select away team</option>
-              {clubs.map((team, teamIndex) => (
-                <option key={teamIndex} value={team.club_name}>
-                  {team.club_name}
-                </option>
-              ))}
-            </select>
+              <select
+                name="club_away"
+                id={`club_away_${index}`}
+                value={event.club_away || ""}
+                onChange={(e) => handleEventChange(index, e)}
+                className={css_1}
+              >
+                <option value="">Select away team</option>
+                {clubs.map((team, teamIndex) => (
+                  <option key={teamIndex} value={team.club_name}>
+                    {team.club_name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className=" grid grid-cols-6">
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Selection"
+                  name="selection"
+                  id={`selection_${index}`}
+                  value={event.selection}
+                  onChange={(e) => handleEventChange(index, e)}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Odds"
+                  name="odds"
+                  id={`odds_${index}`}
+                  value={event.odds}
+                  onChange={(e) => handleEventChange(index, e)}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Date"
+                  name="kickoff_date"
+                  id={`kickoff_date_${index}`}
+                  value={event.kickoff_date}
+                  onChange={(e) => handleEventChange(index, e)}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Time"
+                  name="kickoff_time"
+                  id={`kickoff_time_${index}`}
+                  value={event.kickoff_time}
+                  onChange={(e) => handleEventChange(index, e)}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Scores"
+                  name="scores"
+                  id={`scores_${index}`}
+                  value={event.scores}
+                  onChange={(e) => handleEventChange(index, e)}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Outcome"
+                  name="outcome"
+                  id={`outcome_${index}`}
+                  value={event.outcome}
+                  onChange={(e) => handleEventChange(index, e)}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Price"
+                  name="price"
+                  id={`price_${index}`}
+                  value={formData.price}
+                  onChange={handleInputChange}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Status"
+                  name="status"
+                  id={`status_${index}`}
+                  value={formData.status}
+                  onChange={handleInputChange}
+                  className="rounded px-2 text-black p-1 w-full"
+                />
+              </div>
+              <div className="m-2 gap-x-2 flex col-span-3">
+                <input
+                  type="text"
+                  placeholder="Passcode"
+                  name="passcode"
+                  id={`passcode_${index}`}
+                  value={formData.passcode}
+                  onChange={handleInputChange}
+                  className="rounded px-2 text-black p-1  w-full"
+                />
+              </div>
+            </div>
+            <div className="flex items-center gap-2 py-4 mt-4 border-t-2 border-gray-500 justify-end">
+              <div className="flex">
+                <button type="button" className="rounded bg-red-500 text-white p-2" onClick={() => handleRemoveEvent(index)}>
+                  Remove Event
+                </button>
+              </div>
+              <div className="flex">
+                <button type="button" className="rounded bg-green-500 text-white p-2" onClick={handleAddEvent}>
+                  Add Event
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`selection_${index}`}>Selection</label>
-            <input
-              type="text"
-              name="selection"
-              id={`selection_${index}`}
-              value={event.selection}
-              onChange={(e) => handleEventChange(index, e)}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`odds_${index}`}>Odds</label>
-            <input
-              type="text"
-              name="odds"
-              id={`odds_${index}`}
-              value={event.odds}
-              onChange={(e) => handleEventChange(index, e)}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`kickoff_date_${index}`}>Kickoff Date</label>
-            <input
-              type="text"
-              name="kickoff_date"
-              id={`kickoff_date_${index}`}
-              value={event.kickoff_date}
-              onChange={(e) => handleEventChange(index, e)}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`kickoff_time_${index}`}>Kickoff Time</label>
-            <input
-              type="text"
-              name="kickoff_time"
-              id={`kickoff_time_${index}`}
-              value={event.kickoff_time}
-              onChange={(e) => handleEventChange(index, e)}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`scores_${index}`}>Scores</label>
-            <input
-              type="text"
-              name="scores"
-              id={`scores_${index}`}
-              value={event.scores}
-              onChange={(e) => handleEventChange(index, e)}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`outcome_${index}`}>Outcome</label>
-            <input
-              type="text"
-              name="outcome"
-              id={`outcome_${index}`}
-              value={event.outcome}
-              onChange={(e) => handleEventChange(index, e)}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`price_${index}`}>Price</label>
-            <input
-              type="text"
-              name="price"
-              id={`price_${index}`}
-              value={formData.price}
-              onChange={handleInputChange}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`status_${index}`}>Status</label>
-            <input
-              type="text"
-              name="status"
-              id={`status_${index}`}
-              value={formData.status}
-              onChange={handleInputChange}
-              className="text-black p-1"
-            />
-          </div>
-          <div className="my-2 gap-x-2 flex">
-            <label htmlFor={`passcode_${index}`}>Passcode</label>
-            <input
-              type="text"
-              name="passcode"
-              id={`passcode_${index}`}
-              value={formData.passcode}
-              onChange={handleInputChange}
-              className="text-black p-1"
-            />
-          </div>
-          <button type="button" onClick={() => handleRemoveEvent(index)}>
-            Remove Event
-          </button>
         </div>
       ))}
 
-      <button type="button" onClick={handleAddEvent}>
-        Add Event
-      </button>
+      <div className="flex flex-col">
+        <div className="flex hidden">
+          <button type="button" className="bg-green-500 text-white p-2" onClick={handleAddEvent}>
+            Add Event
+          </button>
+        </div>
+        <hr className="my-4" />
+        <div className="flex">
+          {/* Submit Button */}
+          <button type="submit" className="bg-blue-500 text-white p-2">
+            Submit
+          </button>
+        </div>
 
-      {/* Submit Button */}
-      <button type="submit" className="bg-blue-500 text-white p-2">
-        Submit
-      </button>
+
+      </div>
     </form>
   );
 };

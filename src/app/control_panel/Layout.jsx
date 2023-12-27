@@ -1,20 +1,16 @@
 import React from "react";
-
 import Navbar from "@/app/components/navbars/Navbar";
 import Footer from "@/app/components/Footer";
-import Home from "./components/Home";
+import ControlPanel from "./ControlPanel";
 
 const Layout = () => {
   return (
-    <div className="relative">
+    <div className="">
       <div className="mx-auto max-w-screen-xl">
-        <div className="z-40">
-          <Navbar />
-        </div>
+        <Navbar />
       </div>
-
-      <div className="relative my-2 ">
-        <Home />
+      <div className="mx-auto max-w-screen-xl my-4 bg-green-500/[0.2] p-2">
+        <ControlPanel />
       </div>
       <div className="mx-auto max-w-screen-xl">
         <Footer />

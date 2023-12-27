@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import Link  from "next/link";
 import axios from "axios";
 import ReactGA from "react-ga4";
-// import jwt_decode from "jwt-decode";
-import { Helmet } from "react-helmet";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
@@ -82,14 +80,7 @@ export const Register = () => {
   }, []);
 
   return (
-    <div className=" h-screen">
-      <Helmet>
-        <title>Mynyumba Rental Properties - Register</title>
-        <meta
-          name="description"
-          content="Create a new account with Mynyumba Rental Properties."
-        />
-      </Helmet>
+    <div className="">
       {/* <AuthNavbar /> */}
       <div className="min-h-[70vh] flex flex-col justify-center">
         <div className="p-7 mx-auto bg-white rounded shadow-xl">

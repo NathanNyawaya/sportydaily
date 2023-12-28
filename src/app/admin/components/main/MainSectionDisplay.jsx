@@ -4,8 +4,9 @@ import BlogForm from "../BlogForm";
 import AllBlogs from "../blogs/AllBlogs";
 import AllLivestreams from "../livestreams/AllLivestreams";
 import StreamsLayout from "../livestreams/StreamsLayout";
-import AllBetTips from "../predictions/AllTips";
+
 import HomeDashboard from "../HomeDashboard";
+import AllBetTips from "../../predictions/AllTips";
 
 const MainSectionDisplay = ({ active }) => {
   const [loading, setLoading] = useState(true);

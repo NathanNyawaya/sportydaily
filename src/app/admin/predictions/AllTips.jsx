@@ -12,8 +12,22 @@ const AllBetTips = () => {
   const [betTips, setBetTips] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const [empty, setEmpty] = useState(false)
   const [disable, setDisable] = useState(false);
   const [indexing, setIndexing] = useState(0);
+
+
+  const deleteTipOffer = async (tip_offer_id) => {
+    try {
+      const res = await axios.delete(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/delete/${tip_offer_id}`);
+      if (res) {
+        return res;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   useEffect(() => {
     setLoading(true);
@@ -24,6 +38,7 @@ const AllBetTips = () => {
         console.log(betting_tips_offers.data);
         if (betting_tips_offers.data === "Empty tips") {
           setBetTips([]);
+          setEmpty(true)
         } else {
           setBetTips(betting_tips_offers.data);
         }
@@ -47,16 +62,18 @@ const AllBetTips = () => {
   const deleteBlogs = async (id) => {
     try {
       setDisable(true);
-      const res = await deleteBlog(id);
+      const res = await deleteTipOffer(id);
       if (res) {
         if (res.status === 200) {
           alert(res.data.message);
           setDisable(false);
 
           // refresh data
-          const blogs = await getAllTips();
-          if (blogs) {
-            setBetTips(blogs.data);
+          const offers_ = await getAllTips();
+          if (offers_) {
+            setBetTips(offers_.data);
+          } else {
+            setEmpty(true)
           }
         } else if (res.status === 404) {
           setDisable(false);
@@ -69,19 +86,17 @@ const AllBetTips = () => {
     }
   };
 
+
   const handleDeleteBlog = (blog_obj_id, i) => {
     setIndexing(i);
-    // console.log(blog_obj_id);
     deleteBlogs(blog_obj_id);
   };
+
   const handleEditLink = (blog_obj_id) => {
-    localStorage.setItem("bcmt_id", JSON.stringify(blog_obj_id));
-    window.location.replace("/admin/edit");
+    window.location.replace(`/admin/predictions/${blog_obj_id}`);
   };
 
   const [addTip, setAddTip] = useState(false)
-
-
 
   function formatIsoTimestamp(isoTimestamp) {
     const date = new Date(isoTimestamp);
@@ -90,7 +105,7 @@ const AllBetTips = () => {
   return (
     <div>
       <div className="flex">
-      <p className="bg-gray-100 px-3 py-1" onClick={() => setAddTip(prev => !prev)}>Add</p>
+        <p className="bg-gray-100 px-3 py-1" onClick={() => setAddTip(prev => !prev)}>Add</p>
       </div>
       {
         addTip && <AddBetsTips />
@@ -100,7 +115,7 @@ const AllBetTips = () => {
         !addTip && <div className="relative overflow-x-auto shadow-md sm:rounded-lg sm:rounded-b-none bg-white ">
           <table className="w-full text-sm text-left text-gray-500 text-gray-400">
             <caption className="p-1 md:p-5 text-lg font-semibold text-left text-gray-900 bg-white bg-gray-100">
-              Blogs
+              Tips
             </caption>
             <thead className="text-xs text-gray-800 uppercase bg-gray-200 bg-gray-100 text-gray-400">
               <tr>
@@ -148,7 +163,7 @@ const AllBetTips = () => {
                       <div className="flex items-center text-white gap-2">
                         <p
                           className="bg-blue-500 rounded px-2 py-1 cursor-pointer"
-                        // onClick={() => handleEditLink(blog_doc._id)}
+                          onClick={() => handleEditLink(blog_doc._id)}
                         >
                           Edit
                         </p>
@@ -157,7 +172,7 @@ const AllBetTips = () => {
                             ? "bg-green-500"
                             : "bg-red-500"
                             } rounded px-2 py-1 cursor-pointer`}
-                        // onClick={() => handleDeleteBlog(blog_doc._id, index)}
+                          onClick={() => handleDeleteBlog(blog_doc._id, index)}
                         >
                           Delete
                         </p>
@@ -167,7 +182,7 @@ const AllBetTips = () => {
                 ))
               ) : (
                 <tr>
-                  <td className="md:px-6 px-1 py-4">Loading...</td>
+                  <td className="md:px-6 px-1 py-4">{empty ? "Empty" : "Loading..."}</td>
                 </tr>
               )}
             </tbody>

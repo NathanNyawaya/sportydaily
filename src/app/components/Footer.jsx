@@ -44,14 +44,19 @@ const Footer = () => {
                     Blogs
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/livestreams" className="hover:underline">
                     Livestreams
+                  </a>
+                </li> */}
+                <li>
+                  <a href="/predictions" className="hover:underline">
+                    Betting Tips
                   </a>
                 </li>
                 <li>
                   <a href="/highlights" className="hover:underline">
-                    {/* Highlights */}
+                    Highlights
                   </a>
                 </li>
               </ul>
@@ -68,6 +73,15 @@ const Footer = () => {
                     className="hover:underline"
                   >
                     Twitter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://api.whatsapp.com/send?phone=0710379709"
+                    className="hover:underline"
+                  >
+                    Chat With Us
                   </a>
                 </li>
               </ul>

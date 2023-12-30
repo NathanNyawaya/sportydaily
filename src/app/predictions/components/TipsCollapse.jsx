@@ -30,8 +30,8 @@ const TipsCollapse = ({ opened }) => {
     const [inputCode, setInputCode] = useState('');
     const [isCodeCorrect, setIsCodeCorrect] = useState(true);
     const [emptyTips, setEmptyTips] = useState("");
-    const [tipsOffers, setTipsOffers] = useState(freeBets)
-    const [totalOdds, setTotalOdds] = useState("--")
+    const [tipsOffers, setTipsOffers] = useState([])
+    const [totalOdds, setTotalOdds] = useState()
 
 
     useEffect(() => {
@@ -40,9 +40,14 @@ const TipsCollapse = ({ opened }) => {
         if (pushForward && pushForward) {
             setUserChecked(true)
         }
-        const totalOdds_ = getTotals(freeBets);
-        setTotalOdds(totalOdds_)
+
     }, [])
+
+    useEffect(() => {
+        const totalOdds_ = getTotals(tipsOffers);
+        // console.log(totalOdds_)
+        setTotalOdds(totalOdds_)
+    }, [tipsOffers])
 
 
 
@@ -69,6 +74,7 @@ const TipsCollapse = ({ opened }) => {
                     setEmptyTips("No tips available at the moment")
                 } else {
                     setTipsOffers(res.data)
+                    console.log(res.data)
                 }
             }
         } catch (error) {
@@ -78,17 +84,15 @@ const TipsCollapse = ({ opened }) => {
 
     const getTotals = (event_) => {
         if (event_) {
-            let totalOdds = 1;
+            console.log(event_)
+            let totalOdd = 1;
 
             event_.forEach(offer__ => {
                 offer__.events.forEach(element => {
-                    totalOdds *= element.odds;
+                    totalOdd *= (element.odds);
                 });
             })
-
-            return totalOdds.toFixed(2);
-
-
+            return totalOdd.toFixed(2);
         } else {
             alert("Error: #E1CRT");
         }

@@ -24,7 +24,7 @@ const Home = () => {
         <>
           <div className="md:hidden h-screen w-[90%] bg-gray-100 absolute top-0 z-50">
             <div className="col-span-1 flex md:col-span-10 justify-end">
-              <p className="font-bold m-3 bg-blue-900 px-3 py-1 rounded cursor-pointer" onClick={() => setOpenSideBar(prev => !prev)}>Close</p>
+              <p className="font-bold m-3 bg-blue-900 text-white px-3 py-1 rounded cursor-pointer" onClick={() => setOpenSideBar(prev => !prev)}>Close</p>
             </div>
 
             <SideBar setSelectedPage={setSelectedPage} activeView={selectedPage} setOpenSideBar={setOpenSideBar} />

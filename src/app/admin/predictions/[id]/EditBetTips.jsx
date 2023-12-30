@@ -91,7 +91,7 @@ const EditBetTips = () => {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/all_tips`);
 
       if (response.status === 200) {
-        console.log('Bet Tip added successfully');
+        // console.log('Bet Tip added successfully');
         console.log(response)
       } else {
         console.error('Failed to add Bet Tip');
@@ -110,10 +110,11 @@ const EditBetTips = () => {
       const response = await axios.put(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/update/${id}`, formData);
 
       if (response.status === 200) {
-        console.log('Bet Tip updated successfully');
+        alert('Bet Tip updated successfully')
         await getAllTips()
       } else {
-        console.error('Failed to add Bet Tip');
+        alert('Failed to patch Bet Tip')
+        console.error('Failed to updated Bet Tip');
       }
 
     } catch (error) {
@@ -124,17 +125,58 @@ const EditBetTips = () => {
 
   return (
     <form onSubmit={handleSubmit} className="border my-4 p-3 rounded">
-      {/* Bet Offer Name */}
-      <div className="my-2 gap-x-2 flex" >
-        <label htmlFor="betOfferName" className="text-[0.8rem] text-black">Offer Name</label>
-        <input
-          type="text"
-          name="betOfferName"
-          id="betOfferName"
-          value={formData.betOfferName}
-          onChange={handleInputChange}
-          className="text-black p-1"
-        />
+      <div className="border my-2 rounded p-2">
+        {/* Bet Offer Name */}
+        <div className="m-2 gap-x-2 flex items-center" >
+          <label htmlFor="betOfferName" className="text-[0.8rem] text-black">Offer Name</label>
+          <input
+            type="text"
+            name="betOfferName"
+            id="betOfferName"
+            value={formData.betOfferName}
+            onChange={handleInputChange}
+            className="text-black p-1"
+          />
+        </div>
+
+        <div className="grid grid-cols-6">
+          <div className="m-2 gap-x-2 flex col-span-3 flex-col">
+            <label className="text-[0.7rem] text-black">Price</label>
+            <input
+              type="text"
+              placeholder="Price"
+              name="price"
+              id={`price_`}
+              value={formData.price}
+              onChange={handleInputChange}
+              className="rounded px-2 text-black p-1 w-full"
+            />
+          </div>
+          <div className="m-2 gap-x-2 flex col-span-3 flex-col">
+            <label className="text-[0.7rem] text-black">Status</label>
+            <input
+              type="text"
+              placeholder="Status"
+              name="status"
+              id={`status_`}
+              value={formData.status}
+              onChange={handleInputChange}
+              className="rounded px-2 text-black p-1 w-full"
+            />
+          </div>
+          <div className="m-2 gap-x-2 flex col-span-3 flex-col">
+            <label className="text-[0.7rem] text-black">Passcode</label>
+            <input
+              type="text"
+              placeholder="Passcode"
+              name="passcode"
+              id={`passcode_`}
+              value={formData.passcode}
+              onChange={handleInputChange}
+              className="rounded px-2 text-black p-1  w-full"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Events */}
@@ -147,31 +189,31 @@ const EditBetTips = () => {
                 <div className=" grid grid-cols-6" key={index}>
                   {/* team */}
                   <div className="m-2 gap-x-2 flex col-span-3 flex-col">
-                      <label className="text-[0.7rem] text-black">Home</label>
-                      <input
-                        type="text"
-                        placeholder="Home"
-                        name="home"
-                        id={`home`}
-                        value={event_.club_home}
-                        onChange={(e) => handleEventChange(index, e)}
-                        className="rounded px-2 text-black p-1 w-full"
-                      />
-                    </div>
+                    <label className="text-[0.7rem] text-black">Home</label>
+                    <input
+                      type="text"
+                      placeholder="Home"
+                      name="home"
+                      id={`home`}
+                      value={event_.club_home}
+                      onChange={(e) => handleEventChange(index, e)}
+                      className="rounded px-2 text-black p-1 w-full"
+                    />
+                  </div>
 
-                    <div className="m-2 gap-x-2 flex col-span-3 flex-col">
-                      <label className="text-[0.7rem] text-black">Away</label>
-                      <input
-                        type="text"
-                        placeholder="Away"
-                        name="away"
-                        id={`away`}
-                        value={event_.club_away}
-                        onChange={(e) => handleEventChange(index, e)}
-                        className="rounded px-2 text-black p-1 w-full"
-                      />
-                    </div>
-                    {/* other info */}
+                  <div className="m-2 gap-x-2 flex col-span-3 flex-col">
+                    <label className="text-[0.7rem] text-black">Away</label>
+                    <input
+                      type="text"
+                      placeholder="Away"
+                      name="away"
+                      id={`away`}
+                      value={event_.club_away}
+                      onChange={(e) => handleEventChange(index, e)}
+                      className="rounded px-2 text-black p-1 w-full"
+                    />
+                  </div>
+                  {/* other info */}
                   <div className="m-2 gap-x-2 flex col-span-3 flex-col">
                     <label className="text-[0.7rem] text-black">Selection</label>
                     <input
@@ -244,47 +286,12 @@ const EditBetTips = () => {
                       className="rounded px-2 text-black p-1 w-full"
                     />
                   </div>
-                  <div className="m-2 gap-x-2 flex col-span-3 flex-col">
-                    <label className="text-[0.7rem] text-black">Price</label>
-                    <input
-                      type="text"
-                      placeholder="Price"
-                      name="price"
-                      id={`price_`}
-                      value={formData.price}
-                      onChange={handleInputChange}
-                      className="rounded px-2 text-black p-1 w-full"
-                    />
-                  </div>
-                  <div className="m-2 gap-x-2 flex col-span-3 flex-col">
-                    <label className="text-[0.7rem] text-black">Status</label>
-                    <input
-                      type="text"
-                      placeholder="Status"
-                      name="status"
-                      id={`status_`}
-                      value={formData.status}
-                      onChange={handleInputChange}
-                      className="rounded px-2 text-black p-1 w-full"
-                    />
-                  </div>
-                  <div className="m-2 gap-x-2 flex col-span-3 flex-col">
-                    <label className="text-[0.7rem] text-black">Passcode</label>
-                    <input
-                      type="text"
-                      placeholder="Passcode"
-                      name="passcode"
-                      id={`passcode_`}
-                      value={formData.passcode}
-                      onChange={handleInputChange}
-                      className="rounded px-2 text-black p-1  w-full"
-                    />
-                  </div>
+
                 </div>
               )))
             }
-            <div className="flex items-center gap-2 py-4 mt-4 border-t-2 border-gray-500 justify-end">
-              <div className="flex">
+            {/* <div className="flex items-center gap-2 py-4 mt-4 border-t-2 border-gray-500 justify-end">
+              <div className="flex" >
                 <button type="button" className="rounded bg-red-500 text-white p-2" onClick={() => handleRemoveEvent(index)}>
                   Remove Event
                 </button>
@@ -294,7 +301,7 @@ const EditBetTips = () => {
                   Add Event
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       }

@@ -59,7 +59,7 @@ const AllBetTips = () => {
     }
   };
 
-  const deleteBlogs = async (id) => {
+  const deleteTips = async (id) => {
     try {
       setDisable(true);
       const res = await deleteTipOffer(id);
@@ -71,7 +71,12 @@ const AllBetTips = () => {
           // refresh data
           const offers_ = await getAllTips();
           if (offers_) {
-            setBetTips(offers_.data);
+            if (offers_.data != "Empty tips") {
+              setBetTips(offers_.data)
+            } else {
+              setBetTips([]);
+              setEmpty(true)
+            }
           } else {
             setEmpty(true)
           }
@@ -87,9 +92,9 @@ const AllBetTips = () => {
   };
 
 
-  const handleDeleteBlog = (blog_obj_id, i) => {
+  const handleDeleteTipOffer = (blog_obj_id, i) => {
     setIndexing(i);
-    deleteBlogs(blog_obj_id);
+    deleteTips(blog_obj_id);
   };
 
   const handleEditLink = (blog_obj_id) => {
@@ -172,7 +177,7 @@ const AllBetTips = () => {
                             ? "bg-green-500"
                             : "bg-red-500"
                             } rounded px-2 py-1 cursor-pointer`}
-                          onClick={() => handleDeleteBlog(blog_doc._id, index)}
+                          onClick={() => handleDeleteTipOffer(blog_doc._id, index)}
                         >
                           Delete
                         </p>

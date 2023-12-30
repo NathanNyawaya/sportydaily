@@ -30,21 +30,29 @@ const TipsCollapse = ({ opened }) => {
     const [inputCode, setInputCode] = useState('');
     const [isCodeCorrect, setIsCodeCorrect] = useState(true);
     const [emptyTips, setEmptyTips] = useState("");
-
-    const correctCode = '#231223W1'; // Replace with your correct code
     const [tipsOffers, setTipsOffers] = useState(freeBets)
+    const [totalOdds, setTotalOdds] = useState("--")
+    const [passCode, setPassCode] = useState(false)
 
     useEffect(() => {
         fetcher()
+        const pushForward = localStorage.getItem("ps")
+        if (pushForward && pushForward) {
+            setPassCode(true)
+            setUserChecked(true)
+        }
+        const totalOdds_ = getTotals(freeBets);
+        setTotalOdds(totalOdds_)
     }, [])
 
 
 
-    const handleCodeSubmit = () => {
-        if (inputCode === correctCode) {
+    const handleCodeSubmit = (correct_passcode) => {
+        if (inputCode === correct_passcode) {
             setIsCodeCorrect(true);
             setUserChecked(true)
             setOpenedd(true);
+            localStorage.setItem("ps", true)
         } else {
             setUserChecked(false)
             setIsCodeCorrect(false);
@@ -87,13 +95,14 @@ const TipsCollapse = ({ opened }) => {
         }
     }
 
-    const totalOdds = getTotals(freeBets);
+
 
     return (
         <>
             {tipsOffers && tipsOffers.length > 0 ? tipsOffers.map((offer_, index) => {
+
                 return (
-                    <Box mx="auto" className="w-full z-0"  key={index}>
+                    <Box mx="auto" className="w-full z-0" key={index}>
                         <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
                             <div className="z-0 relative  flex justify-between text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1  cursor-pointer h-full">
@@ -112,8 +121,8 @@ const TipsCollapse = ({ opened }) => {
                                             {offer_.betOfferName}
                                         </p>
                                     </div>
-                                    <div className="flex my-4">
-                                        <p className='text-[0.9rem] tracking-wide uppercase'>Price: {offer_.price}</p>
+                                    <div className="flex my-4 hidden">
+                                        <p className='text-[0.9rem] tracking-wide uppercase'>Price: £{offer_.price}</p>
                                     </div>
 
                                     <div className='flex my-6 flex-col'>
@@ -128,7 +137,7 @@ const TipsCollapse = ({ opened }) => {
 
                                     <div className='absolute bottom-0 right-4 left-0 p-2 flex justify-end items-center w-full z-0'>
                                         <h1 className='tracking-widest text-gray-100/[0.9] text-[0.7rem] shadow-lg'>
-                                            89% Winrate
+                                            70% Winrate
                                         </h1>
                                     </div>
                                 </div>
@@ -229,7 +238,7 @@ const TipsCollapse = ({ opened }) => {
                                 {!userChecked && (
                                     <div className="absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center bg-gray-900/[1]">
                                         <div className='flex flex-col'>
-                                            <lable htmlFor="pass_code" className="text-[0.8rem]"> Pass Code</lable>
+                                            <label htmlFor="pass_code" className="text-[0.8rem]"> Pass Code</label>
 
                                             <input
                                                 id='pass_code'
@@ -240,7 +249,7 @@ const TipsCollapse = ({ opened }) => {
                                                 className="mt-1 rounded text-black "
                                             />
                                             <div className='flex'>
-                                                <button type='button' onClick={handleCodeSubmit} className='bg-green-600 py-1 px-3  my-3 py-1 rounded'>Pass</button>
+                                                <button type='button' onClick={() => handleCodeSubmit(offer_.passcode)} className='bg-green-600 py-1 px-3  my-3 py-1 rounded'>Pass</button>
                                             </div>
                                             {!isCodeCorrect && <p className="text-red-500 text-[0.7rem]">Incorrect code. Please try again.</p>}
                                         </div>

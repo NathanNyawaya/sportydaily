@@ -87,10 +87,12 @@ const AddBetsTips = () => {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/add_tip`, formData);
 
       if (response.status === 200) {
-        console.log('Bet Tip added successfully');
+        alert("Bet Tip added successfully")
+        // console.log('Bet Tip added successfully');
         await getAllTips()
       } else {
         console.error('Failed to add Bet Tip');
+        alert('Failed to add Bet Tip')
       }
 
     } catch (error) {
@@ -102,16 +104,53 @@ const AddBetsTips = () => {
   return (
     <form onSubmit={handleSubmit} className="border my-4 p-3 rounded">
       {/* Bet Offer Name */}
-      <div className="my-2 gap-x-2 flex">
-        <label htmlFor="betOfferName">Offer Name</label>
-        <input
-          type="text"
-          name="betOfferName"
-          id="betOfferName"
-          value={formData.betOfferName}
-          onChange={handleInputChange}
-          className="text-black p-1"
-        />
+      <div className="border my-2 rounded p-2">
+        <div className="my-2 gap-x-2 flex">
+          <label htmlFor="betOfferName">Offer Name</label>
+          <input
+            type="text"
+            name="betOfferName"
+            id="betOfferName"
+            value={formData.betOfferName}
+            onChange={handleInputChange}
+            className="text-black p-1"
+          />
+        </div>
+        <div className="grid grid-cols-6">
+          <div className="m-2 gap-x-2 flex col-span-3">
+            <input
+              type="text"
+              placeholder="Price"
+              name="price"
+              id={`price_`}
+              value={formData.price}
+              onChange={handleInputChange}
+              className="rounded px-2 text-black p-1 w-full"
+            />
+          </div>
+          <div className="m-2 gap-x-2 flex col-span-3">
+            <input
+              type="text"
+              placeholder="Status"
+              name="status"
+              id={`status_`}
+              value={formData.status}
+              onChange={handleInputChange}
+              className="rounded px-2 text-black p-1 w-full"
+            />
+          </div>
+          <div className="m-2 gap-x-2 flex col-span-3">
+            <input
+              type="text"
+              placeholder="Passcode"
+              name="passcode"
+              id={`passcode_`}
+              value={formData.passcode}
+              onChange={handleInputChange}
+              className="rounded px-2 text-black p-1  w-full"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Events */}
@@ -214,39 +253,6 @@ const AddBetsTips = () => {
                   value={event.outcome}
                   onChange={(e) => handleEventChange(index, e)}
                   className="rounded px-2 text-black p-1 w-full"
-                />
-              </div>
-              <div className="m-2 gap-x-2 flex col-span-3">
-                <input
-                  type="text"
-                  placeholder="Price"
-                  name="price"
-                  id={`price_${index}`}
-                  value={formData.price}
-                  onChange={handleInputChange}
-                  className="rounded px-2 text-black p-1 w-full"
-                />
-              </div>
-              <div className="m-2 gap-x-2 flex col-span-3">
-                <input
-                  type="text"
-                  placeholder="Status"
-                  name="status"
-                  id={`status_${index}`}
-                  value={formData.status}
-                  onChange={handleInputChange}
-                  className="rounded px-2 text-black p-1 w-full"
-                />
-              </div>
-              <div className="m-2 gap-x-2 flex col-span-3">
-                <input
-                  type="text"
-                  placeholder="Passcode"
-                  name="passcode"
-                  id={`passcode_${index}`}
-                  value={formData.passcode}
-                  onChange={handleInputChange}
-                  className="rounded px-2 text-black p-1  w-full"
                 />
               </div>
             </div>

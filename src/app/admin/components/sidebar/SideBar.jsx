@@ -2,8 +2,9 @@
 import React from "react";
 
 
-const SideBar = ({ setSelectedPage, activeView }) => {
+const SideBar = ({ setSelectedPage, activeView, setOpenSideBar }) => {
   const handledClick = (current_page_identifier) => {
+    setOpenSideBar(prev => !prev)
     setSelectedPage(current_page_identifier);
   };
   const checkActiveView = (id) => {
@@ -13,19 +14,20 @@ const SideBar = ({ setSelectedPage, activeView }) => {
       return false;
     }
   };
+
   return (
     <div className="text-black p-2 md:sticky top-0">
       <div className="text-center">Control Panel</div>
       <div className="">
 
-      <p
+        <p
           className={`${checkActiveView("home") && "bg-gray-200"
             } cursor-pointer my-2 text-sm`}
           onClick={() => handledClick("home_dashboard")}
         >
           Home
         </p>
-        
+
         <p
           className={`${checkActiveView("add_blog") && "bg-gray-200"
             } cursor-pointer my-2 text-sm`}
@@ -33,7 +35,7 @@ const SideBar = ({ setSelectedPage, activeView }) => {
         >
           Add Blog
         </p>
-        
+
 
         <p
           className={`${checkActiveView("all_blogs") && "bg-gray-200"

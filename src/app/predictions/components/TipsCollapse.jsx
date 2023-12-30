@@ -32,13 +32,12 @@ const TipsCollapse = ({ opened }) => {
     const [emptyTips, setEmptyTips] = useState("");
     const [tipsOffers, setTipsOffers] = useState(freeBets)
     const [totalOdds, setTotalOdds] = useState("--")
-    const [passCode, setPassCode] = useState(false)
+
 
     useEffect(() => {
         fetcher()
         const pushForward = localStorage.getItem("ps")
         if (pushForward && pushForward) {
-            setPassCode(true)
             setUserChecked(true)
         }
         const totalOdds_ = getTotals(freeBets);

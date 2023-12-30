@@ -6,13 +6,10 @@ import { MantineProvider } from "@mantine/core";
 
 
 export default function page() {
-  
+
   return (
     <MantineProvider>
-     
-          <Predictions />
-      
-
+      <Predictions />
     </MantineProvider>
   )
 }

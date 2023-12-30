@@ -14,10 +14,11 @@ const Layout = () => {
                     <div className="col-span-10 flex flex-col px-2 gap-3">
                         <Link
                             href="/admin"
+                            className="text-white"
                         >
                             {"<< "}Back
                         </Link>
-                        <p className="text-xl font-bold my-5">Edit Offer</p>
+                        <p className="text-xl text-white font-bold my-5">Edit Offer</p>
                     </div>
                     {/* admin sidebar */}
 

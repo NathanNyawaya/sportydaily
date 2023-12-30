@@ -61,6 +61,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+            
             <div className="col-span-1">
               <h2 className="mb-6 text-sm font-semibold text-gray-50 uppercase dark:text-white">
                 Follow us
@@ -78,7 +79,7 @@ const Footer = () => {
                 <li>
                   <a
                     target="_blank"
-                    href="https://api.whatsapp.com/send?phone=0710379709"
+                    href="https://wa.me/0710379709"
                     className="hover:underline"
                   >
                     Chat With Us

@@ -79,7 +79,7 @@ const Footer = () => {
                 <li>
                   <a
                     target="_blank"
-                    href="https://wa.me/0710379709"
+                    href="https://wa.me/254710379709"
                     className="hover:underline"
                   >
                     Chat With Us

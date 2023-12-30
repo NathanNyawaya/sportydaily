@@ -13,7 +13,7 @@ const Layout = () => {
         </div>
       </div>
 
-      <div className="relative my-2 ">
+      <div className="my-2 ">
         <Home />
       </div>
       <div className="mx-auto max-w-screen-xl">

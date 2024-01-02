@@ -16,7 +16,7 @@ const Home = () => {
         <p className="text-sm font-bold m-3 bg-blue-900 px-3 text-white py-1 rounded cursor-pointer" onClick={() => setOpenSideBar(prev => !prev)}>Menu</p>
       </div>
       <div className="hidden md:block col-span-1 md:col-span-2 min-h-[40vh] bg-white">
-        <SideBar setSelectedPage={setSelectedPage} activeView={selectedPage} />
+        <SideBar setSelectedPage={setSelectedPage} activeView={selectedPage} setOpenSideBar={setOpenSideBar} />
       </div>
 
       {

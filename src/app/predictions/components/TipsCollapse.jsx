@@ -114,7 +114,7 @@ const TipsCollapse = ({ opened }) => {
                                         <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm'>100% OFF</p>
                                         <div>
                                             <p className='border-l-[2px] border-gray-100/[1] shadow text-gray-100/[0.9] tracking-widest px-2 uppercase font-bold text-sm'>
-                                                Football
+                                                PL Football
                                             </p>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@ const TipsCollapse = ({ opened }) => {
 
                                     <div className='flex my-6 flex-col'>
                                         <p className='text-[0.6rem] tracking-wide uppercase'>
-                                            New customers only. Place your first bet on any sportsbook market; T&Cs apply.
+                                            New customers only. Place your first bet on <a target='blank_' href='https://www.bet365.com/#/ME/X2200' className='text-gray-100 rounded p-1 underline'>Bet365</a>; T&Cs apply.
                                         </p>
 
                                         <p className='text-[0.6rem] tracking-wide my-2'>
@@ -140,7 +140,7 @@ const TipsCollapse = ({ opened }) => {
 
                                     <div className='absolute bottom-0 right-4 left-0 p-2 flex justify-end items-center w-full z-0'>
                                         <h1 className='tracking-widest text-gray-100/[0.9] text-[0.7rem] shadow-lg'>
-                                            70% Winrate
+                                            95% Winrate
                                         </h1>
                                     </div>
                                 </div>

@@ -10,6 +10,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 import ShareIcon from '@mui/icons-material/Share';
+import SlidingAds from "./ads/SlidingAds";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
@@ -73,50 +74,112 @@ const Blogs = () => {
       ) : (
         posts &&
         posts.map((post, index) => {
-          // console.log(post._id)
-          return (
-            <div
-              key={index}
-              className="flex max_lg:flex-col justify-center text-white group mb-2 rounded bg-gray-800 relative cursor-pointer max_sm:m-2"
+          if (index % 3 === 0 && index != 0) {
+            {
+              // console.log(post._id)
+              return (
+                <div key={index}>
+                  <div
 
-            >
-              <div className="lg:w-[30%] "
-                onClick={() => {
-                  setLoading(true);
-                  location.replace(`/blog/${post._id}`);
-                }}>
-                <img
-                  src={post.imageFiles[0].url}
-                  alt="visuals"
-                  className="w-full h-full rounded-t"
-                />
-              </div>
-              <div className="lg:w-[70%] flex flex-col w-full p-2">
-                <h2 className={`mb-3 text-xl font-semibold`}>
-                  {post.title}
-                  <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                    &gt;
-                  </span>
-                </h2>
-                <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
-                  {post.summaryText}
-                </p>
-                <div className="flex items-center justify-between mt-4">
-                  <button
-                    className="text-blue-500 cursor-pointer"
-                    onClick={() => handleShare(post._id)}
+                    className="flex max_lg:flex-col justify-center text-white group mb-2 rounded bg-gray-800 relative cursor-pointer max_sm:m-2"
+
                   >
-                    <ShareIcon size="smaller" className="  w-[30px] text-gray-300" />
-                  </button>
-                  <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                    <p className="italic text-gray-400">{post.author}</p>
-                    <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
+                    <div className="lg:w-[30%] "
+                      onClick={() => {
+                        setLoading(true);
+                        location.replace(`/blog/${post._id}`);
+                      }}>
+                      <img
+                        src={post.imageFiles[0].url}
+                        alt="visuals"
+                        className="w-full h-full rounded-t"
+                      />
+                    </div>
+                    <div className="lg:w-[70%] flex flex-col w-full p-2">
+                      <h2 className={`mb-3 text-xl font-semibold`}>
+                        {post.title}
+                        <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                          &gt;
+                        </span>
+                      </h2>
+                      <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
+                        {post.summaryText}
+                      </p>
+                      <div className="flex items-center justify-between mt-4">
+                        <button
+                          className="text-blue-500 cursor-pointer"
+                          onClick={() => handleShare(post._id)}
+                        >
+                          <ShareIcon size="smaller" className="  w-[30px] text-gray-300" />
+                        </button>
+                        <div className="flex justify-end  gap-x-3 text-[0.8rem]">
+                          <p className="italic text-gray-400">{post.author}</p>
+                          <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* break the flow with some ads, or anyother CTA */}
+                  <div className="my-20 relative bg-black">
+                    <div className="flex justify-center items-center">
+                      <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
+                    </div>
+                    <div className="absolute top-0 bottom-0 right-0 left-0">
+                      <SlidingAds />
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+          } else {
+            return (
+
+              <div
+                key={index}
+                className="flex max_lg:flex-col justify-center text-white group mb-2 rounded bg-gray-800 relative cursor-pointer max_sm:m-2"
+
+              >
+                <div className="lg:w-[30%] "
+                  onClick={() => {
+                    setLoading(true);
+                    location.replace(`/blog/${post._id}`);
+                  }}>
+                  <img
+                    src={post.imageFiles[0].url}
+                    alt="visuals"
+                    className="w-full h-full rounded-t"
+                  />
+                </div>
+                <div className="lg:w-[70%] flex flex-col w-full p-2">
+                  <h2 className={`mb-3 text-xl font-semibold`}>
+                    {post.title}
+                    <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                      &gt;
+                    </span>
+                  </h2>
+                  <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
+                    {post.summaryText}
+                  </p>
+                  <div className="flex items-center justify-between mt-4">
+                    <button
+                      className="text-blue-500 cursor-pointer"
+                      onClick={() => handleShare(post._id)}
+                    >
+                      <ShareIcon size="smaller" className="  w-[30px] text-gray-300" />
+                    </button>
+                    <div className="flex justify-end  gap-x-3 text-[0.8rem]">
+                      <p className="italic text-gray-400">{post.author}</p>
+                      <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
+
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
+            )
+          }
+
         })
       )}
 

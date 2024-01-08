@@ -21,3 +21,16 @@ body {
   background: rgba(8, 8, 1, 0.919);
   font-family: "Bebas Neue", sans-serif;
 }
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slideRight {
+  animation: slideRight 15s infinite;
+}

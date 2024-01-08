@@ -6,6 +6,7 @@ import BottomNav from "../components/navbars/Dropdown";
 import SideBarAds from "../components/ads/SideBarAds";
 import Footer from "../components/Footer";
 import LoadingStatus from "../status/Loading";
+import SlidingAds from "../components/ads/SlidingAds";
 
 
 const Home = () => {
@@ -38,6 +39,15 @@ const Home = () => {
                   <div className="">
                     <BottomNav />
                   </div>
+                </div>
+
+              </div>
+              <div className="grid grid-cols-12 items-center my-1">
+                <div className="col-span-4">
+
+                </div>
+                <div className="col-span-12 md:col-span-8 bg-black">
+                  <SlidingAds />
                 </div>
               </div>
               <div className=" flex flex-col text-black">

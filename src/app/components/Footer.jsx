@@ -101,7 +101,7 @@ const Footer = () => {
 
         <div className="flex items-center justify-between">
           <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
-            © 2023{" "}
+            Since 2023 ©
             <a href="#" className="hover:underline">
               ThePitchBasket™
             </a>

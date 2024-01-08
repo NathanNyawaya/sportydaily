@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className="w-full bg-[#FCD107] py-4 text-gray-800">
       <div className=" flex justify-between items-center">
         <div className="flex justify-between w-[40%] items-center">
-          <p className="text-2xl font-bold bg-[#FCD107] rounded p-1 text-black">
+          <p className="text-2xl md:text-3xl font-bold bg-[#FCD107] rounded p-1 text-black tracking-wider">
             ThePitchBasket™
           </p>
         </div>

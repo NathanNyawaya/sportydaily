@@ -5,21 +5,21 @@ import Footer from "@/app/components/Footer";
 
 const Layout = () => {
   return (
-    <div className="">
-      <main className="relative">
-        <div className="mx-auto max-w-screen-xl">
-          <div className="z-100 sticky top-0 z-40 ">
-            {/* navigations */}
-            <Navbar />
-          </div>
+    <main className="relative">
+      <div className="mx-auto max-w-screen-xl">
+        <div className="z-100 sticky top-0 z-40 ">
+          {/* navigations */}
+          <Navbar />
+        </div>
+        <div className="grid grid-rows-[auto_1fr_auto] h-screen">
           <div className=" flex min-h-screen flex-col text-black">
             {/* main content */}
             <Blog />
           </div>
-          <Footer />
         </div>
-      </main>
-    </div>
+        <Footer />
+      </div>
+    </main>
   );
 };
 

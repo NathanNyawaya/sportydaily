@@ -27,7 +27,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className="">
       {
         activeLink ? (
           <main className="relative">
@@ -42,12 +42,15 @@ const Home = () => {
                 </div>
 
               </div>
-              <div className="grid grid-cols-12 items-center my-1">
-                <div className="col-span-4">
-
-                </div>
-                <div className="col-span-12 md:col-span-8 bg-black">
-                  <SlidingAds />
+              <div className="grid grid-cols-12 items-center my-10">
+                <div className="col-span-4"></div>
+                <div className="col-span-12 md:col-span-8 flex justify-center items-center">
+                  <div className="items-center flex justify-center mb-40 relative  p-0 w-full">
+                    <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
+                    <div className="absolute top-0 bottom-0 right-0 left-0">
+                      <SlidingAds />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className=" flex flex-col text-black">
@@ -79,7 +82,12 @@ const Home = () => {
             </div>
           </main>
         ) : (
-          <LoadingStatus />
+          <div className="flex flex-col justify-center items-center h-screen w-screen">
+            <p className="text-2xl md:text-3xl font-bold p-1 text-white tracking-wider">
+              ThePitchBasket™
+            </p>
+            <LoadingStatus />
+          </div>
         )
       }
     </div>

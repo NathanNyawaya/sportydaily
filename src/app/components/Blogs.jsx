@@ -24,7 +24,7 @@ const Blogs = () => {
       try {
         const res = await getBlogs();
         if (res) {
-          console.log(res);
+          // console.log(res);
           // console.log(res.data[0].imageFiles[0].url);
           setPosts(res.data);
           setLoading(false);
@@ -74,7 +74,7 @@ const Blogs = () => {
       ) : (
         posts &&
         posts.map((post, index) => {
-          if (index % 3 === 0 && index != 0) {
+          if (index % 5 === 0 && index != 0) {
             {
               // console.log(post._id)
               return (
@@ -110,10 +110,10 @@ const Blogs = () => {
                           className="text-blue-500 cursor-pointer"
                           onClick={() => handleShare(post._id)}
                         >
-                          <ShareIcon size="smaller" className="  w-[30px] text-gray-300" />
+                          <ShareIcon size="small" className="w-[10px] text-gray-300" />
                         </button>
                         <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                          <p className="italic text-gray-400">{post.author}</p>
+                          <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
                           <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
 
                         </div>
@@ -122,12 +122,12 @@ const Blogs = () => {
                   </div>
 
                   {/* break the flow with some ads, or anyother CTA */}
-                  <div className="my-20 relative bg-black">
+                  <div className="mt-10 mb-40 relative bg-black p-2 w-full">
                     <div className="flex justify-center items-center">
                       <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
                     </div>
-                    <div className="absolute top-0 bottom-0 right-0 left-0">
-                      <SlidingAds />
+                    <div className="absolute top-0 bottom-0 right-0 left-0 pb-5">
+                      <SlidingAds  />
                     </div>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ const Blogs = () => {
                   />
                 </div>
                 <div className="lg:w-[70%] flex flex-col w-full p-2">
-                  <h2 className={`mb-3 text-xl font-semibold`}>
+                  <h2 className={`mb-3 text-[1rem] md:text-[1.2rem] font-semibold`}>
                     {post.title}
                     <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                       &gt;
@@ -167,10 +167,10 @@ const Blogs = () => {
                       className="text-blue-500 cursor-pointer"
                       onClick={() => handleShare(post._id)}
                     >
-                      <ShareIcon size="smaller" className="  w-[30px] text-gray-300" />
+                      <ShareIcon size="small" className="w-[10px] text-gray-300" />
                     </button>
                     <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                      <p className="italic text-gray-400">{post.author}</p>
+                      <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
                       <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
 
                     </div>

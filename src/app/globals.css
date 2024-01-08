@@ -32,5 +32,5 @@ body {
 }
 
 .animate-slideRight {
-  animation: slideRight 15s infinite;
+  animation: slideRight 7s ease-in-out infinite;
 }

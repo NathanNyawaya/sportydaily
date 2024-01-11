@@ -1,4 +1,3 @@
-
 "use client"
 import React, { useEffect, useState } from "react";
 
@@ -52,6 +51,11 @@ const Footer = () => {
                 <li>
                   <a href="/predictions" className="hover:underline">
                     Betting Tips
+                  </a>
+                </li>
+                <li>
+                  <a href="/bet/SP/SPB" className="hover:underline">
+                    Betting
                   </a>
                 </li>
                 <li>

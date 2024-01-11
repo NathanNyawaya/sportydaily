@@ -3,15 +3,12 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const links = [
-  { id: "news", label: "News", href: "/" },
-  // { id: "livestreams", label: "Live Streams", href: "/livestreams" },
-  { id: "fixtures", label: "Fixture", href: "/fixtures" },
-  { id: "highlights", label: "Highlights", href: "/highlights" },
-  { id: "predictions", label: "Prediction", href: "/predictions" },
+  // { id: "exchange", label: "Exchange", href: "/bet/SP/EXC" },
+  { id: "sportsbook", label: "Sportbook", href: "/bet/SP/SPB" },
   // Add more links as needed
 ];
 
-const DropdownMenu = () => {
+const BottomNavBar = () => {
   const [activeView, setActiveView] = useState("/")
 
 
@@ -30,22 +27,25 @@ const DropdownMenu = () => {
 
 
   return (
-    <div className="py-3 max_md..:mb-5 mb--10 mx-auto">
+    <div className="flex justify-between items-center py-3 max_md:mb-5 mx-auto">
       <div className="flex items-center gap-x-2 px-1">
         {links.map((link) => (
           <Link key={link.id} href={link.href}>
             <p
               onClick={() => linkShot(link.href)}
               className={` ${activeView === link.href ? "bg-white text-black" : "text-white"
-                } px-2 rounded cursor-pointer text-[0.9rem]`}
+                } px-2  cursor-pointer text-[0.9rem]`}
             >
               {link.label}
             </p>
           </Link>
         ))}
       </div>
+      <div className="flex mx-1">
+        <p>Bal: 5000</p>
+      </div>
     </div>
   );
 };
 
-export default DropdownMenu;
+export default BottomNavBar;

@@ -11,6 +11,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 import ShareIcon from '@mui/icons-material/Share';
 import SlidingAds from "./ads/SlidingAds";
+import Image from "next/image";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
@@ -78,10 +79,10 @@ const Blogs = () => {
             {
               // console.log(post._id)
               return (
-                <div key={index} className="mb-1">
+                <div key={index} className="">
                   <div
 
-                    className="flex max_lg:flex-col justify-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2"
+                    className="flex max_lg:flex-col justify-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
 
                   >
                     <div className="lg:w-[30%] "
@@ -91,9 +92,11 @@ const Blogs = () => {
                       }}>
                       <img
                         src={post.imageFiles[0].url}
+                        loading="lazy"
                         alt="visuals"
                         className="w-full h-full rounded-t"
                       />
+                     
                     </div>
                     <div className="lg:w-[70%] flex flex-col w-full p-2">
                       <h2 className={`mb-3 text-xl font-semibold`}>
@@ -138,7 +141,7 @@ const Blogs = () => {
 
               <div
                 key={index}
-                className="flex max_lg:flex-col justify-center text-white group mb-15 rounded bg-gray-800 relative cursor-pointer max_sm:mx-2"
+                className="flex max_lg:flex-col justify-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
 
               >
                 <div className="lg:w-[30%] "
@@ -148,6 +151,7 @@ const Blogs = () => {
                   }}>
                   <img
                     src={post.imageFiles[0].url}
+                    loading="lazy"
                     alt="visuals"
                     className="w-full h-full rounded-t"
                   />

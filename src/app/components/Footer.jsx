@@ -53,11 +53,11 @@ const Footer = () => {
                     Betting Tips
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/bet/SP/SPB" className="hover:underline">
                     Betting
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="/highlights" className="hover:underline">
                     Highlights

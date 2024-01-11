@@ -183,7 +183,7 @@ const SportsBookHome = () => {
                       const { date, time } = formatDateTime(match.starts, timeZone)
 
                       return (
-                        <div className="grid grid-cols-10 bg-black mx-1 items-center p-2 border-gray-700 border-b">
+                        <div key={index} className="grid grid-cols-10 bg-black mx-1 items-center p-2 border-gray-700 border-b">
                           <div className="col-span-1">
                             <div className="flex flex-col border-r border-gray-900 pr-2">
                               <p className="text-[0.6rem]">{date}</p>

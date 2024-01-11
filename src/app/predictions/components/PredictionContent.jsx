@@ -9,12 +9,12 @@ const PredictionContent = () => {
 
 
   return (
-    <div className="text-white grid grid-cols-12 gap-x-2">
+    <div className="z-0 text-white grid grid-cols-12 gap-x-2">
       {/* links */}
 
       <div className="col-span-12">
         {predictions.length === 0 ? (
-          <div className="flex flex-col">
+          <div className="flex flex-col z-0">
 
            <TipsCollapse opened={opened}/>
 

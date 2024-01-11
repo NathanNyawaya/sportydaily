@@ -33,18 +33,18 @@ const Footer = () => {
           </div>
 
 
-          <div className="grid grid-cols-3 items-center gap-8 sm:gap-6 sm:grid-cols-3 w-full">
+          <div className="flex justify-center items-center gap-x-4 w-full">
 
-            <div className="col-span-1 flex justify-center items-center">
-              <img src="/18+.png" className={`h-[50px] w-[50px]`} />
+            <div className=" flex justify-center items-center">
+              <img src="/18+.png" className={`h-[45px] w-[45px]`} />
             </div>
             <div className="">
               <a
                 target="_blank"
                 href="https://wa.me/254710379709"
-                className="text-white hover:underline"
+                className="text-gray-400 text-[0.7rem] hover:underline"
               >
-                Chat With Us
+                Chat On WhatsApp
               </a>
             </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
         <div className="flex items-center justify-center">
-          <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
+          <p className="text-[0.7rem] text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
             2024 © {" "}
             <a href="#" className="hover:underline">
               BetGreen

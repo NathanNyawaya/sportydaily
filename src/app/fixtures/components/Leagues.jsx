@@ -10,10 +10,12 @@ import FixtureCollapse from "./Collapse";
 const LeaguesFixtures = ({ activeLeague }) => {
   const [leagues, setLeagues] = useState([])
   const [eventsData, setEventsData] = useState([])
+  const [loading, setLoading] = useState(true)
 
 
 
   const fetcher = async () => {
+    setLoading(true)
     const options = {
       method: 'GET',
       url: 'https://football536.p.rapidapi.com/fixtures',
@@ -29,8 +31,10 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
     try {
       const response = await axios.request(options)
-      if (response) {
-        setLeagues(response.data.data)
+      if (response && response.data) {
+        if (response.data.data.length > 0) {
+          setLeagues(response.data.data)
+        }
       }
     } catch (error) {
       console.error(error);
@@ -47,9 +51,13 @@ const LeaguesFixtures = ({ activeLeague }) => {
     console.log(filteredData)
     if (filteredData.length > 0) {
       setEventsData(filteredData)
+      setLoading(false)
     } else {
       setEventsData([])
+      setLoading(false)
+
     }
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -73,17 +81,27 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
 
             {
-              eventsData && eventsData.length > 0 ? eventsData.map((event_, index) => {
-                const kickoff_time_obj = formatDateTimeEAT(event_.start_time)
-                return (
-
-                  <FixtureCollapse opened={false} event_={event_} kickoff_time_obj={kickoff_time_obj} key={index} />
-                )
-              }) :
-
+              loading ? (
                 <div className="flex justify-center items-center">
-                  <p className="text-white">No events at the moment</p>
+                  <p className="text-white">
+                    {"Loading..."}
+                  </p>
                 </div>
+              ) :
+                (
+                  eventsData && eventsData.length > 0 ? eventsData.map((event_, index) => {
+                    const kickoff_time_obj = formatDateTimeEAT(event_.start_time)
+                    return (
+
+                      <FixtureCollapse opened={false} event_={event_} kickoff_time_obj={kickoff_time_obj} key={index} />
+                    )
+                  }) :
+                    <div className="flex justify-center items-center">
+                      <p className="text-white">
+                        Loading...
+                      </p>
+                    </div>
+                )
             }
 
           </div>

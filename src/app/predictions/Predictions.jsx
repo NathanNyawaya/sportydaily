@@ -10,7 +10,7 @@ const Predictions = () => {
   return (
     <main className="">
       <div className="relative flex min-h-screen flex-col text-black mx-auto max-w-screen-xl">
-        <div className="sticky top-0 z-0">
+        <div className="sticky top-0 z-40">
           {/* navigations */}
           <Navbar />
           <div className="bg-black">
@@ -21,7 +21,7 @@ const Predictions = () => {
         </div>
         {/* main content */}
         <div className="grid grid-cols-12 gap-x-2 mb-4">
-          <div className="flex flex-col justify-center min-h-[60vh] mb-4 max_md:col-span-12 col-span-9">
+          <div className="flex flex-col justify-center min-h-[60vh] mb-4 max_md:col-span-12 col-span-9 z-0">
             <div className="flex pb-10">
               <p className="mx-1 text-xl text-gray-100/[0.9] font-bold tracking-widest uppercase shadow-lg">Todays Offers {":"}</p>
             </div>

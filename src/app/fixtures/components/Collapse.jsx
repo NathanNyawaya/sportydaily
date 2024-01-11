@@ -50,25 +50,10 @@ const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
             <p className='text-[0.7rem] text-gray-300'>Venue</p>
             <p className="text-[0.7rem] text-gray-300">{event_.venue && event_.venue.name || "--"}</p>
           </div>
-          <div className='flex gap-x-4 items-center w-full'>
+          {/* <div className='flex gap-x-4 items-center w-full'>
             <p className='text-[0.7rem] text-gray-300'>Round</p>
             <p className='text-[0.7rem] text-gray-300'>{event_.round.id}</p>
-          </div>
-          <div className='flex gap-4 items-center w-full'>
-            <div className='flex items-center'>
-              <p className='text-[0.7rem] text-gray-300'>Goals</p>
-            </div>
-            <div className='grid grid-cols-2 w-full '>
-              <div className='flex flex-col  bg-green-500/[0.2] items-center border-r  border-gray-400/[0.4]'>
-                <p className='text-[0.7rem] text-gray-300'>Home</p>
-                <p className='text-[0.7rem] text-gray-300'> {event_.home_goals}</p>
-              </div>
-              <div className='flex flex-col bg-yellow-500/[0.2] items-center'>
-                <p className='text-[0.7rem] text-gray-300'>Away</p>
-                <p className='text-[0.7rem] text-gray-300'>{event_.home_goals}</p>
-              </div>
-            </div>
-          </div>
+          </div> */}
 
         </div>
       </Collapse>

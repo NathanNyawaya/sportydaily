@@ -8,6 +8,10 @@ export const clubs = [
     club_flag: "https://l.ivesoccer.sx/teams/aston-villa.png",
   },
   {
+    club_name: "Bournemouth",
+    club_flag: "https://l.ivesoccer.sx/teams/bournemouth.png",
+  },
+  {
     club_name: "Brentford",
     club_flag: "https://l.ivesoccer.sx/teams/brentford.png",
   },
@@ -30,6 +34,10 @@ export const clubs = [
   {
     club_name: "Everton",
     club_flag: "https://l.ivesoccer.sx/teams/everton.png",
+  },
+  {
+    club_name: "Fulham",
+    club_flag: "https://l.ivesoccer.sx/teams/fulham.png",
   },
   {
     club_name: "Leeds United",
@@ -62,6 +70,14 @@ export const clubs = [
   {
     club_name: "Norwich City",
     club_flag: "https://l.ivesoccer.sx/teams/norwich-city.png",
+  },
+  {
+    club_name: "Nottingham Forest",
+    club_flag: "https://l.ivesoccer.sx/teams/nottingham-forest.png",
+  },
+  {
+    club_name: "Sheffield United",
+    club_flag: "https://l.ivesoccer.sx/teams/sheffield-united.png",
   },
   {
     club_name: "Southampton",

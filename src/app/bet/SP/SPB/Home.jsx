@@ -7,20 +7,25 @@ import BottomNavBar from "../../components/navbar/Dropdown";
 import SlidingAds from "../../components/ads/SlidingAds";
 import SideBar from "./components/SideBar";
 import axios from "axios";
-import { formatDateTimeEAT } from "@/app/funcStore/toReadableTime";
-
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 const MobileFixed = ({ setTogglSidebar }) => {
   return (
-    <div className="bg-black max-h-screen max-w-screen">
+    <div className="bg-green-900/[0.9] max-h-screen max-w-screen">
       <div className="grid grid-cols-3 gap-x-2">
-        <div className="col-span-1 bg-gray-800 flex justify-center items-center p-3" onClick={() => setTogglSidebar(prev => !prev)}>
-          <p className="font-bold text-sm">Menu</p>
+        <div className="col-span-1  flex justify-center items-center p-3" onClick={() => setTogglSidebar(prev => !prev)}>
+          <p className="font-bold text-sm">
+            <WidgetsOutlinedIcon color="" />
+          </p>
         </div>
-        <div className="col-span-1 bg-gray-800 flex justify-center items-center p-3">
-          <p className="font-bold text-sm">Home</p>
+        <div className="col-span-1  flex justify-center items-center p-3">
+          <p className="font-bold text-sm">
+            <HomeRoundedIcon color="" />
+          </p>
         </div>
-        <div className="col-span-1 bg-gray-800 flex justify-center items-center p-3">
+        <div className="col-span-1  flex justify-center items-center p-3">
           <p className="font-bold text-sm">Betlsip</p>
         </div>
       </div>
@@ -33,26 +38,7 @@ const SportsBookHome = () => {
   const [toggleSidebar, setTogglSidebar] = useState(false)
 
   const [matches, setMatches] = useState([])
-
-  const fetcher = async () => {
-    try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER}/api/betgreen/sp/leagues`)
-
-      if (res) {
-        // console.log(res.data)
-        const premierLeague = res.data.leagues.filter(item => {
-          if (item.name === "England - Premier League") {
-            // console.log(item.name)
-            return item
-          }
-        })
-      }
-
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
+  
 
 
   const fetcherMarkets = async () => {
@@ -80,7 +66,7 @@ const SportsBookHome = () => {
   }
 
   useEffect(() => {
-    fetcher()
+    // fetcher()
     fetcherMarkets()
   }, [])
 
@@ -179,18 +165,18 @@ const SportsBookHome = () => {
                 {
                   matches.length > 0 ? matches.map((match, index) => {
                     if (match.periods.num_0.money_line) {
-                      console.log(match)
+                      // console.log(match)
                       const { date, time } = formatDateTime(match.starts, timeZone)
 
                       return (
-                        <div key={index} className="grid grid-cols-10 bg-black mx-1 items-center p-2 border-gray-700 border-b">
+                        <div key={index} className="grid grid-cols-10 bg- mx-1 items-center p-2 border-gray-700 border-b">
                           <div className="col-span-1">
-                            <div className="flex flex-col border-r border-gray-900 pr-2">
+                            <div className="flex flex-col border-r border-gray-500 pr-2">
                               <p className="text-[0.6rem]">{date}</p>
                               <p className="text-[0.6rem]">{time}</p>
                             </div>
                           </div>
-                          <div className="col-span-5 flex flex-col border-l border-gray-900 px-1">
+                          <div className="col-span-5 flex flex-col  px-2">
                             <p className="text-[0.7rem] font-bold">{match.home}</p>
                             <p className="text-[0.7rem] font-bold">{match.away}</p>
                           </div>
@@ -221,7 +207,7 @@ const SportsBookHome = () => {
             <div className="min_md:my-10 mt-10 w-full">
               <Footer />
             </div>
-            
+
           </div>
         </div>
 

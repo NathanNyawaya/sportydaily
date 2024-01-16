@@ -11,13 +11,15 @@ const Layout = () => {
           {/* navigations */}
           <Navbar />
         </div>
-        <div className="grid grid-rows-[auto_1fr_auto] h-screen">
+        <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
           <div className=" flex min-h-screen flex-col text-black">
             {/* main content */}
             <Blog />
           </div>
         </div>
+        <div className="mt-10"> 
         <Footer />
+        </div>
       </div>
     </main>
   );

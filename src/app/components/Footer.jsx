@@ -45,7 +45,8 @@ const Footer = () => {
 
 
       <div className="bg-white my-10">
-        <iframe src='https://www.scorebat.com/embed/v/659f74f81cb5d/?utm_source=api&utm_medium=video&utm_campaign=dflt' frameborder='0' width='100%' height='100%' allowfullscreen allow='autoplay; fullscreen' ></iframe>
+        {/* <iframe src='https://www.scorebat.com/embed/v/659f74f81cb5d/?utm_source=api&utm_medium=video&utm_campaign=dflt' frameborder='0' width='100%' height='100%' allowfullscreen allow='autoplay; fullscreen' ></iframe> */}
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/CTM2b2xxi3A?si=YbqSw5OBOW5tJcld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
 
       <div className="mx-auto max-w-screen-xl">
@@ -86,7 +87,7 @@ const Footer = () => {
 
         <div className="flex items-center justify-center">
           <p className="text-[0.8rem] text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
-            © Since 2023-2024 {" "}
+            © Since 2023 {" "}
             <a href="#" className="hover:underline">
               ThePitchBasket™
             </a>

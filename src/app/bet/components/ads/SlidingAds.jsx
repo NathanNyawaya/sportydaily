@@ -40,6 +40,8 @@ const SlidingAds = ({ startstate }) => {
         };
     }, []);
 
+
+
     return (
         <div className="overflow-hidden flex bg-gradient-to-r from-green-900 to-black">
             <div className={`bg-gradient-to-l ${contents[contentIndex].gradient} flex justify-end items-center overflow-hidden  animate-slidindAds min-w-[500px]  text-white shadow-lg `}>

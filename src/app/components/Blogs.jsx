@@ -82,7 +82,7 @@ const Blogs = () => {
                 <div key={index} className="">
                   <div
 
-                    className="flex max_lg:flex-col justify-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
+                    className="flex max_lg:flex-col justify-center items-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
 
                   >
                     <div className="lg:w-[30%] "
@@ -94,11 +94,11 @@ const Blogs = () => {
                         src={post.imageFiles[0].url}
                         loading="lazy"
                         alt="visuals"
-                        className="w-full h-full rounded-t"
+                        className="w-full h-full rounded-t object-contain"
                       />
                      
                     </div>
-                    <div className="lg:w-[70%] flex flex-col w-full p-2">
+                    <div className="lg:w-[70%] flex flex-col h-full  w-full p-2">
                       <h2 className={`mb-3 text-xl font-semibold`}>
                         {post.title}
                         <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -141,7 +141,7 @@ const Blogs = () => {
 
               <div
                 key={index}
-                className="flex max_lg:flex-col justify-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
+                className="flex max_lg:flex-col justify-center items-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
 
               >
                 <div className="lg:w-[30%] "

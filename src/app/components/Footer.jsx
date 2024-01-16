@@ -46,7 +46,8 @@ const Footer = () => {
 
       <div className="bg-white my-10">
         {/* <iframe src='https://www.scorebat.com/embed/v/659f74f81cb5d/?utm_source=api&utm_medium=video&utm_campaign=dflt' frameborder='0' width='100%' height='100%' allowfullscreen allow='autoplay; fullscreen' ></iframe> */}
-        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/CTM2b2xxi3A?si=YbqSw5OBOW5tJcld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        {/* <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/CTM2b2xxi3A?si=YbqSw5OBOW5tJcld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+         <iframe src="https://d1csarkz8obe9u.cloudfront.net/index.php/posterbuilder/view/77c6379b43c33985fe2a1d08baa658ab/1"  className="md:h-[200px] w-full"></iframe>
       </div>
 
       <div className="mx-auto max-w-screen-xl">

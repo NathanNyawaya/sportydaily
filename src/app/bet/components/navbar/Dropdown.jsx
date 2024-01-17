@@ -27,7 +27,7 @@ const BottomNavBar = () => {
 
 
   return (
-    <div className="flex justify-between items-center py-3 max_md:mb-5 mx-auto">
+    <div className="flex justify-between items-center py-3  mx-auto">
       <div className="flex items-center gap-x-2 px-1">
         {links.map((link) => (
           <Link key={link.id} href={link.href}>

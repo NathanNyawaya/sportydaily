@@ -42,12 +42,12 @@ const SideBar = ({ setTogglSidebar }) => {
             const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER}/api/betgreen/sp/leagues`)
 
             if (res) {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.leagues.length > 0) {
                     setSportLeagues(res.data.leagues)
                 }
                 const premierLeague = res.data.leagues.filter(item => {
-                    fetcherMarkets(item.id)
+                    // fetcherMarkets(item.id)
                     if (item.name === "England - Premier League") {
                         console.log(item.name)
                         return item

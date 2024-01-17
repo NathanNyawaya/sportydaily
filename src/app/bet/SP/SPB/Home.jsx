@@ -269,7 +269,6 @@ const SportsBookHome = () => {
               </div>
             }
 
-
             <div className="min_md:my-10 mt-10 w-full">
               <Footer />
             </div>

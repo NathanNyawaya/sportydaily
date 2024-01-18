@@ -32,9 +32,9 @@ body {
 }
 
 .animate-slideRight {
-  animation: slideRight 7s ease-in-out infinite;
+  animation: slideRight 15s infinite;
 }
 
 .animate-slidindAds {
-  animation: slideRight 25s infinite;
+  animation: slideRight 20s infinite;
 }

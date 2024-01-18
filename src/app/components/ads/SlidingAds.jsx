@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import '@mantine/carousel/styles.css';
+import { Carousel } from '@mantine/carousel'
 
-const SlidingAds = ({startstate}) => {
+const SlidingAds = ({ startstate }) => {
     const [contentIndex, setContentIndex] = useState(0);
     const contents = [
         {
@@ -71,7 +73,10 @@ const SlidingAds = ({startstate}) => {
 
     return (
         <div className="overflow-hidden flex">
-            <div className={`flex justify-between items-center min-h-[5vh] overflow-hidden bg-gradient-to-r animate-slideRight w-full ${contents[contentIndex].gradient} p-1 text-white shadow-lg `}>
+
+
+
+            <div className={`flex justify-between items-center h-[200px] overflow-hidden bg-gradient-to-r animate-slideRight w-full ${contents[contentIndex].gradient} p-1 text-white shadow-lg `}>
                 {
                     contents[contentIndex].imagePostition === 1 && contents[contentIndex].imageUrl != "" &&
                     <div className="flex items-center pt- m-1 h-full">

@@ -1,12 +1,14 @@
 export const metadata = {
-  title: 'SmartBet',
+  title: 'BetGreen',
   description: 'ThePitchBasket Fixtures',
 }
 
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-      <body>{children}</body>
+      <body >{children}
+      {/* <script src="/node_modules/flowbite/dist/flowbite.min.js"></script> */}
+      </body>
     </html>
   )
 }

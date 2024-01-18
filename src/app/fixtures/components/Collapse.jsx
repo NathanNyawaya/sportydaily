@@ -8,28 +8,60 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
   const [openedd, setOpenedd] = useState(opened)
 
+
+  function formatDateTimeEAT(utcDateTimeString) {
+    const utcDateTime = new Date(utcDateTimeString);
+
+    // Convert to EAT (East Africa Time)
+    const eatDateTime = new Date(utcDateTime.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' }));
+
+    // Format the date and time
+    const options = {
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric'
+    };
+
+    const formattedDateTime = new Intl.DateTimeFormat('en-US', options).format(eatDateTime);
+    return formattedDateTime;
+  }
+
+  function oddsToPercentage(odds) {
+    // Check if the odds are valid (not zero or negative)
+    if (odds <= 0) {
+      throw new Error('Odds must be a positive value.');
+    }
+
+    // Calculate the percentage
+    const percentage = (1 / odds) * 100;
+
+    // Round the percentage to two decimal places
+    return percentage.toFixed(2);
+  }
   return (
     <Box mx="auto" className="w-full"  >
       <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
-        <div className="grid grid-cols-12 text-white text-[0.9rem] mx-2 mb-1 bg-gray-800 hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
+        <div className="grid grid-cols-12 text-white text-[0.9rem] mx-2 mb-1 bg-gray-800 md:hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
           <div className="md:col-span-6 col-span-6 flex flex-col gap-y-2">
             <div className="flex gap-3">
               <p className="text-[0.8rem] text-white">
-                {event_.home_team.name}
+                {event_.home}
               </p>
             </div>
             <div className="flex gap-3">
 
               <p className="text-[0.8rem] text-white">
-                {event_.away_team.name}
+                {event_.away}
               </p>
             </div>
           </div>
           <div className="col-span-5 max_sm:col-span-5 md:col-span-3 flex gap-2 items-center max_sm:justify-between" >
             <div className="flex flex-col">
               <p className="text-[0.8rem] text-gray-200">Kickoff</p>
-              <p className="text-[0.7rem] text-gray-300 text-gray-200">{kickoff_time_obj.date_}{" "}{kickoff_time_obj.time_}{" "}{kickoff_time_obj.timezone}
+              <p className="text-[0.7rem] text-gray-300 text-gray-200">
+                {formatDateTimeEAT(event_.starts)}
               </p>
 
             </div>
@@ -45,15 +77,45 @@ const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
       </Group>
 
       <Collapse in={openedd} className="text-white">
-        <div className="flex flex-col text-white text-[0.9rem] mx-2 mb-1 bg-gray-800/[0.2] hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
-          <div className='flex  gap-4 items-center w-full'>
-            <p className='text-[0.7rem] text-gray-300'>Venue</p>
-            <p className="text-[0.7rem] text-gray-300">{event_.venue && event_.venue.name || "--"}</p>
+        <div className="flex flex-col text-white text-[0.9rem] mx-2 mb-1 bg-gray-300/[0.2] md:hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
+          <div className='flex flex-col gap-4 w-full my-4 bg-orange-600/[0.1] shadow-lg shadow-gray-900 p-2'>
+            <p className='text-[0.7rem] text-gray-300 font-bold tracking-wide text-center w-full'>Win Probability</p>
+            <div className='grid grid-cols-3'>
+              <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1'>
+                <p className='text-[0.8rem] font-bold'>{event_.home}</p>
+                {
+                  event_.periods.num_0.money_line != null &&
+                  <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.home)}%</p>
+                }
+
+              </div>
+              <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1 mt-1'>
+                <p className='text-[0.8rem] font-bold'>Draw</p>
+                {
+                  event_.periods.num_0.money_line != null &&
+                  <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.draw)}%</p>
+                }
+              </div>
+              <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1'>
+                <p className='text-[0.8rem] font-bold'>{event_.away}</p>
+                {
+                  event_.periods.num_0.money_line != null &&
+
+                  <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.away)}%</p>
+                }
+              </div>
+            </div>
           </div>
-          {/* <div className='flex gap-x-4 items-center w-full'>
-            <p className='text-[0.7rem] text-gray-300'>Round</p>
-            <p className='text-[0.7rem] text-gray-300'>{event_.round.id}</p>
+
+          {/* CAT */}
+          {/* <div className='flex flex-col gap-4 w-full mt-12'>
+            <p className='z-20 text-[0.7rem] text-gray-300 font-bold tracking-wide text-center w-full uppercase'>Betting Offers</p>
+            <div className='z-0 flex items-center gap-x-1'>
+              <p className='bg-green-500 rounded p-1 font-bold text-white text-[0.7rem]'>Bet365</p>
+              <p className='bg-yellow-400 rounded p-1 font-bold text-white text-[0.7rem]'>Betika</p>
+            </div>
           </div> */}
+
 
         </div>
       </Collapse>

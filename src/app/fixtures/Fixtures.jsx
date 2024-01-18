@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 
 import LeaguesNavigation from "./components/LeaguesNavigation";
 import LeaguesFixtures from "./components/Leagues";
+import Filters from "../bet/SP/SPB/components/Filters";
 
 
 const Fixtures = () => {
@@ -26,17 +27,18 @@ const Fixtures = () => {
         <div className="grid grid-cols-12 gap-x-2">
 
           {/* side-bar */}
-          <div className="md:col-span-3 col-span-12">
+          <div className="md:col-span-3 col-span-12 hidden">
             <LeaguesNavigation
               activeLeague={activeLeague}
               setActiveLeague={setActiveLeague}
+              
             />
+
           </div>
 
           <div className="min-h-[65vh] flex flex-col max_md:col-span-12 col-span-9 z-0">
             <LeaguesFixtures activeLeague={activeLeague} />
           </div>
-
         </div>
 
         <Footer />

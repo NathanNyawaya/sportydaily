@@ -97,7 +97,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
     const filteredData = leagues.filter(league_ => {
       return league_.leagueName == activeLeague
     })
-    console.log(filteredData)
+    // console.log(filteredData)
     if (filteredData.length > 0) {
       setEventsData(filteredData)
       setLoading(false)
@@ -114,7 +114,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
   }, [leagues, activeLeague])
 
   useEffect(() => {
-    console.log(leagueEvents)
+    // console.log(leagueEvents)
   }, [leagueEvents])
   return (
     <div className="grid grid-cols-12 gap-x-2">

@@ -8,7 +8,7 @@ export default function page() {
   return(
     <>
       <MantineProvider>
-        <SportsBookHome />
+        {/* <SportsBookHome /> */}
       </MantineProvider>
     </>
   )

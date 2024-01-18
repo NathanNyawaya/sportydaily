@@ -2,6 +2,7 @@ import Footer from '@/app/bet/components/footer/Footer'
 import React, { useEffect, useState } from 'react'
 import Filters from './Filters'
 import axios from 'axios'
+import SideBar from './SideBar'
 
 const MainContent = () => {
     const [toggleSidebar, setTogglSidebar] = useState(false)

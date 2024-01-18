@@ -125,7 +125,7 @@ const SportsBookHome = () => {
         </div>
         <div className="flex w-full p-1 md:hidden">
           <div className="flex flex-col justify-center items-center bg-gray-200 border border-gray-800 p-1 shadow-l">
-            <SportsSoccerIcon size="small" color="black" className="bg-black rounded-full" />
+            <SportsSoccerIcon size="small" className="bg-black rounded-full" />
             <p className="text-[0.8rem] font-medium hover text-gray-500 ">Soccer</p>
           </div>
         </div>

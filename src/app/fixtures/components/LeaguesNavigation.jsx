@@ -22,10 +22,7 @@ const LeaguesNavigation = ({ setActiveLeague, activeLeague }) => {
             console.error(error);
         }
     }
-    useEffect(() => {
-        fetcher()
-
-    }, [])
+   
 
     const shortTitle = (league_title) => {
         switch (league_title) {

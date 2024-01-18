@@ -147,7 +147,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
                           position="start"
                           mb={5}
                           onClick={() => toggleLeagueCollapse(index)}
-                          className=""
+                          
                         >
                           <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
                             <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
@@ -164,7 +164,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
                           {league_.leagueEventsData.map((event, i) => (
                             <FixtureCollapse
                               event_={event}
-                              opened={openeddd}
+                              opened={false}
                               league_={league_}
                               key={i}
                             />

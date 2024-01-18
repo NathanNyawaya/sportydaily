@@ -15,10 +15,10 @@ const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
                     <div class="flex w-full">
                         <Box mx="auto" className="w-full"  >
                             <Group
-                                position="start"
+                                // position="start"
                                 mb={5}
                                 onClick={() => setOpenedd(prev => !prev)}
-                                className="bg-">
+                                className="">
 
                                 <div className="flex justify-between text-gray-600 text-[0.9rem] mb-1 bg-gray-100 hover:bg-gray-200 p-1 col-span-6 items-center cursor-pointer">
                                     <h4 className='text-[0.7rem] truncate text-gray-600 font-bold tracking-wide'>{selectedLeague}</h4>

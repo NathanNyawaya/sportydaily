@@ -105,11 +105,11 @@ const TipsCollapse = ({ opened }) => {
             {tipsOffers && tipsOffers.length > 0 ? tipsOffers.map((offer_, index) => {
 
                 return (
-                    <Box mx="auto" className="w-full z-0 mb-15 md:mb-20" key={index}>
+                    <Box mx="auto" className="w-full z-0 mb-16 md:mb-20" key={index}>
                         <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
                             <div className={`z-0 relative  flex justify-between text-white
-                            bg-gradient-to-r ${index === 1 ? "to-yellow-200 shadow-yellow-500/[0.3]" : "to-green-200 shadow-gray-500/[0.5]"} from-black   min-h-[200px] mx-1  cursor-pointer h-full shadow-lg `}>
+                            bg-gradient-to-r ${index === 1 ? "to-yellow-200/[0.3] shadow-yellow-500/[0.3]" : "to-green-200/[0.3] shadow-gray-500/[0.5]"} from-black   min-h-[200px] mx-1  cursor-pointer h-full shadow-lg `}>
                                 <div className='m-3'>
                                     <div className="flex my-6 gap-x-4 items-center">
                                         <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm'>Bet</p>

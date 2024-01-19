@@ -105,16 +105,17 @@ const TipsCollapse = ({ opened }) => {
             {tipsOffers && tipsOffers.length > 0 ? tipsOffers.map((offer_, index) => {
 
                 return (
-                    <Box mx="auto" className="w-full z-0" key={index}>
+                    <Box mx="auto" className="w-full z-0 mb-15 md:mb-20" key={index}>
                         <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
-                            <div className="z-0 relative  flex justify-between text-white bg-gradient-to-l from-orange-700 to-orange-900 min-h-[200px] mx-1  cursor-pointer h-full">
+                            <div className={`z-0 relative  flex justify-between text-white
+                            bg-gradient-to-r ${index === 1 ? "to-yellow-200 shadow-yellow-500/[0.3]" : "to-green-200 shadow-gray-500/[0.5]"} from-black   min-h-[200px] mx-1  cursor-pointer h-full shadow-lg `}>
                                 <div className='m-3'>
                                     <div className="flex my-6 gap-x-4 items-center">
-                                        <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm'>100% OFF</p>
+                                        <p className='shadow-lg bg-orange-700/[0.5] text-gray-50 tracking-widest py-1 px-2 uppercase font-bold text-sm'>Bet</p>
                                         <div>
                                             <p className='border-l-[2px] border-gray-100/[1] shadow text-gray-100/[0.9] tracking-widest px-2 uppercase font-bold text-sm'>
-                                                PL Football
+                                                Soccer
                                             </p>
                                         </div>
                                     </div>
@@ -124,7 +125,7 @@ const TipsCollapse = ({ opened }) => {
                                             {offer_.betOfferName}
                                         </p>
                                     </div>
-                                    <div className="flex my-4 hidden">
+                                    <div className="flex my-4">
                                         <p className='text-[0.9rem] tracking-wide uppercase'>Price: £{offer_.price}</p>
                                     </div>
 
@@ -139,8 +140,8 @@ const TipsCollapse = ({ opened }) => {
                                     </div>
 
                                     <div className='absolute bottom-0 right-4 left-0 p-2 flex justify-end items-center w-full z-0'>
-                                        <h1 className='tracking-widest text-gray-100/[0.9] text-[0.7rem] shadow-lg'>
-                                            95% Winrate
+                                        <h1 className='tracking-widest font-bold text-gray-800 text-[0.6rem] shadow-lg shadow-gray-900'>
+                                            TPB
                                         </h1>
                                     </div>
                                 </div>

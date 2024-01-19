@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const SideBarAds = () => {
+const FeaturedMatches = () => {
   const initialAdsList = [
     {
       host_name: "Jumia Kenya",
@@ -74,4 +74,4 @@ const SideBarAds = () => {
   );
 };
 
-export default SideBarAds;
+export default FeaturedMatches;

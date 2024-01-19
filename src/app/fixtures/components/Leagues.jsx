@@ -20,21 +20,21 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
 
 
-  useEffect(()=>{
-    if(filter != ""){
-      if(leagues.length > 0){
-        const filtered = leagues.filter(league=>{
-          if(league.leagueName === filter){
+  useEffect(() => {
+    if (filter != "") {
+      if (leagues.length > 0) {
+        const filtered = leagues.filter(league => {
+          if (league.leagueName === filter) {
             return league
           }
         })
-        if(filter.length> 0){
+        if (filter.length > 0) {
           setLeagueEvents(filtered)
         }
       }
-      
+
     }
-  },[filter])
+  }, [filter])
 
   const toggleLeagueCollapse = (index) => {
     setOpenedLeagues((prev) => {
@@ -117,13 +117,18 @@ const LeaguesFixtures = ({ activeLeague }) => {
     // console.log(leagueEvents)
   }, [leagueEvents])
   return (
-    <div className="grid grid-cols-12 gap-x-2">
+    <div className="relative grid grid-cols-12 gap-x-2">
       <div className="col-span-12 mb-5">
-        {
-          leagueEvents.length > 0
-          &&
-          <Filters leagueEvents={leagues} setFilter={setFilter} setOpeneddd={setOpeneddd}/>
-        }
+        <div className="z-50 sticky top-10 z-50">
+          {/* navigations */}
+          {/* <Navbar /> */}
+          {
+            leagueEvents.length > 0
+            &&
+            <Filters leagueEvents={leagues} setFilter={setFilter} setOpeneddd={setOpeneddd} />
+          }
+        </div>
+
       </div>
 
 
@@ -147,7 +152,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
                           position="start"
                           mb={5}
                           onClick={() => toggleLeagueCollapse(index)}
-                          
+
                         >
                           <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
                             <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>

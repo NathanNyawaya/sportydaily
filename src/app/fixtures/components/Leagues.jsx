@@ -7,6 +7,8 @@ import FixtureCollapse from "./Collapse";
 import Filters from "@/app/bet/SP/SPB/components/Filters";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import SlidingAds from "@/app/bet/components/ads/SlidingAds";
+import HorizontalAds from "@/app/components/ads/HorizontalAds";
 
 
 const LeaguesFixtures = ({ activeLeague }) => {
@@ -145,39 +147,47 @@ const LeaguesFixtures = ({ activeLeague }) => {
               leagueEvents && leagueEvents.length > 0 ? (
                 leagueEvents.map((league_, index) => {
                   const isOpened = openedLeagues.includes(index);
-                  return (
-                    <div className="flex flex-col" key={index}>
-                      <Box mx="auto" className="w-full">
-                        <Group
-                          position="start"
-                          mb={5}
-                          onClick={() => toggleLeagueCollapse(index)}
 
-                        >
-                          <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
-                            <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
-                            <div>
-                              {isOpened ? (
-                                <ArrowDropUpIcon fontSize="small" className="" />
-                              ) : (
-                                <ArrowDropDownIcon fontSize="small" />
-                              )}
+                  return (
+                    <div className="flex flex-col">
+                      <div className="flex flex-col" key={index}>
+                        <Box mx="auto" className="w-full">
+                          <Group
+                            position="start"
+                            mb={5}
+                            onClick={() => toggleLeagueCollapse(index)}
+
+                          >
+                            <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
+                              <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
+                              <div>
+                                {isOpened ? (
+                                  <ArrowDropUpIcon fontSize="small" className="" />
+                                ) : (
+                                  <ArrowDropDownIcon fontSize="small" />
+                                )}
+                              </div>
                             </div>
-                          </div>
-                        </Group>
-                        <Collapse in={isOpened} className="text-white">
-                          {league_.leagueEventsData.map((event, i) => (
-                            <FixtureCollapse
-                              event_={event}
-                              opened={false}
-                              league_={league_}
-                              key={i}
-                            />
-                          ))}
-                        </Collapse>
-                      </Box>
+                          </Group>
+                          <Collapse in={isOpened} className="text-white">
+                            {league_.leagueEventsData.map((event, i) => (
+                              <FixtureCollapse
+                                event_={event}
+                                opened={false}
+                                league_={league_}
+                                key={i}
+                              />
+                            ))}
+                          </Collapse>
+                        </Box>
+                      </div>
+                      {index === 20 && <div className="my-5"><SlidingAds /></div>}
+                      {index === 15 || index === 40 || leagueEvents.length - 1 === index && <div className="my-5"><HorizontalAds /></div>}
                     </div>
                   );
+
+
+
                 })
               ) : (
                 <div className="flex justify-center items-center">

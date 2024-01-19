@@ -23,15 +23,7 @@ const Fixtures = () => {
             </div>
           </div>
         </div>
-        <div className=" sticky top-0 z-50">
-          {/* navigations */}
-          {/* <Navbar /> */}
-          <div className="bg-black">
-            <div className="mx-auto max-w-screen-xl">
-              <BottomNav />
-            </div>
-          </div>
-        </div>
+       
         {/* main content */}
         <div className="grid grid-cols-12 gap-x-2">
 

@@ -1,4 +1,4 @@
-import { Roboto, Vina_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "./analytics/GoogleAnalytics";
 
@@ -9,12 +9,7 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-const vina_sans = Vina_Sans({
-  subsets: ["latin"],
-  weight: ['400'],
-  variable: "--font-vina-sans",
-  display: 'swap',
-});
+
 
 export const metadata = {
   title: "ThePitchBasket™",
@@ -24,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${vina_sans.variable} ${roboto.variable}`}>
+      <body className={`${roboto.variable}`}>
         {process.env.NEXT_PUBLIC_PROD ? (
           <GoogleAnalytics
             ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}

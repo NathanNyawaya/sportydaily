@@ -28,7 +28,7 @@ const UpcomingMatches = () => {
                         className="col-span-2 bord border-gray-600/[0.4] rounded text-center p-3 text-gray-200"
                     >
                         <p className="font-bold tracking-wide text-[0.6rem]">Kickoff</p>
-                        <h4 className="font-bold text-[0.9rem]">11:00</h4>
+                        <h4 className="font-bold text-[0.9rem]">22:45</h4>
                         <h4 className="text-[0.7rem] font-medium">22/1</h4>
                     </div>
                     <div className="col-span-5 flex flex-col w-full gap-1 items-center justify-center">

@@ -88,7 +88,7 @@ const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
 
                     </div>
                 </div>
-                <div className="col-span-2 flex">
+                <div className="col-span-2 flex hidden">
                     <div class="flex w-full">
 
                         <Box mx="auto" className="w-full"  >

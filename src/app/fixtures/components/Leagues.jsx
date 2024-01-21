@@ -160,7 +160,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
                                 </div>
                               </div>
                             </Group>
-                            <Collapse in={true} className="text-white">
+                            <Collapse in={isOpened} className="text-white">
                               {league_.leagueEventsData.map((event, i) => (
                                 <FixtureCollapse
                                   event_={event}

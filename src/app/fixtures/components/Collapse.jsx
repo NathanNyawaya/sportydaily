@@ -7,6 +7,9 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
   const [openedd, setOpenedd] = useState(opened)
+  if (event_.periods.num_0.money_line === null) {
+    // console.log(event_)
+  }
 
 
   function formatDateTimeEAT(utcDateTimeString) {
@@ -78,34 +81,40 @@ const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
 
       <Collapse in={openedd} className="text-white">
         <div className="flex flex-col text-white text-[0.9rem] mx-2 mb-1 bg-gray-300/[0.2] md:hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
-          <div className='flex flex-col gap-4 w-full my-4 bg-orange-600/[0.1] shadow-lg shadow-gray-900 p-2'>
-            <p className='text-[0.7rem] text-gray-300 font-bold tracking-wide text-center w-full'>Win Probability</p>
-            <div className='grid grid-cols-3'>
-              <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1'>
-                <p className='text-[0.8rem] font-bold'>{event_.home}</p>
-                {
-                  event_.periods.num_0.money_line != null &&
-                  <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.home)}%</p>
-                }
+          {
+            event_.periods.num_0.money_line != null ? <div className='flex flex-col gap-4 w-full my-4 bg-orange-600/[0.1] shadow-lg shadow-gray-900 p-2'>
+              <p className='text-[0.7rem] text-gray-300 font-bold tracking-wide text-center w-full'>Win Probability</p>
+              <div className='grid grid-cols-3'>
+                <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1'>
+                  <p className='text-[0.8rem] font-bold'>Home</p>
+                  {
+                    event_.periods.num_0.money_line != null &&
+                    <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.home)}%</p>
+                  }
 
-              </div>
-              <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1 mt-1'>
-                <p className='text-[0.8rem] font-bold'>Draw</p>
-                {
-                  event_.periods.num_0.money_line != null &&
-                  <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.draw)}%</p>
-                }
-              </div>
-              <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1'>
-                <p className='text-[0.8rem] font-bold'>{event_.away}</p>
-                {
-                  event_.periods.num_0.money_line != null &&
+                </div>
+                <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1 mt-1'>
+                  <p className='text-[0.8rem] font-bold'>Draw</p>
+                  {
+                    event_.periods.num_0.money_line != null &&
+                    <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.draw)}%</p>
+                  }
+                </div>
+                <div className='col-span-1 flex flex-col items-center text-center bg-gray-900/[0.2] p-2 mx-1'>
+                  <p className='text-[0.8rem] font-bold'>Away</p>
+                  {
+                    event_.periods.num_0.money_line != null &&
 
-                  <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.away)}%</p>
-                }
+                    <p className='tracking-wide font-medium text-[0.7rem]'>{oddsToPercentage(event_.periods.num_0.money_line.away)}%</p>
+                  }
+                </div>
               </div>
-            </div>
-          </div>
+            </div> : (
+              <div className='flex'>
+                <p className='text-[0.7rem] text-gray-300'>No stats</p>
+              </div>
+            )
+          }
 
           {/* CAT */}
           {/* <div className='flex flex-col gap-4 w-full mt-12'>

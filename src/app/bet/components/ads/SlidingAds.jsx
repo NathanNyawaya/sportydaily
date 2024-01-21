@@ -3,16 +3,24 @@ import React, { useEffect, useState } from "react";
 const SlidingAds = ({ startstate }) => {
     const [contentIndex, setContentIndex] = useState(0);
     const contents = [
-        // {
-        //     text: 'Win Big With Our Free Bets.',
-        //     gradient: 'from-black to-yellow-900',
-        //     p_styles: "font-bold text-white text-sm",
-        //     imagePostition: 1,
-        //     imageUrl: "/player1.png"
-           
-        // },
         {
-            text: 'PLACE A KSH.100 BET and Get upto KSH.200 FREE BETS',
+            text: 'Win Big With Our Free Bets',
+            gradient: 'from-yellow-500 to-black',
+            p_styles: "font-bold text-white text-sm",
+            imagePostition: 1,
+            imageUrl: "/player1.png"
+           
+        },
+        {
+            text: 'Visit ThePitchBasket Predictions 👆☝️',
+            gradient: 'from-black to-gray-800',
+            p_styles: "font-bold text-white text-sm",
+            imagePostition: 1,
+            imageUrl: "/player1.png"
+           
+        },
+        {
+            text: 'ThePitchBasket',
             gradient: 'from-yellow-900 to-black',
             p_styles: "font-bold text-white text-sm min-w-[600px]",
             imagePostition: 0,

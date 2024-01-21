@@ -12,6 +12,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import ShareIcon from '@mui/icons-material/Share';
 import SlidingAds from "./ads/SlidingAds";
 import Image from "next/image";
+import { Upcoming } from "@mui/icons-material";
+import UpcomingMatches from "./features/Upcoming";
+
+import KeyboardDoubleArrowRightSharpIcon from '@mui/icons-material/KeyboardDoubleArrowRightSharp';
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
@@ -69,23 +73,21 @@ const Blogs = () => {
     setShareModalOpen(false);
   };
   return (
-    <div className="mb-20 gap-y-4  max_lg:max-w-5xl lg:w-full lg:mb-0  lg:text-left">
-      {loading ? (
-        <LoadingStatus />
-      ) : (
-        posts &&
-        posts.map((post, index) => {
-          if (index % 5 === 0 && index != 0) {
-            {
-              // console.log(post._id)
+    <>
+      <div className="grid grid-cols-12 gap-2 mb-10 items-center">
+        <div className="col-span-12 md:col-span-6 w-full " >
+          <UpcomingMatches />
+        </div>
+        {
+          posts &&
+          posts.map((post, index) => {
+            if (index === 0) {
               return (
-                <div key={index} className="">
+                <div key={index} className="m-1 col-span-12 md:col-span-6">
                   <div
-
-                    className="flex max_lg:flex-col justify-center items-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
-
+                    className="flex flex-col justify-center items-center text-white   relative cursor-pointer mb-10 h-full"
                   >
-                    <div className="lg:w-[30%] "
+                    <div className="w-full"
                       onClick={() => {
                         setLoading(true);
                         location.replace(`/blog/${post._id}`);
@@ -94,124 +96,202 @@ const Blogs = () => {
                         src={post.imageFiles[0].url}
                         loading="lazy"
                         alt="visuals"
-                        className="w-full h-full rounded-t object-contain"
+                        className="w-full h-[40vh] object-cover rounded-t"
                       />
-                     
                     </div>
-                    <div className="lg:w-[70%] flex flex-col h-full  w-full p-2">
-                      <h2 className={`mb-3 text-xl font-semibold`}>
+                    <div className="bg-gray-800 flex flex-col min-h-[20vh]  w-full p-2">
+                      <h2 className={`mb-3 text-[1rem] font-semibold`}>
                         {post.title}
                         <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                          &gt;
+                          {/* &gt; */}
                         </span>
                       </h2>
-                      <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
+                      <p className={`m-0 text-[0.8rem] text-gray-300 w-50 truncate`}>
                         {post.summaryText}
                       </p>
+                      <div className="flex justify-center items-center my-6">
+                        <p className={`m-0 text-[0.8rem] text-gray-300 shadow shadow-orange-600/[0.2] px-20 py-1 cursor-pointer items-center flex uppercase tracking-wide font-bold`}
+                          onClick={() => {
+                            setLoading(true);
+                            location.replace(`/blog/${post._id}`);
+                          }}
+                        >
+                          Read More
+                          <KeyboardDoubleArrowRightSharpIcon size="small"
+                            className="" color="warning" />
+                        </p>
+                      </div>
                       <div className="flex items-center justify-between mt-4">
                         <button
                           className="text-blue-500 cursor-pointer"
                           onClick={() => handleShare(post._id)}
                         >
-                          <ShareIcon size="small" className="w-[10px] text-gray-300" />
+                          <ShareIcon size="small" className="w-[10px] text-gray-300 opacity-20" />
                         </button>
-                        <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                          <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
+                        <div className="flex justify-end  gap-x-3 text-[0.7rem]">
+                          <p className="font-bold text-gray-400">{post.author}</p>
                           <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
-
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* break the flow with some ads, or anyother CTA */}
-                  <div className="mt-10 mb-40 relative bg-black p-2 w-full">
-                    <div className="flex justify-center items-center">
-                      <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
-                    </div>
-                    <div className="absolute top-0 bottom-0 right-0 left-0 pb-5">
-                      <SlidingAds  />
-                    </div>
-                  </div>
                 </div>
-              );
+              )
             }
-          } else {
-            return (
+          })
+        }
+      </div>
 
-              <div
-                key={index}
-                className="flex max_lg:flex-col justify-center items-center text-white group rounded bg-gray-800 relative cursor-pointer max_sm:mx-2 mb-10"
+      
 
-              >
-                <div className="lg:w-[30%] "
-                  onClick={() => {
-                    setLoading(true);
-                    location.replace(`/blog/${post._id}`);
-                  }}>
-                  <img
-                    src={post.imageFiles[0].url}
-                    loading="lazy"
-                    alt="visuals"
-                    className="w-full h-full rounded-t"
-                  />
-                </div>
-                <div className="lg:w-[70%] flex flex-col w-full p-2">
-                  <h2 className={`mb-3 text-[1rem] md:text-[1.2rem] font-semibold`}>
-                    {post.title}
-                    <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                      &gt;
-                    </span>
-                  </h2>
-                  <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
-                    {post.summaryText}
-                  </p>
-                  <div className="flex items-center justify-between mt-4">
-                    <button
-                      className="text-blue-500 cursor-pointer"
-                      onClick={() => handleShare(post._id)}
+      <div className="max_md:mt-10 mb-20 gap-y-4  max_lg:max-w-5xl lg:w-full lg:mb-0  lg:text-left">
+        {loading ? (
+          <LoadingStatus />
+        ) : (
+          posts &&
+          posts.map((post, index) => {
+
+            if (index === 0) {
+              {
+                // console.log(post._id)
+                return (
+                  <div key={index} className="hidden">
+                    <div
+
+                      className="flex max_lg:flex-col justify-center items-center text-white group rounded  relative cursor-pointer max_sm:mx-2 my-1s0"
+
                     >
-                      <ShareIcon size="small" className="w-[10px] text-gray-300" />
-                    </button>
-                    <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                      <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
-                      <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
+                      <div className="lg:w-[30%] "
+                        onClick={() => {
+                          setLoading(true);
+                          location.replace(`/blog/${post._id}`);
+                        }}>
+                        <img
+                          src={post.imageFiles[0].url}
+                          loading="lazy"
+                          alt="visuals"
+                          className="w-full h-[20vh] rounded-t object-cover"
+                        />
 
+                      </div>
+                      <div className="bg-gray-800 lg:w-[70%] flex flex-col h-[20vh] w-full p-2">
+                        <h2 className={`mb-3 text-xl font-semibold`}>
+                          {post.title}
+                          <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                            {/* &gt; */}
+                          </span>
+                        </h2>
+                        <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
+                          {post.summaryText}
+                        </p>
+                        <div className="flex items-center justify-between mt-4">
+                          <button
+                            className="text-blue-500 cursor-pointer"
+                            onClick={() => handleShare(post._id)}
+                          >
+                            <ShareIcon size="small" className="w-[10px] text-gray-300 opacity-20" />
+                          </button>
+                          <div className="flex justify-end  gap-x-3 text-[0.8rem]">
+                            <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
+                            <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* break the flow with some ads, or anyother CTA */}
+                    <div className="mt-10 mb-40 relative bg-black p-2 w-full">
+                      <div className="flex justify-center items-center">
+                        <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
+                      </div>
+                      <div className="absolute top-0 bottom-0 right-0 left-0 pb-5">
+                        <SlidingAds />
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            } else {
+              return (
+
+                <div
+                  key={index}
+                  className="flex max_lg:flex-col justify-center items-center text-white group rounded relative cursor-pointer max_sm:mx-2 my-10"
+
+                >
+                  <div className="lg:w-[30%] "
+                    onClick={() => {
+                      setLoading(true);
+                      location.replace(`/blog/${post._id}`);
+                    }}>
+                    <img
+                      src={post.imageFiles[0].url}
+                      loading="lazy"
+                      alt="visuals"
+                      className="w-full h-[20vh] object-cover rounded-t"
+                    />
+                  </div>
+                  <div className="bg-gray-800 lg:w-[70%] flex flex-col w-full h-[20vh] p-2">
+                    <h2 className={`mb-3 text-[1rem] md:text-[1.2rem] font-semibold`}>
+                      {post.title}
+                      <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                        {/* &gt; */}
+                      </span>
+                    </h2>
+                    <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
+                      {post.summaryText}
+                    </p>
+                    <div className="flex items-center justify-between mt-4">
+                      <button
+                        className="text-blue-500 cursor-pointer"
+                        onClick={() => handleShare(post._id)}
+                      >
+                        <ShareIcon size="small" className="w-[10px] text-gray-300 opacity-20" />
+                      </button>
+                      <div className="flex justify-end  gap-x-3 text-[0.8rem]">
+                        <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
+                        <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
+
+                      </div>
                     </div>
                   </div>
                 </div>
+              )
+            }
+
+          })
+        )}
+
+
+
+        {/* Share Modal */}
+        {shareModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+            <div className="bg-white p-4 rounded shadow-lg">
+              <p className="text-lg font-semibold mb-2">Choose a platform to share:</p>
+              <div className="flex justify-between">
+                <button onClick={() => handleSharePlatform('whatsapp')} className="bg-green-500 text-white px-4 py-2 rounded mr-2">
+                  <WhatsAppIcon size="small" />
+                </button>
+                <button onClick={() => handleSharePlatform('facebook')} className="bg-blue-500 text-white px-4 py-2 rounded mr-2">
+                  <FacebookIcon size="small" />
+                </button>
+                <button onClick={() => handleSharePlatform('twitter')} className="bg-black text-white px-4 py-2 rounded">
+                  <TwitterIcon size="small" />
+                </button>
               </div>
-            )
-          }
-
-        })
-      )}
-
-      {/* Share Modal */}
-      {shareModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
-          <div className="bg-white p-4 rounded shadow-lg">
-            <p className="text-lg font-semibold mb-2">Choose a platform to share:</p>
-            <div className="flex justify-between">
-              <button onClick={() => handleSharePlatform('whatsapp')} className="bg-green-500 text-white px-4 py-2 rounded mr-2">
-                <WhatsAppIcon size="small" />
-              </button>
-              <button onClick={() => handleSharePlatform('facebook')} className="bg-blue-500 text-white px-4 py-2 rounded mr-2">
-                <FacebookIcon size="small" />
-              </button>
-              <button onClick={() => handleSharePlatform('twitter')} className="bg-black text-white px-4 py-2 rounded">
-                <TwitterIcon size="small" />
+              <button onClick={handleCloseShareModal} className="mt-4 text-gray-500 hover:text-gray-700">
+                Cancel
               </button>
             </div>
-            <button onClick={handleCloseShareModal} className="mt-4 text-gray-500 hover:text-gray-700">
-              Cancel
-            </button>
           </div>
-        </div>
-      )}
+        )}
 
-      <div className="mx-2">{!loading && <HorizontalAds3 />}</div>
-    </div>
+        <div className="mx-2">{!loading && <HorizontalAds3 />}</div>
+      </div>
+    </>
   );
 };
 

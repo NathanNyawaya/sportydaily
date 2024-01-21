@@ -140,8 +140,8 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
                   if (league_.leagueName === "England - Premier League") {
                     return (
-                      <div className="flex flex-col">
-                        <div className="flex flex-col" key={index}>
+                      <div className="flex flex-col" key={index}>
+                        <div className="flex flex-col" >
                           <Box mx="auto" className="w-full">
                             <Group
                               position="start"
@@ -178,8 +178,8 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
                   if (topLeagues.includes(league_.leagueName)) {
                     return (
-                      <div className="flex flex-col">
-                        <div className="flex flex-col" key={index}>
+                      <div className="flex flex-col" key={index}>
+                        <div className="flex flex-col">
                           <Box mx="auto" className="w-full">
                             <Group
                               position="start"

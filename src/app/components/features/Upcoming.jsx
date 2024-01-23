@@ -18,26 +18,26 @@ const UpcomingMatches = () => {
                     <div className="col-span-5 flex flex-col w-full mx-auto  gap-1 items-center justify-center">
                         <img
                             alt="home"
-                            src="https://l.ivesoccer.sx/teams/brighton.png"
+                            src="https://l.ivesoccer.sx/teams/liverpool.png"
                             className="h-[50px] w-[50px]"
                         />
-                        <p className="my-2 text-gray-300 text-[0.8rem] font-bold tracking-wide text-center">Brighton & Hove </p>
+                        <p className="my-2 text-gray-300 text-[0.8rem] font-bold tracking-wide text-center">Liverpool </p>
                     </div>
 
                     <div
                         className="col-span-2 bord border-gray-600/[0.4] rounded text-center p-3 text-gray-200"
                     >
                         <p className="font-bold tracking-wide text-[0.6rem]">Kickoff</p>
-                        <h4 className="font-bold text-[0.9rem]">22:45</h4>
-                        <h4 className="text-[0.7rem] font-medium">22/1</h4>
+                        <h4 className="font-bold text-[0.9rem]">23:15</h4>
+                        <h4 className="text-[0.7rem] font-medium">31/1</h4>
                     </div>
                     <div className="col-span-5 flex flex-col w-full gap-1 items-center justify-center">
                         <img
                             alt="away"
-                            src="https://ssl.gstatic.com/onebox/media/sports/logos/-WjHLbBIQO9xE2e2MW3OPQ_96x96.png"
+                            src="https://l.ivesoccer.sx/teams/chelsea.png"
                             className="h-[50px] w-[50px]"
                         />
-                        <p className="my-2 text-gray-300 text-[0.8rem] w-full font-bold tracking-wide text-center">Wolverhampton </p>
+                        <p className="my-2 text-gray-300 text-[0.8rem] w-full font-bold tracking-wide text-center">Chelsea </p>
                     </div>
                 </div>
                 <div className="flex justify-center w-full p-2">

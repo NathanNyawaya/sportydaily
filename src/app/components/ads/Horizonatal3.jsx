@@ -24,7 +24,7 @@ const HorizontalAds3 = () => {
    
   ];
   return (
-    <div className=" mx-auto h-auto w-full flex flex-col px-1">
+    <div className="hidden mx-auto h-auto w-full flex flex-col px-1">
       <div className="w-full text-white my-2">
       <p className="opacity-80 text-[0.6rem] my-1 uppercase">Offers</p>
       </div>

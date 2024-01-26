@@ -18,17 +18,20 @@ const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
     // Convert to EAT (East Africa Time)
     const eatDateTime = new Date(utcDateTime.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' }));
 
+    // Add 3 hours
+    eatDateTime.setHours(eatDateTime.getHours() + 3);
+
     // Format the date and time
     const options = {
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric'
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
     };
 
     const formattedDateTime = new Intl.DateTimeFormat('en-US', options).format(eatDateTime);
     return formattedDateTime;
-  }
+}
 
   function oddsToPercentage(odds) {
     // Check if the odds are valid (not zero or negative)

@@ -50,7 +50,6 @@ const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
                                                             setFilter(league.leagueName)
                                                             setOpenedd(false)
                                                             setOpeneddd(true)
-                                                            
                                                         }}
                                                     >
                                                         {league.leagueName}

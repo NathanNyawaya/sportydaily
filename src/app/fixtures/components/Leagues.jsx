@@ -89,7 +89,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
   return (
     <div className="grid grid-cols-12 gap-x-2">
-      <div className="z-50 sticky top-0 col-span-12 mb-5">
+      <div className="hidden z-50 sticky top-0 col-span-12 mb-5">
         <div className="">
           {
             leagueEvents.length > 0
@@ -203,40 +203,40 @@ const LeaguesFixtures = ({ activeLeague }) => {
                     );
                   }
 
-                  return (
-                    <div className="flex flex-col" key={index}>
-                      <div className="flex flex-col" >
-                        <Box mx="auto" className="w-full">
-                          <Group
-                            position="start"
-                            mb={5}
-                            onClick={() => toggleLeagueCollapse(index)}
-                          >
-                            <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
-                              <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
-                              <div>
-                                {isOpened ? (
-                                  <ArrowDropUpIcon fontSize="small" className="" />
-                                ) : (
-                                  <ArrowDropDownIcon fontSize="small" />
-                                )}
-                              </div>
-                            </div>
-                          </Group>
-                          <Collapse in={isOpened} className="text-white">
-                            {league_.leagueEventsData.map((event, i) => (
-                              <FixtureCollapse
-                                event_={event}
-                                opened={false}
-                                league_={league_}
-                                key={i}
-                              />
-                            ))}
-                          </Collapse>
-                        </Box>
-                      </div>
-                    </div>
-                  );
+                  // return (
+                  //   <div className="flex flex-col" key={index}>
+                  //     <div className="flex flex-col" >
+                  //       <Box mx="auto" className="w-full">
+                  //         <Group
+                  //           position="start"
+                  //           mb={5}
+                  //           onClick={() => toggleLeagueCollapse(index)}
+                  //         >
+                  //           <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
+                  //             <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
+                  //             <div>
+                  //               {isOpened ? (
+                  //                 <ArrowDropUpIcon fontSize="small" className="" />
+                  //               ) : (
+                  //                 <ArrowDropDownIcon fontSize="small" />
+                  //               )}
+                  //             </div>
+                  //           </div>
+                  //         </Group>
+                  //         <Collapse in={isOpened} className="text-white">
+                  //           {league_.leagueEventsData.map((event, i) => (
+                  //             <FixtureCollapse
+                  //               event_={event}
+                  //               opened={false}
+                  //               league_={league_}
+                  //               key={i}
+                  //             />
+                  //           ))}
+                  //         </Collapse>
+                  //       </Box>
+                  //     </div>
+                  //   </div>
+                  // );
 
                 })
               ) : (

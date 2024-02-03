@@ -75,9 +75,9 @@ const Blogs = () => {
   return (
     <>
       <div className="grid grid-cols-12 gap-2 mb-10 items-center">
-        <div className="col-span-12 md:col-span-6 w-full " >
+        {/* <div className="col-span-12 md:col-span-6 w-full " >
           <UpcomingMatches />
-        </div>
+        </div> */}
         {
           posts &&
           posts.map((post, index) => {

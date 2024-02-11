@@ -49,7 +49,7 @@ const Standings = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
 
   return (
-    <table {...getTableProps()} style={{ borderCollapse: 'collapse', width: '100%' }}>
+    <table {...getTableProps()} style={{ borderCollapse: 'collapse', width: '100%' }} className='mb-20'>
       <thead className='bg-gray-900'>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>

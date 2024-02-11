@@ -75,9 +75,9 @@ const Blogs = () => {
   return (
     <>
       <div className="grid grid-cols-12 gap-2 mb-10 items-center">
-        {/* <div className="col-span-12 md:col-span-6 w-full " >
+        <div className="col-span-12 md:col-span-6 w-full " >
           <UpcomingMatches />
-        </div> */}
+        </div>
         {
           posts &&
           posts.map((post, index) => {
@@ -143,9 +143,14 @@ const Blogs = () => {
         }
       </div>
 
-      
+      {/* STORIES HEADING */}
+      <div className="flex mx-1">
+        <h2 className="text-white font-bold tracking-wide uppercase text-xl shadow shadow-gray-200/[0.1]">Stories</h2>
+      </div>
 
-      <div className="max_md:mt-10 mb-20 gap-y-4  max_lg:max-w-5xl lg:w-full lg:mb-0  lg:text-left">
+
+
+      <div className="max_md:mt-5 mb-20 gap-y-4  max_lg:max-w-5xl lg:w-full lg:mb-0  lg:text-left">
         {loading ? (
           <LoadingStatus />
         ) : (
@@ -153,69 +158,9 @@ const Blogs = () => {
           posts.map((post, index) => {
 
             if (index === 0) {
-              {
-                // console.log(post._id)
-                return (
-                  <div key={index} className="hidden">
-                    <div
-
-                      className="flex max_lg:flex-col justify-center items-center text-white group rounded  relative cursor-pointer max_sm:mx-2 my-1s0"
-
-                    >
-                      <div className="lg:w-[30%] "
-                        onClick={() => {
-                          setLoading(true);
-                          location.replace(`/blog/${post._id}`);
-                        }}>
-                        <img
-                          src={post.imageFiles[0].url}
-                          loading="lazy"
-                          alt="visuals"
-                          className="w-full h-[20vh] rounded-t object-cover"
-                        />
-
-                      </div>
-                      <div className="bg-gray-800 lg:w-[70%] flex flex-col h-[20vh] w-full p-2">
-                        <h2 className={`mb-3 text-xl font-semibold`}>
-                          {post.title}
-                          <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                            {/* &gt; */}
-                          </span>
-                        </h2>
-                        <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
-                          {post.summaryText}
-                        </p>
-                        <div className="flex items-center justify-between mt-4">
-                          <button
-                            className="text-blue-500 cursor-pointer"
-                            onClick={() => handleShare(post._id)}
-                          >
-                            <ShareIcon size="small" className="w-[10px] text-gray-300 opacity-20" />
-                          </button>
-                          <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                            <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
-                            <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* break the flow with some ads, or anyother CTA */}
-                    <div className="mt-10 mb-40 relative bg-black p-2 w-full">
-                      <div className="flex justify-center items-center">
-                        <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
-                      </div>
-                      <div className="absolute top-0 bottom-0 right-0 left-0 pb-5">
-                        <SlidingAds />
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
+              return
             } else {
               return (
-
                 <div
                   key={index}
                   className="flex max_lg:flex-col justify-center items-center text-white group rounded relative cursor-pointer max_sm:mx-2 my-10"

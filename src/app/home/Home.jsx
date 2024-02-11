@@ -43,13 +43,11 @@ const Home = () => {
                 </div>
 
               </div>
-              <div className="grid grid-cols-12 gap-x-1 my-20 h-[200px] md:h-[300px]">
-                <div className="md:col-span-4 col-span-12 m-1 max_md:mb-10">
-                  {/* <UpcomingMatches /> */}
-                </div>
-                <div className="relative col-span-12 max_md:mb-40 md:col-span-8 flex justify-center items-center">
-                  <div className="items-center flex justify-center mb-40   p-0 w-full">
-                    <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p>
+              <div className="grid grid-cols-12 gap-x-1 mt-5 mx-1 md:my-20 h-[200px] md:h-[300px]">
+              
+                <div className="relative col-span-12  flex justify-center items-center">
+                  <div className="items-center flex justify-center   p-0 w-full">
+                    {/* <p className="text-sm text-gray-500/[0.9] tracking-wide">You are experiencing ThePitchBasket</p> */}
                     <div className="absolute top-0 bottom-0 right-0 left-0">
                       <SlidingAds />
                     </div>

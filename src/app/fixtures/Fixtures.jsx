@@ -32,10 +32,10 @@ const Fixtures = () => {
 
           {/* side-bar */}
           <div className="md:col-span-3 col-span-12 hidden">
-            <LeaguesNavigation
+            {/* <LeaguesNavigation
               activeLeague={activeLeague}
               setActiveLeague={setActiveLeague}
-            />
+            /> */}
           </div>
 
           <div className="min-h-[65vh] flex flex-col max_md:col-span-12 col-span-9 z-0">

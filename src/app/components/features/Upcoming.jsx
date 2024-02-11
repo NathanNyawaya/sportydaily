@@ -5,15 +5,15 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 const UpcomingMatches = () => {
     return (
         <div className="m-1 max_md:mb-10 mx-auto">
-            <div className="w-full mb">
-                <p className="text-[0.8rem] tracking-medium uppercase text-gray-200 font-bold">UPCOMING</p>
+            <div className="w-full items-center m-1">
+                <p className="text-[0.9rem] tracking-medium uppercase text-gray-200 font-bold">UPCOMING</p>
             </div>
             <div className="bg-gray-600/[0.2] min-h-[40vh] py-20">
-                <div className="flex justify-center w-full p-2">
-                    <h2 className="text-xl text-gray-200 font-bold uppercase bg-gray-600/[0.4] shadow-lg px-20 py-2 shadow-yellow-600/[0.3]">Premier League</h2>
+                <div className="flex justify-center w-full p-2 ">
+                    <h2 className="text-xl text-gray-200 font-bold uppercase bg-gray-600/[0.4] animate-bounce shadow-lg px-20 py-2 shadow-yellow-600">Premier League</h2>
                 </div>
                 {/* teams */}
-                <div className="grid grid-cols-12 w-full py-6">
+                {/* <div className="grid grid-cols-12 w-full py-6">
 
                     <div className="col-span-5 flex flex-col w-full mx-auto  gap-1 items-center justify-center">
                         <img
@@ -39,8 +39,8 @@ const UpcomingMatches = () => {
                         />
                         <p className="my-2 text-gray-300 text-[0.8rem] w-full font-bold tracking-wide text-center">Chelsea </p>
                     </div>
-                </div>
-                <div className="flex justify-center w-full p-2">
+                </div> */}
+                <div className="flex justify-center w-full mt-10 p-2">
                     <p
                         className="flex items-center justify-center cursor-pointer text-[1rem] text-gray-200 font-bold uppercase bg-gray-500/[0.1] shadow-lg px-20 py-2 shadow-gray-600/[0.4]"
                     >

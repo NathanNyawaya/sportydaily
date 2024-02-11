@@ -73,7 +73,8 @@ const SlidingAds = ({ startstate }) => {
 
     return (
         <div className="overflow-hidden flex">
-            <div className={`flex justify-between items-center h-[200px] md:h-[250px] overflow-hidden bg-gradient-to-r animate-slideRight w-full ${contents[contentIndex].gradient} p-1 text-white shadow-lg `}>
+             <iframe src="https://d1csarkz8obe9u.cloudfront.net/index.php/posterbuilder/view/77c6379b43c33985fe2a1d08baa658ab/1"  className="md:w-[800px] md:min-h-[200px] w-full h-[108px]"></iframe>
+            {/* <div className={`flex justify-between items-center h-[200px] md:h-[250px] overflow-hidden bg-gradient-to-r animate-slideRight w-full ${contents[contentIndex].gradient} p-1 text-white shadow-lg `}>
                 {
                     contents[contentIndex].imagePostition === 1 && contents[contentIndex].imageUrl != "" &&
                     <div className="flex items-center pt- m-1 h-full">
@@ -91,7 +92,7 @@ const SlidingAds = ({ startstate }) => {
                     </div>
                 }
 
-            </div>
+            </div> */}
         </div>
     );
 };

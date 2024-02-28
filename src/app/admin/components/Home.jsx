@@ -30,10 +30,13 @@ const Home = () => {
             <SideBar setSelectedPage={setSelectedPage} activeView={selectedPage} setOpenSideBar={setOpenSideBar} />
           </div>
         </>
-
       }
+
       {/* main content */}
       <div className="col-span-1 md:col-span-8 bg-white w-full">
+        {/* <div className="flex items-center justify-end w-full bg-gradient-to-r from-gray-400 to-yellow-700">
+          
+        </div> */}
         <MainSectionDisplay active={selectedPage} />
       </div>
     </div>

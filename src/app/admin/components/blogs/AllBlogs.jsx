@@ -20,7 +20,6 @@ const AllBlogs = () => {
     (async () => {
       const blogs = await getBlogs();
       if (blogs) {
-        console.log(blogs.data);
         setBlogDocs(blogs.data);
       }
     })();

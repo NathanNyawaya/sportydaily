@@ -100,17 +100,17 @@ const Blogs = () => {
                       />
                     </div>
                     <div className="bg-gray-800 flex flex-col min-h-[20vh]  w-full p-2">
-                      <h2 className={`mb-3 text-[1rem] font-semibold`}>
+                      <h2 className={`mb-3 text-[0.9rem] font-semibold tracking-wide`}>
                         {post.title}
                         <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                           {/* &gt; */}
                         </span>
                       </h2>
-                      <p className={`m-0 text-[0.8rem] text-gray-300 w-50 truncate`}>
+                      <p className={`m-0 text-[0.7rem] tracking-wide font-medium text-gray-300 w-50 truncate`}>
                         {post.summaryText}
                       </p>
                       <div className="flex justify-center items-center my-6">
-                        <p className={`m-0 text-[0.8rem] text-gray-300 shadow shadow-orange-600/[0.2] px-20 py-1 cursor-pointer items-center flex uppercase tracking-wide font-bold`}
+                        <p className={`m-0 text-[0.7rem] text-gray-300 shadow shadow-orange-600/[0.2] px-20 py-1 cursor-pointer items-center flex uppercase tracking-wide font-bold`}
                           onClick={() => {
                             setLoading(true);
                             location.replace(`/blog/${post._id}`);
@@ -126,9 +126,9 @@ const Blogs = () => {
                           className="text-blue-500 cursor-pointer"
                           onClick={() => handleShare(post._id)}
                         >
-                          <ShareIcon size="small" className="w-[10px] text-gray-300 opacity-20" />
+                          <ShareIcon size="smaller" className="w-[8px] text-gray-200 opacity-40" />
                         </button>
-                        <div className="flex justify-end  gap-x-3 text-[0.7rem]">
+                        <div className="flex justify-end  gap-x-3 text-[0.7rem] tracking-wide">
                           <p className="font-bold text-gray-400">{post.author}</p>
                           <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
                         </div>
@@ -145,7 +145,7 @@ const Blogs = () => {
 
       {/* STORIES HEADING */}
       <div className="flex mx-1">
-        <h2 className="text-white font-bold tracking-wide uppercase text-xl shadow shadow-gray-200/[0.1]">Stories</h2>
+        <h2 className="text-white font-bold tracking-wide uppercase text-[0.9rem] shadow shadow-gray-200/[0.1]">Stories</h2>
       </div>
 
 
@@ -179,13 +179,13 @@ const Blogs = () => {
                     />
                   </div>
                   <div className="bg-gray-800 lg:w-[70%] flex flex-col w-full h-[20vh] p-2">
-                    <h2 className={`mb-3 text-[1rem] md:text-[1.2rem] font-semibold`}>
+                    <h2 className={`mb-3 text-[0.9rem] font-semibold tracking-wide`}>
                       {post.title}
                       <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                         {/* &gt; */}
                       </span>
                     </h2>
-                    <p className={`m-0 text-sm text-gray-300 w-50 truncate`}>
+                    <p className={`m-0 text-[0.7rem] tracking-wide font-medium text-gray-300 w-50 truncate`}>
                       {post.summaryText}
                     </p>
                     <div className="flex items-center justify-between mt-4">
@@ -195,9 +195,9 @@ const Blogs = () => {
                       >
                         <ShareIcon size="small" className="w-[10px] text-gray-300 opacity-20" />
                       </button>
-                      <div className="flex justify-end  gap-x-3 text-[0.8rem]">
-                        <p className="font-bold text-[0.rem] text-gray-400">{post.author}</p>
-                        <p className="text-gray-400">{getTimeAgo(post.createdAt)}</p>
+                      <div className="flex justify-end  gap-x-3 text-[0.6rem]">
+                        <p className="font-bold text-[0.6rem] text-gray-400  tracking-wide">{post.author}</p>
+                        <p className="text-gray-400 font-bold tracking-wide">{getTimeAgo(post.createdAt)}</p>
 
                       </div>
                     </div>

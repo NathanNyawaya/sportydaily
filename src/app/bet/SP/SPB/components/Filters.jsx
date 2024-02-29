@@ -4,10 +4,10 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 
-const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
+const Filters = ({ leagueEvents, setFilter, setDefaultLeagues, setOpeneddd }) => {
     const [openedd, setOpenedd] = useState(false)
     const [opened, setOpened] = useState(false)
-    const [selectedLeague, setSelectedLeague] = useState("Leagues")
+    const [selectedLeague, setSelectedLeague] = useState("Popular")
     function formatDateInEAT(timestamp) {
         const dateObject = new Date(timestamp);
 
@@ -44,10 +44,10 @@ const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
                                 onClick={() => setOpenedd(prev => !prev)}
                                 className="">
 
-                                <div className="flex justify-between text-gray-600 text-[0.9rem] mb-1 bg-gray-100 hover:bg-gray-200 p-1 col-span-6 items-center cursor-pointer">
-                                    <h4 className='text-[0.7rem] truncate text-gray-600 font-bold tracking-wide'>{selectedLeague}</h4>
+                                <div className="flex justify-between text-gray-600 text-[0.9rem] mb-1 bg-green-800 shadow-lg shadow-gray-800 rounded p-1 col-span-6 items-center cursor-pointer">
+                                    <h4 className='text-[0.7rem] truncate text-gray-200 font-bold tracking-wide'>{selectedLeague}</h4>
                                     <div className='col-span-1'>
-                                        {openedd ? <ArrowDropUpIcon fontSize='small' className='' /> : <ArrowDropDownIcon fontSize='small' />}
+                                        {openedd ? <ArrowDropUpIcon fontSize='small' className='text-gray-200' /> : <ArrowDropDownIcon fontSize='small' className='text-gray-200' />}
                                     </div>
 
                                 </div>
@@ -59,18 +59,33 @@ const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
                                     h={40}
                                     type="always"
                                     offsetScrollbars
-                                    scrollbarSize={40}
-                                    className='bg-gray-200'>
+                                    scrollbarSize={5}
+                                    className='bg-gray-400'>
                                     <div className='flex flex-col w-full p-1 max-h-[25vh]'>
+                                        <p
+                                            className='border-b border-gray-300 mb-1 text-[0.7rem] text-gray-600 font-bold tracking-wide'
+                                            onClick={() => {
+                                                setSelectedLeague("Popular")
+                                                setFilter("")
+                                                setDefaultLeagues(true)
+                                                setOpenedd(false)
+                                                  setOpeneddd(true)
+
+                                            }}
+                                        >
+                                            
+                                            Popular
+                                        </p>
                                         {
                                             leagueEvents.map((league, i) => {
                                                 return (
                                                     <p
                                                         key={i}
-                                                        className='border-b border-gray-300 mb-1 text-[0.7rem] text-gray-600 font-bold tracking-wide'
+                                                        className='border-b border-gray-300 mb-1 cursor-pointer hover:bg-gray-300 text-[0.7rem] text-gray-600 font-bold tracking-wide'
                                                         onClick={() => {
                                                             setSelectedLeague(league.leagueName)
                                                             setFilter(league.leagueName)
+                                                            setDefaultLeagues(false)
                                                             setOpenedd(false)
                                                             setOpeneddd(true)
 
@@ -122,7 +137,7 @@ const Filters = ({ leagueEvents, setFilter, setOpeneddd }) => {
             </div>
             <div className="grid grid-cols-4 hidden">
                 <div className="col-span-2 flex ">
-                   
+
                 </div>
                 <div className="col-span-2">
                     <div class="flex w-full">

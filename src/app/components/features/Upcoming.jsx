@@ -10,7 +10,7 @@ const UpcomingMatches = () => {
             </div>
             <div className="bg-gray-600/[0.2] min-h-[40vh] py-20">
                 <div className="flex justify-center w-full p-2 ">
-                    <h2 className="text-xl text-gray-200 font-bold uppercase bg-gray-600/[0.4] animate-bounce shadow-lg px-20 py-2 shadow-yellow-600">Premier League</h2>
+                    <h2 className="text-[0.8rem] text-gray-200 font-bold uppercase bg-gray-600/[0.4] animate-bounce shadow-lg px-20 py-2 shadow-yellow-600">Premier League</h2>
                 </div>
                 {/* teams */}
                 {/* <div className="grid grid-cols-12 w-full py-6">
@@ -42,7 +42,7 @@ const UpcomingMatches = () => {
                 </div> */}
                 <div className="flex justify-center w-full mt-10 p-2">
                     <p
-                        className="flex items-center justify-center cursor-pointer text-[1rem] text-gray-200 font-bold uppercase bg-gray-500/[0.1] shadow-lg px-20 py-2 shadow-gray-600/[0.4]"
+                        className="flex items-center justify-center cursor-pointer text-[0.7rem] text-gray-200 font-bold uppercase bg-gray-500/[0.1] shadow-lg px-20 py-2 shadow-gray-600/[0.4]"
                     >
                         <Link href="/fixtures">
                             See More

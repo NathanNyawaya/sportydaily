@@ -59,7 +59,7 @@ const Blog = () => {
             </p>
             {/* blog header */}
             <div className="max_ss:mb-2 md:my-10">
-              <h1 className="leading-normal text-xl md:text-3xl lg:text-4xl font-bold  text-white">
+              <h1 className="leading-normal text-[1rem] md:text-2xl font-bold  text-white">
                 {blogDoc.title}
               </h1>
             </div>
@@ -77,7 +77,7 @@ const Blog = () => {
                 {/* blog body */}
                 <div className="my-10">
                   {blogDoc.paragraphs.map((p, index) => (
-                    <p key={index} className="my-5 text-white">
+                    <p key={index} className="my-5 text-gray-200 tracking-wider font-medium text-[0.9rem]">
                       {p}
                     </p>
                   ))}

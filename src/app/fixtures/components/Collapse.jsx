@@ -49,7 +49,7 @@ const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
     <Box mx="auto" className="w-full"  >
       <Group position="start" mb={5} onClick={() => setOpenedd(prev => !prev)} className="">
 
-        <div className="grid grid-cols-12 text-white text-[0.9rem] mx-2 mb-1 bg-gray-800 md:hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
+        <div className="grid grid-cols-12 text-white text-[0.9rem] mx-2 mb-1 bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
           <div className="md:col-span-6 col-span-6 flex flex-col gap-y-2">
             <div className="flex gap-3">
               <p className="text-[0.8rem] text-white">
@@ -83,7 +83,7 @@ const FixtureCollapse = ({ event_, opened, kickoff_time_obj }) => {
       </Group>
 
       <Collapse in={openedd} className="text-white">
-        <div className="flex flex-col text-white text-[0.9rem] mx-2 mb-1 bg-gray-300/[0.2] md:hover:bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
+        <div className="flex flex-col text-white text-[0.9rem] mx-2 mb-1 bg-yellow-400/[0.1] p-3 col-span-6 items-center rounded">
           {
             event_.periods.num_0.money_line != null ? <div className='flex flex-col gap-4 w-full my-4 bg-orange-600/[0.1] shadow-lg shadow-gray-900 p-2'>
               <p className='text-[0.7rem] text-gray-300 font-bold tracking-wide text-center w-full'>Win Probability</p>

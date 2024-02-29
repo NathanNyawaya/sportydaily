@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-gradient-to-r from-black to-[#FCD107] rounded my-1 text-gray-800">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between gap-x-1 items-center">
         <div className="flex justify-between items-center">
           <Link href={`/`}>
             <p className="text-[1rem] max-w-[200px] cursor-pointer text-center font-bold bg-[#FCD107] rounded p-1 text-black">
@@ -61,9 +61,9 @@ const Navbar = () => {
         </div>
         <div className="flex justify-end items-center">
           {time && (
-            <div className="flex gap-x-1 bg-green-500/[0.5] p-2 items-center">
+            <div className="flex gap-x-1 bg-green-500/[0.5] p-2 items-center max_md:max-w-[60px]">
               <img src="/clock.gif" alt="Time" className="h-[15px] w-[15px] rounded-full" />
-              <h2 className="text-[0.7rem] font-bold text-black mr-1">
+              <h2 className="md:text-[0.7rem] text-[0.6rem]  font-bold text-black mr-1">
                 {time} EAT
               </h2>
             </div>
@@ -77,7 +77,7 @@ const Navbar = () => {
               </Link>
             )}
             {userName != "" && userName != undefined && loggedIn && (
-              <p className="flex items-center text-[0.8rem] font-bold px-1">
+              <p className="flex items-center md:text-[0.7rem] text-[0.6rem] font-bold px-1">
                 {`${greeting}, ${userName}`}
               </p>
             )}

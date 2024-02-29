@@ -53,7 +53,7 @@ const Standings = () => {
     <>
       <div className="flex items-center justify-around bg-gradient-to-r from-gray-50 to-gray-500 w-full py-4 my-10">
         <img src={`https://www.logo.wine/a/logo/Premier_League/Premier_League-Logo.wine.svg`} className='h-[8vh] md:h-[15vh]' alt="epl-logo" />
-        <p className='font-bold text-sm md:text-2xl text-[#3D195B] tracking-wide shadow-lg shadow-gray-900/[0.1]'># WORLD'S FAVORITE</p>
+        <p className='font-bold text-sm md:text-2xl text-[#3D195B] tracking-wide shadow-lg shadow-gray-900/[0.1]'>{`# WORLD'S FAVORITE`}</p>
       </div>
       <div className='flex w-full mx-1 mb-2'>
         <StandingsNavigation />

@@ -12,6 +12,11 @@ export default function PageHandler() {
       if (decodedToken.emailConfirm === false) {
         window.location.replace("/emailconfirm")
       }
+      if (decodedToken.role === "level_0") {
+        setLoggedIn(true)
+      } else if (decodedToken === "level_200") {
+        window.location.replace("/")
+      }
     } else {
       setLoggedIn(false);
       // router.push("/login")

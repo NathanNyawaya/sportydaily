@@ -11,7 +11,7 @@ const links = [
   // Add more links as needed
 ];
 
-const DropdownMenu = () => {
+const BottomNav = () => {
   const [activeView, setActiveView] = useState("/")
 
 
@@ -30,22 +30,20 @@ const DropdownMenu = () => {
 
 
   return (
-    <div className="py-3 max_md..:mb-5 mb--10 mx-auto">
-      <div className="flex items-center gap-x-2 px-1">
-        {links.map((link) => (
-          <Link key={link.id} href={link.href}>
-            <p
-              onClick={() => linkShot(link.href)}
-              className={` ${activeView === link.href ? "bg-white text-black" : "text-white"
-                } px-2 rounded cursor-pointer text-[0.9rem]`}
-            >
-              {link.label}
-            </p>
-          </Link>
-        ))}
-      </div>
+    <div className="flex overflow-hidden items-center gap-x-2  py-2 md:py-3 mt-1 px-1 rounded bg-gradient-to-r to-[#FCD107]/[0.1] from-black">
+      {links.map((link) => (
+        <Link key={link.id} href={link.href}>
+          <p
+            onClick={() => linkShot(link.href)}
+            className={` ${activeView === link.href ? "bg-white text-black" : "text-white"
+              } px-2 rounded-r cursor-pointer text-[0.8rem]`}
+          >
+            {link.label}
+          </p>
+        </Link>
+      ))}
     </div>
   );
 };
 
-export default DropdownMenu;
+export default BottomNav;

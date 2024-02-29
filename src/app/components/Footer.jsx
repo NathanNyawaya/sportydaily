@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from "react";
-
+import { blogIconGIF } from "../assets";
 
 const Footer = () => {
   const [eighteenPlus, setEighteenPlus] = useState(false)
@@ -15,89 +15,79 @@ const Footer = () => {
     }
   }, [])
 
+
   const links = [
-    { href: "/", text: "Blogs" },
+    {
+      href: "/",
+      text: "Blogs",
+      icon: "https://img.icons8.com/fluency/48/blog.png"
+    },
     // { href: "/livestreams", text: "Livestreams" },
-    { href: "/predictions", text: "Betting Tips" },
+    {
+      href: "/predictions",
+      text: "Betting Tips",
+      icon: "https://img.icons8.com/external-others-pike-picture/50/external-Gambling-currency-others-pike-picture.png"
+    },
     // { href: "/bet/SP/SPB", text: "Betting" },
-    { href: "/highlights", text: "Highlights" },
+    {
+      href: "/highlights",
+      text: "Highlights",
+      icon: "https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/66/external-video-stream-party-and-celebrations-smashingstocks-outline-color-smashing-stocks.png"
+    },
     {
       href: "https://twitter.com/ThePitchBasket",
       text: "Twitter",
       target: "_blank",
+      icon: "https://img.icons8.com/papercut/60/twitter.png"
     },
     {
       href: "https://wa.me/254710379709",
       text: "Chat With Us",
       target: "_blank",
+      icon: "https://img.icons8.com/arcade/64/chat.png"
     },
   ]
 
-  const generateNavItem = (href, text, target = "_self", index) => (
-    <li key={text}>
-      <a href={href} target={target} className={`hover:underline ${index === links.length - 1 ? "" : "border-r border-gray-500"} px-1 text-[0.7rem]`}>
+  const generateNavItem = (href, text, icon, target = "_self", index) => (
+    <li key={text} className="flex items-center pb-2">
+      <img src={icon} alt="icons" className="h-[14px] w-[14px] animate-bounce\" />
+      <a href={href} target={target} className={`hover:underline ${index === links.length - 1 ? "" : ""} pr-4 pl-1 text-[0.7rem] tracking-wide font-medium`}>
         {text}
       </a>
     </li>
   );
+  const showThirdPartiesLinks = () => {
+
+    alert("Icons By: icons8.com")
+  }
   return (
-    <footer id="footer" className="p-3 bg-gray-800 dark:bg-gray-800">
-
-
-      <div className="bg-white my-10">
-        {/* <iframe src='https://www.scorebat.com/embed/v/659f74f81cb5d/?utm_source=api&utm_medium=video&utm_campaign=dflt' frameborder='0' width='100%' height='100%' allowfullscreen allow='autoplay; fullscreen' ></iframe> */}
-        {/* <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/CTM2b2xxi3A?si=YbqSw5OBOW5tJcld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
-         <iframe src="https://d1csarkz8obe9u.cloudfront.net/index.php/posterbuilder/view/77c6379b43c33985fe2a1d08baa658ab/1"  className="md:h-[200px] w-full"></iframe>
-      </div>
-
+    <footer id="footer" className="bg-gradient-to-r from-black to-black px-1 py-3 rounded">
       <div className="mx-auto max-w-screen-xl">
-        <div className="md:flex md:justify-between gap-y-4 items-center">
-          <div className="md:flex md:justify-between md:mr-5 items-center gap-4 w-full">
-            <div className="md:mb-0 w-full flex justify-center">
-              <p className="text-[1.2rem] max-w-[200px] text-center font-bold bg-[#FCD107] rounded p-1 text-black">
-                ThePitchBasket™
-              </p>
-            </div>
-            <div className="md:mb-0 flex justify-center max_md:my-4">
-              <p className="text-[0.7rem] max_md:max-w-[200px] text-center font-bold px-3 py-1 text-white rounded bg-green-500/[0.2]">
-                Powered by GrenLyfe™
-              </p>
-            </div>
-          </div>
-
-
-          <div className="flex w-full">
-
-
-            <div className="flex justify-center items-center w-full">
-              <ul className="flex flex-wrap justify-center text-gray-400 dark:text-gray-400">
-                {links.map(({ href, text, target }, index) => generateNavItem(href, text, target, index))}
-              </ul>
-
-            </div>
-
-            <div className="col-span-1 flex justify-center items-center">
-              <img src="/18+.png" className={`${!eighteenPlus && "hidden"} h-[50px] w-[50px]`} />
-            </div>
+        <div className="flex max_sm:flex-col items-center justify-center mb-16">
+          <p className="text-[1rem] max-w-[200px] text-center font-bold bg-[#FCD107] rounded p-1 text-black">
+            ThePitchBasket™
+          </p>
+          <div className="flex justify-center items-center">
+            <img src="/18+.png" className={`${!eighteenPlus && "hidden"} h-[50px] w-[50px]`} />
           </div>
         </div>
 
+        <div className="flex shadow-lg shadow-[#FCD107]/[0.1] mb-2 max_sm:flex-col items-center justify-between border-top border-gray-200 gap-y-4">
+          <div className="flex justify-center items-center w-40%">
+            <ul className="flex flex-wrap justify-center text-gray-400 dark:text-gray-400">
+              {links.map(({ href, text, icon, target }, index) => generateNavItem(href, text, icon, target, index))}
+            </ul>
+          </div>
 
-
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-
-        <div className="flex items-center justify-center">
-          <p className="text-[0.8rem] text-gray-500 sm:text-center dark:text-gray-400 my-2 text-center">
-            © Since 2023 {" "}
-            <a href="#" className="hover:underline">
-              ThePitchBasket™
-            </a>
-          </p>
-          {/* <p className="text-[0.7rem] text-gray-500">v2</p> */}
-
+          <div className="">
+            <p className=" text-gray-200 tracking-wide text-[0.7rem] text-slide text-gray-400 sm:text-center dark:text-gray-400 text-center">
+              © Since 2023 <a href="#" className="hover:underline">ThePitchBasket™</a>
+            </p>
+          </div>
         </div>
       </div>
-    </footer >
+    </footer>
+
   );
 };
 

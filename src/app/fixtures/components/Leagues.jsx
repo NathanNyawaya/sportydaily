@@ -1,31 +1,31 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { formatDateTimeEAT } from "@/app/funcStore/toReadableTime";
 import { Group, Collapse, Box } from "@mantine/core";
 import FixtureCollapse from "./Collapse";
 import Filters from "@/app/bet/SP/SPB/components/Filters";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import SlidingAds from "@/app/bet/components/ads/SlidingAds";
-import HorizontalAds from "@/app/components/ads/HorizontalAds";
 
 
 const LeaguesFixtures = ({ activeLeague }) => {
   const [leagues, setLeagues] = useState([])
   const [eventsData, setEventsData] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [leagueEvents, setLeagueEvents] = useState([])
+  const [leagueEventsDT, setLeagueEventsDT] = useState([])
+  const [open, setOpen] = useState(true)
   const [openeddd, setOpeneddd] = useState(true)
   const [openedLeagues, setOpenedLeagues] = useState([]);
   const [filter, setFilter] = useState("")
 
-
+  const [defaultLeagues, setDefaultLeagues] = useState(true)
 
   useEffect(() => {
     if (filter != "") {
-      if (leagues.length > 0) {
-        const filtered = leagues.filter(league => {
+      if (leagueEventsDT.length > 0) {
+        const filtered = leagueEventsDT.filter(league => {
           if (league.leagueName === filter) {
             return league
           }
@@ -54,8 +54,7 @@ const LeaguesFixtures = ({ activeLeague }) => {
     try {
       const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER}/api/betgreen/sp/leagueEvents`)
       if (res && res.data) {
-        setLeagueEvents(res.data)
-        setLeagues(res.data)
+        setLeagueEventsDT(res.data)
       }
     } catch (error) {
       console.error(error)
@@ -64,20 +63,19 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
   useEffect(() => {
     fetchLeagues()
-    // fetcher()
+
   }, [])
 
   const filterEvents = () => {
     const filteredData = leagues.filter(league_ => {
       return league_.leagueName == activeLeague
     })
-    // console.log(filteredData)
     if (filteredData.length > 0) {
       setEventsData(filteredData)
       setLoading(false)
     } else {
       setEventsData([])
-      setLoading(false)
+      // setLoading(false)
 
     }
     setLoading(false)
@@ -89,12 +87,12 @@ const LeaguesFixtures = ({ activeLeague }) => {
 
   return (
     <div className="grid grid-cols-12 gap-x-2">
-      <div className="hidden z-50 sticky top-0 col-span-12 mb-5">
+      <div className=" z-50 sticky top-0 col-span-12 mb-5">
         <div className="">
           {
-            leagueEvents.length > 0
+            leagueEventsDT.length > 0
             &&
-            <Filters leagueEvents={leagues} setFilter={setFilter} setOpeneddd={setOpeneddd} />
+            <Filters leagueEvents={leagueEventsDT} setDefaultLeagues={setDefaultLeagues} setFilter={setFilter} setOpeneddd={setOpeneddd} />
           }
         </div>
       </div>
@@ -102,148 +100,175 @@ const LeaguesFixtures = ({ activeLeague }) => {
       <div className="col-span-12">
         <div className="flex flex-col justify-center">
           <div className="flex w-full flex-col justify-start rounded my-1">
-            <div className="flex mb-5 bg-gradient-to-r p-1 from-black to-yellow-500 items-center">
-              <p className="text-white uppercase text-[0.9rem] tracking-wide font-bold">Popular Leagues</p>
-            </div>
+
             {/* fixtures */}
             {loading ? (
               <div className="flex justify-center items-center">
                 <p className="text-white">{"Loading..."}</p>
               </div>
             ) : (
-              leagueEvents && leagueEvents.length > 0 ? (
-                leagueEvents.map((league_, index) => {
-                  const isOpened = openedLeagues.includes(index);
-                  const topLeagues = [
-                    "England - Premier League",
-                    "Italy - Serie A",
-                    "Mexico - Liga de Expansión MX",
-                    "Spain - La Liga",
-                    "Spain - Segunda Division",
-                    "Germany - Bundesliga",
-                    "CAF - Africa Cup of Nations",
-                    "Mexico - Liga Premier",
-                    "UEFA - Champions League",
-                    "UEFA - EURO",
-                    "UEFA - Europa League"
-                  ];
-                  // console.log(league_)
-                  if (league_.leagueName === "England - Premier League") {
-                    return (
-                      <div className="flex flex-col" key={index}>
-                        <div className="flex flex-col" >
-                          <Box mx="auto" className="w-full">
-                            <Group
-                              position="start"
-                              mb={5}
-                              onClick={() => toggleLeagueCollapse(index)}
-                            >
-                              <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
-                                <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
-                                <div>
-                                  {isOpened ? (
-                                    <ArrowDropUpIcon fontSize="small" className="" />
-                                  ) : (
-                                    <ArrowDropDownIcon fontSize="small" />
-                                  )}
+              <>
+                {
+                  leagueEvents  && !defaultLeagues &&leagueEvents.length > 0 && (
+                    leagueEvents.map((league_, index) => {
+                      const isOpened = openedLeagues.includes(index);
+
+
+                      return (
+                        <div className="flex flex-col" key={index}>
+                          <div className="flex flex-col">
+                            <Box mx="auto" className="w-full">
+                              <Group
+                                position="start"
+                                mb={5}
+                                onClick={() => setOpen(prev=>!prev)}
+                              >
+                                <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center rounded">
+                                  <div className="flex items-center gap-x-2 py-1">
+                                    <img src="https://img.icons8.com/3d-fluency/94/football2.png" alt="sport-icon" className="h-[20px] w-[20px]" />
+                                    <h3 className="text-gray-300 text-sm font-medium ">{league_.leagueName}</h3>
+                                  </div>
+                                  <div>
+                                    {open ? (
+                                      <ArrowDropUpIcon fontSize="small" className="" />
+                                    ) : (
+                                      <ArrowDropDownIcon fontSize="small" className="text-[#FCD107]/[0.5]"/>
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                            </Group>
-                            <Collapse in={isOpened} className="text-white">
-                              {league_.leagueEventsData.map((event, i) => (
-                                <FixtureCollapse
-                                  event_={event}
-                                  opened={false}
-                                  league_={league_}
-                                  key={i}
-                                />
-                              ))}
-                            </Collapse>
-                          </Box>
+                              </Group>
+                              <Collapse in={open} className="text-white">
+                                {league_.leagueEventsData.map((event, i) => (
+                                  <FixtureCollapse
+                                    event_={event}
+                                    opened={false}
+                                    league_={league_}
+                                    key={i}
+                                  />
+                                ))}
+                              </Collapse>
+                            </Box>
+                          </div>
+                          {index % 13 === 0 ? <div className="my-5"><SlidingAds /></div> : ""}
                         </div>
-                      </div>
-                    );
-                  }
+                      );
 
-                  if (topLeagues.includes(league_.leagueName)) {
-                    return (
-                      <div className="flex flex-col" key={index}>
-                        <div className="flex flex-col">
-                          <Box mx="auto" className="w-full">
-                            <Group
-                              position="start"
-                              mb={5}
-                              onClick={() => toggleLeagueCollapse(index)}
-                            >
-                              <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
-                                <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
-                                <div>
-                                  {isOpened ? (
-                                    <ArrowDropUpIcon fontSize="small" className="" />
-                                  ) : (
-                                    <ArrowDropDownIcon fontSize="small" />
-                                  )}
-                                </div>
-                              </div>
-                            </Group>
-                            <Collapse in={isOpened} className="text-white">
-                              {league_.leagueEventsData.map((event, i) => (
-                                <FixtureCollapse
-                                  event_={event}
-                                  opened={false}
-                                  league_={league_}
-                                  key={i}
-                                />
-                              ))}
-                            </Collapse>
-                          </Box>
-                        </div>
-                        {index % 13 === 0 ? <div className="my-5"><SlidingAds /></div> : ""}
-                      </div>
-                    );
-                  }
+                    })
+                  )
+                }
+                {
+                  leagueEventsDT && defaultLeagues && leagueEventsDT.length > 0 &&
+                  (
+                    <div className="flex items-center justify-between mb-5 bg-gradient-to-r p-1 from-black to-yellow-500 items-center">
+                      <p className="text-white uppercase text-[0.9rem] tracking-wide font-bold">Popular Leagues</p>
+                      <img src="https://img.icons8.com/3d-fluency/94/star.png" alt="start-icon" className="h-[20px] w-[20px]" />
+                    </div>
+                  )
+                }
+                {
+                  leagueEventsDT && defaultLeagues && leagueEventsDT.length > 0 && (
+                    leagueEventsDT.map((league_, index) => {
+                      const isOpened = openedLeagues.includes(index);
+                      const topLeagues = [
+                        // "England - Premier League",
+                        "Italy - Serie A",
+                        "Mexico - Liga de Expansión MX",
+                        "Spain - La Liga",
+                        "Spain - Segunda Division",
+                        "Germany - Bundesliga",
+                        "CAF - Africa Cup of Nations",
+                        "Mexico - Liga Premier",
+                        "UEFA - Champions League",
+                        "UEFA - EURO",
+                        "UEFA - Europa League"
+                      ];
+                      if (league_.leagueName === "England - Premier League") {
+                        return (
+                          <div className="flex flex-col" key={index}>
+                            <div className="flex flex-col" >
+                              <Box mx="auto" className="w-full">
+                                <Group
+                                  position="start"
+                                  mb={5}
+                                  onClick={() => toggleLeagueCollapse(index)}
+                                >
+                                  <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center rounded">
+                                    <div className="flex items-center gap-x-2 py-1">
+                                      <img src="https://img.icons8.com/3d-fluency/94/football2.png" alt="sport-icon" className="h-[20px] w-[20px]" />
+                                      <h3 className="text-gray-300 text-sm font-medium ">{league_.leagueName}</h3>
+                                    </div>
+                                    <div>
+                                      {isOpened ? (
+                                        <ArrowDropUpIcon fontSize="small" className="" />
+                                      ) : (
+                                        <ArrowDropDownIcon fontSize="small" className="text-[#FCD107]/[0.5]"/>
+                                      )}
+                                    </div>
+                                  </div>
+                                </Group>
+                                <Collapse in={isOpened} className="text-white">
+                                  {league_.leagueEventsData.map((event, i) => (
+                                    <FixtureCollapse
+                                      event_={event}
+                                      opened={true}
+                                      league_={league_}
+                                      key={i}
+                                    />
+                                  ))}
+                                </Collapse>
+                              </Box>
+                            </div>
+                          </div>
+                        );
+                      }
 
-                  // return (
-                  //   <div className="flex flex-col" key={index}>
-                  //     <div className="flex flex-col" >
-                  //       <Box mx="auto" className="w-full">
-                  //         <Group
-                  //           position="start"
-                  //           mb={5}
-                  //           onClick={() => toggleLeagueCollapse(index)}
-                  //         >
-                  //           <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center">
-                  //             <h3 className="text-gray-300 text-sm">{league_.leagueName}</h3>
-                  //             <div>
-                  //               {isOpened ? (
-                  //                 <ArrowDropUpIcon fontSize="small" className="" />
-                  //               ) : (
-                  //                 <ArrowDropDownIcon fontSize="small" />
-                  //               )}
-                  //             </div>
-                  //           </div>
-                  //         </Group>
-                  //         <Collapse in={isOpened} className="text-white">
-                  //           {league_.leagueEventsData.map((event, i) => (
-                  //             <FixtureCollapse
-                  //               event_={event}
-                  //               opened={false}
-                  //               league_={league_}
-                  //               key={i}
-                  //             />
-                  //           ))}
-                  //         </Collapse>
-                  //       </Box>
-                  //     </div>
-                  //   </div>
-                  // );
+                      if (topLeagues.includes(league_.leagueName)) {
+                        return (
+                          <div className="flex flex-col" key={index}>
+                            <div className="flex flex-col">
+                              <Box mx="auto" className="w-full">
+                                <Group
+                                  position="start"
+                                  mb={5}
+                                  onClick={() => toggleLeagueCollapse(index)}
+                                >
+                                  <div className="flex justify-between items-center text-white text-[0.9rem] mb-1 bg-black md:hover:bg-yellow-400/[0.1] p-1 col-span-6 items-center rounded">
+                                    <div className="flex items-center gap-x-2 py-1">
+                                      <img src="https://img.icons8.com/3d-fluency/94/football2.png" alt="sport-icon" className="h-[20px] w-[20px]" />
+                                      <h3 className="text-gray-300 text-sm font-medium ">{league_.leagueName}</h3>
+                                    </div>
+                                    <div>
+                                      {isOpened ? (
+                                        <ArrowDropUpIcon fontSize="small" className="" />
+                                      ) : (
+                                        <ArrowDropDownIcon fontSize="small" className="text-[#FCD107]/[0.5]"/>
+                                      )}
+                                    </div>
+                                  </div>
+                                </Group>
+                                <Collapse in={isOpened} className="text-white">
+                                  {league_.leagueEventsData.map((event, i) => (
+                                    <FixtureCollapse
+                                      event_={event}
+                                      opened={false}
+                                      league_={league_}
+                                      key={i}
+                                    />
+                                  ))}
+                                </Collapse>
+                              </Box>
+                            </div>
+                            {index % 13 === 0 ? <div className="my-5"><SlidingAds /></div> : ""}
+                          </div>
+                        );
+                      }
 
-                })
-              ) : (
-                <div className="flex justify-center items-center">
-                  <p className="text-white">Loading...</p>
-                </div>
-              )
+                    })
+                  )
+                }
+
+
+              </>
             )}
           </div>
           {/* <div className="my-10 flex flex-col m-1">

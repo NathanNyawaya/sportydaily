@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import {Layout} from "./Layout";
-import ConfirmEmail from "../auth/ConfirmEmail";
+import ConfirmEmail from "../(auth)/ConfirmEmail";
 
 export default function page() {
   return (
-    <div>
-      <ConfirmEmail />
-    </div>
+    <main className="relative">
+      <div className="mx-auto max-w-screen-xl">
+        <ConfirmEmail />
+      </div>
+    </main>
   );
 }

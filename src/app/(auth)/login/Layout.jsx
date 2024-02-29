@@ -5,7 +5,7 @@ import Login from "./Login";
 
 const Layout = () => {
   return (
-    <div className="mx-auto max-w-screen-xl">
+    <div className="mx-auto max-w-screen-xl px-1">
       <Navbar />
       <div className=" my-4">
         <Login/>

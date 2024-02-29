@@ -1,14 +1,14 @@
-import Link from "next/link"
-
-export const checkIsAuthenticated = async () => {
-
+export const checkIsAuthenticated = async (from) => {
   try {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("ksj");
     if (token) {
       return true;
     } else {
-      window.location.replace("/auth/login")
-      return false;
+      if(from){
+        window.location.replace(`/login?rt=${from}`)
+      }else{
+        window.location.replace(`/login`)
+      }
     }
   } catch (error) {
     console.error(error);

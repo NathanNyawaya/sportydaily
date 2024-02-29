@@ -88,8 +88,6 @@ const BlogForm = () => {
         data && setSuccessMessage("Image upload Successfully");
       }
       setBlogData({ ...blogData, imageFiles: arr });
-
-      console.log(arr);
     } catch (error) {
       console.log(error);
     }
@@ -113,10 +111,7 @@ const BlogForm = () => {
             },
           }
         );
-
-        console.log(res.data);
         if (res.status === 200) {
-          console.log(res);
           setUploadOk(true);
         }
       }

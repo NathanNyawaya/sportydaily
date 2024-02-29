@@ -35,7 +35,6 @@ const AllBetTips = () => {
     (async () => {
       const betting_tips_offers = await getAllTips();
       if (betting_tips_offers) {
-        console.log(betting_tips_offers.data);
         if (betting_tips_offers.data === "Empty tips") {
           setBetTips([]);
           setEmpty(true)
@@ -51,7 +50,6 @@ const AllBetTips = () => {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/all_tips`);
 
       if (response.status === 200) {
-        console.log(response)
         return response
       }
     } catch (error) {

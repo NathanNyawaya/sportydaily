@@ -25,8 +25,6 @@ const AddLivestream = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    // Add logic here to do something with the form data, such as sending it to a server
   };
 
   return (

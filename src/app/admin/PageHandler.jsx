@@ -8,7 +8,6 @@ export default function PageHandler() {
     const ksj = localStorage.getItem("ksj");
     if (ksj) {
       const decodedToken = jwt_decode(ksj, process.env.NEXT_PUBLIC_JWT_SECRET);
-      console.log(decodedToken)
       if (decodedToken.emailConfirm === false) {
         window.location.replace("/emailconfirm")
       }

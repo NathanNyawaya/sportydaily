@@ -101,8 +101,6 @@ const EditBlog = () => {
         data && setSuccessMessage("Image upload Successfully");
       }
       setBlogData({ ...blogData, imageFiles: arr });
-
-      console.log(arr);
     } catch (error) {
       console.log(error);
     }
@@ -110,12 +108,8 @@ const EditBlog = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    console.log(blogData);
-
     try {
-      const token = localStorage.getItem("token");
-      console.log(`${process.env.NEXT_PUBLIC_SERVER}/api/blogs/${blogDoc._id}`);
+      const token = localStorage.getItem("ksj");
       if (token) {
         const res = await axios.put(
           `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/${blogDoc._id}`,
@@ -130,11 +124,9 @@ const EditBlog = () => {
         );
 
         if (res.status === 200) {
-          console.log(res);
           setEditOk(true);
         }
       }
-      console.log(blogData);
     } catch (error) {
       console.log(error);
     }
@@ -147,7 +139,6 @@ const EditBlog = () => {
         const blog_id = JSON.parse(id_raw);
         const blog = await getBlog(blog_id);
         if (blog) {
-          console.log(blog);
           setBlogDoc(blog.data.blog_doc);
           populateFormWithBlogDoc(blog.data.blog_doc); // Populate the form with blogDoc data
         }

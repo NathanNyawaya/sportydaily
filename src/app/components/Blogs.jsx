@@ -10,7 +10,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 import ShareIcon from '@mui/icons-material/Share';
-import UpcomingMatches from "./features/Upcoming";
 
 import KeyboardDoubleArrowRightSharpIcon from '@mui/icons-material/KeyboardDoubleArrowRightSharp';
 
@@ -145,7 +144,7 @@ const Blogs = ({ club_name, theme }) => {
       {/* STORIES HEADING */}
       <div className="flex mx-1">
 
-        <h2 className={`${theme ? theme.h_c_1 : "text-gray-100"} font-bold tracking-wide uppercase text-[2.074rem] shadow shadow-gray-200/[0.1]`}>Stories</h2>
+        <h2 className={`${theme ? theme.h_c_1 : "text-gray-100"} font-bold tracking-wide uppercase md:text-[2.074rem] text-[1rem] shadow shadow-gray-200/[0.1]`}>Stories</h2>
       </div>
 
 

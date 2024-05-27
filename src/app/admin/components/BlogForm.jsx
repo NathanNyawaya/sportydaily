@@ -98,7 +98,7 @@ const BlogForm = () => {
     console.log(blogData);
 
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("ksj");
       if (token) {
         const res = await axios.post(
           `${process.env.NEXT_PUBLIC_SERVER}/api/blogs/create`,

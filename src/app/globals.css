@@ -26,6 +26,65 @@ body {
 
 
 
+/* GRENLYFE V1.1.1 TYPESCALE */
+
+/*stakebuttons*/
+.sButton{
+  width: 7rem;
+}
+.submit{
+  margin-top: 1rem;
+  width: 5rem;
+  padding: 5px;
+}
+
+.bg_1 {
+  background: #031123;
+}
+
+.h_1 {
+  font-size: 2.986rem;
+}
+.h_2 {
+  font-size: 2.488rem;
+}
+.h_3 {
+  font-size: 2.074rem;
+}
+.h_4 {
+  font-size: 1.728rem;
+}
+.h_5 {
+  font-size: 1.44rem;
+}
+.h_6 {
+  font-size: 1.2rem;
+}
+.p_1 {
+  font-size: 1rem;
+}
+.p_1_sm {
+  font-size: 0.962rem;
+}
+.p_2 {
+  font-size: 0.833rem;
+}
+.p_2_sm {
+  font-size: 0.803rem;
+}
+.p_3 {
+  font-size: 0.694rem;
+}
+.p_3_sm {
+  font-size: 0.667rem;
+}
+.t_c_1 {
+  color: #031123;
+}
+
+.accent_1 {
+  color: rgb(255, 165, 0);
+}
 
 @keyframes slideRight {
   from {
@@ -45,3 +104,23 @@ body {
 }
 
 
+@keyframes slideInOut {
+  0% {
+    transform: translateX(300%);
+  }
+ 
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sliding-text-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sliding-text {
+  display: inline-block;
+  animation: slideInOut 15s ease-in-out infinite;
+}

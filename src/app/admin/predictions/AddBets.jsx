@@ -63,35 +63,17 @@ const AddBetsTips = () => {
     }));
   };
 
-  const getAllTips = async () => {
-    try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/all_tips`);
-
-      if (response.status === 200) {
-        console.log('Bet Tip added successfully');
-        console.log(response)
-      } else {
-        console.error('Failed to add Bet Tip');
-      }
-    } catch (error) {
-      console.error('Error adding Bet Tip:', error);
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      console.log(formData)
       // Send data to the backend using axios
       const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER}/api/betting/tips/add_tip`, formData);
 
       if (response.status === 200) {
-        alert("Bet Tip added successfully")
-        // console.log('Bet Tip added successfully');
-        await getAllTips()
+        alert('Bet Tip added successfully');
       } else {
-        console.error('Failed to add Bet Tip');
         alert('Failed to add Bet Tip')
       }
 

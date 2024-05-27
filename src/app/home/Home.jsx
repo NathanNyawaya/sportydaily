@@ -14,7 +14,6 @@ const Home = () => {
   const [activeLink, setActiveLink] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState("EPL Chelsea");
-  const [productCategory, setProductCategory] = useState("");
   const [activeTeams, setActiveTeams] = useState([]);
 
   useEffect(() => {

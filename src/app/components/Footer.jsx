@@ -18,6 +18,11 @@ const Footer = ({ theme }) => {
 
   const links = [
     {
+      href: "/fixtures",
+      text: "Fixtures",
+      icon: "https://img.icons8.com/external-icongeek26-flat-icongeek26/64/external-trophy-football-icongeek26-flat-icongeek26.png"
+    },
+    {
       href: "/",
       text: "Blogs",
       icon: "https://img.icons8.com/fluency/48/blog.png"
@@ -41,7 +46,7 @@ const Footer = ({ theme }) => {
       icon: "https://img.icons8.com/papercut/60/twitter.png"
     },
     {
-      href: "https://wa.me/254710379709",
+      href: "https://twitter.com/ThePitchBasket",
       text: "Chat With Us",
       target: "_blank",
       icon: "https://img.icons8.com/arcade/64/chat.png"

@@ -172,10 +172,10 @@ const Blogs = ({ club_name, theme }) => {
                       src={post.imageFiles[0].url}
                       loading="lazy"
                       alt="visuals"
-                      className="w-full h-[30vh] object-cover rounded-t"
+                      className="w-full h-[40vh] object-cover rounded-t"
                     />
                   </div>
-                  <div className="bg-gray-800 rounded-b-lg flex flex-col w-full h-[20vh] text-gray-50 p-2">
+                  <div className="bg-gray-800 rounded-b-lg flex flex-col w-full min-h-[20vh] text-gray-50 p-2">
                     <h2 className="mb-3 md:text-[1.44rem] text-[1rem] font-bold tracking-wide">
                       {post.title}
                       <span className="ml-3 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">

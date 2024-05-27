@@ -13,6 +13,23 @@ export const getBlogs = async () => {
   }
 };
 
+
+export const getClubNews = async (club_name) => {
+  try {
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_SERVER}/api/v1/getClubNews`,
+      { club_name }
+    );
+    if (res) {
+      return res;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+
 export const getBlog = async (blog_id) => {
   try {
     const res = await axios.get(

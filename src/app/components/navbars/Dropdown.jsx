@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const links = [
-  { id: "home", label: "Home", href: "/" },
+  // { id: "home", label: "Home", href: "/" },
   // { id: "livestreams", label: "Live Streams", href: "/livestreams" },
   { id: "fixtures", label: "Fixture", href: "/fixtures" },
   { id: "highlights", label: "Highlights", href: "/highlights" },
@@ -30,7 +30,7 @@ const BottomNav = () => {
 
 
   return (
-    <div className="flex overflow-hidden items-center gap-x-2  py-2 md:py-3 mt-1 px-1 rounded bg-gradient-to-r to-[#FCD107]/[0.1] from-black">
+    <div className="flex items-center justiry-end text-end p_2 font-bold">
       {links.map((link) => (
         <Link key={link.id} href={link.href}>
           <p

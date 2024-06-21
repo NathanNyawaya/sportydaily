@@ -13,8 +13,21 @@ import SlidingText from "../components/SlidingText";
 const Home = () => {
   const [activeLink, setActiveLink] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [selectedTeam, setSelectedTeam] = useState("EPL Chelsea");
+  const [selectedTeam, setSelectedTeam] = useState(() => {
+    // Get the initial state from local storage, or use "EPL Arsenal" if nothing is found
+    return localStorage.getItem('selectedTeam') || 'EPL Arsenal';
+  });
   const [activeTeams, setActiveTeams] = useState([]);
+
+  const handleTeamChange = (event) => {
+    const club_name = event.target.value;
+    setSelectedTeam(club_name);
+  };
+
+  useEffect(() => {
+    // Save the selected team to local storage whenever it changes
+    localStorage.setItem('selectedTeam', selectedTeam);
+  }, [selectedTeam]);
 
   useEffect(() => {
     const l_raw = localStorage.getItem("l_");
@@ -200,11 +213,7 @@ const Home = () => {
     setActiveTeams(activeTeams);
   }, []);
 
-  const handleTeamChange = (event) => {
-    const club_name = event.target.value;
-    setSelectedTeam(club_name);
-  };
-
+ 
   const selectedTheme = activeTeams.find(team => team.club_name === selectedTeam);
 
   const links = [
@@ -253,7 +262,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <SlidingText/>
+            {/* <SlidingText/> */}
 
             <Footer theme={selectedTheme} />
           </div>

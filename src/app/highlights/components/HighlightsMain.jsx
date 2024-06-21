@@ -16,9 +16,7 @@ const LinksMain = () => {
     {
       video_url: "https://youtu.be/_BJy3tVc6QE?si=6gfxDcy2bf8ovFny",
     },
-    {
-      video_url: "https://youtu.be/r5jniHNjcJ0?si=ijKbL1_uGzlo3phL",
-    },
+    
 
   ];
   return (

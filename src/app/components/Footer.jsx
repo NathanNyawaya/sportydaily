@@ -34,11 +34,11 @@ const Footer = ({ theme }) => {
       icon: "https://img.icons8.com/external-others-pike-picture/50/external-Gambling-currency-others-pike-picture.png"
     },
     // { href: "/bet/SP/SPB", text: "Betting" },
-    {
-      href: "/highlights",
-      text: "Highlights",
-      icon: "https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/66/external-video-stream-party-and-celebrations-smashingstocks-outline-color-smashing-stocks.png"
-    },
+    // {
+    //   href: "/highlights",
+    //   text: "Highlights",
+    //   icon: "https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/66/external-video-stream-party-and-celebrations-smashingstocks-outline-color-smashing-stocks.png"
+    // },
     {
       href: "https://twitter.com/ThePitchBasket",
       text: "Twitter",
